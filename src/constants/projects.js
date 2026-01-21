@@ -20,6 +20,7 @@ import { ReelYouth } from "./Team/ReelYouth";
 export const Projects = [
   {
     name: "Mosaic",
+    slug: "mosaic",
     description: "Aiding New Comers to Canada",
     date: "November 2023 - Current",
     tags: ["Immigration", "AI / Bot"],
@@ -34,6 +35,7 @@ export const Projects = [
   },
   {
     name: "Pedals",
+    slug: "pedals",
     description: "Empowering Communities Through Bicycles",
     date: "January 2024 - Current",
     tags: ["Community", "Admin"],
@@ -48,6 +50,7 @@ export const Projects = [
   },
   {
     name: "Blueprint Website",
+    slug: "blueprint-website",
     description: "Taking SFU Blueprint LIVE",
     date: "September 2023 - December 2023",
     tags: ["Innovation", "Website"],
@@ -61,6 +64,7 @@ export const Projects = [
   },
   {
     name: "Reel Youth",
+    slug: "reel-youth",
     description: "Helping Reel Youth build website",
     date: "August 2024 - Current",
     tags: ["Community", "Website"],

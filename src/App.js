@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import StudentsPage from "./pages/StudentsPage";
 import NonprofitsPage from "./pages/NonprofitsPage";
+import IndividualProject from "./pages/IndividualProject";
 import Footer from "./components/footer/Footer";
 import ScrollToHashElement from "./components/shared/ScrollToHash";
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/projectspage" element={<ProjectsPage />} />
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/nonprofits" element={<NonprofitsPage />} />
+        <Route path="/projects/:slug" element={<IndividualProject />} />
       </Routes>
       </main>
       <Footer></Footer>
