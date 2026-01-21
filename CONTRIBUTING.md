@@ -1,6 +1,6 @@
 # Contributing Guide — SFU Blueprint Website Revamp
 
-This repo is in an active redesign. We are intentionally rebuilding pages to match the new wireframes.
+This repo is in an active redesign. We are intentionally rebuilding pages to match the new wireframe
 
 ## Quick Start (Local Setup)
 1. Install Node.js (LTS recommended).
