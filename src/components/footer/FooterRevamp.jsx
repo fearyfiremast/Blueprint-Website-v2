@@ -5,6 +5,25 @@ import { ReactComponent as InstagramIcon } from "../../assets/icons/instagram.sv
 import { ReactComponent as LinkedinIcon } from "../../assets/icons/linkedin.svg";
 import { ReactComponent as YouTubeIcon } from "../../assets/icons/youtube.svg";
 
+function LinkSection({ title, links, titleClassName, linkClassName, titleGap, linkGap, width }) {
+  return (
+    <div className={`flex flex-col ${titleGap} ${width || ''}`}>
+      <h3 className={titleClassName}>{title}</h3>
+      <div className={`flex flex-col ${linkGap}`}>
+        {links.map((link, idx) => (
+          <Link
+            key={idx}
+            to={link.path}
+            className={linkClassName}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function FooterRevamp() {
   const footerLinks = {
     projects: [
@@ -70,65 +89,42 @@ export default function FooterRevamp() {
               </h2>
 
               <div className="flex flex-wrap gap-x-[60px] gap-y-[30px]">
-                <div className="flex flex-col gap-[18px] w-[105px]">
-                  <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">projects</h3>
-                  <div className="flex flex-col gap-[12px]">
-                    {footerLinks.projects.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.path}
-                        className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-[12px] w-[184px]">
-                  <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">for non profits</h3>
-                  <div className="flex flex-col gap-[12px]">
-                    {footerLinks.forNonProfits.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.path}
-                        className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-[12px] w-[154px]">
-                  <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">for students</h3>
-                  <div className="flex flex-col gap-[12px]">
-                    {footerLinks.forStudents.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.path}
-                        className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-[12px] w-[109px]">
-                  <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">about us</h3>
-                  <div className="flex flex-col gap-[12px]">
-                    {footerLinks.aboutUs.map((link, idx) => (
-                      <Link
-                        key={idx}
-                        to={link.path}
-                        className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <LinkSection
+                  title="projects"
+                  links={footerLinks.projects}
+                  titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+                  linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+                  titleGap="gap-[18px]"
+                  linkGap="gap-[12px]"
+                  width="w-[105px]"
+                />
+                <LinkSection
+                  title="for non profits"
+                  links={footerLinks.forNonProfits}
+                  titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+                  linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+                  titleGap="gap-[18px]"
+                  linkGap="gap-[12px]"
+                  width="w-[184px]"
+                />
+                <LinkSection
+                  title="for students"
+                  links={footerLinks.forStudents}
+                  titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+                  linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+                  titleGap="gap-[18px]"
+                  linkGap="gap-[12px]"
+                  width="w-[154px]"
+                />
+                <LinkSection
+                  title="about us"
+                  links={footerLinks.aboutUs}
+                  titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+                  linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+                  titleGap="gap-[18px]"
+                  linkGap="gap-[12px]"
+                  width="w-[109px]"
+                />
               </div>
             </div>
           </div>
@@ -174,65 +170,42 @@ export default function FooterRevamp() {
           </div>
 
           <div className="flex flex-wrap gap-x-[60px] gap-y-[30px]">
-            <div className="flex flex-col gap-[18px] w-[105px]">
-              <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">projects</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.projects.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[12px] w-[184px]">
-              <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">for non profits</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.forNonProfits.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[12px] w-[154px]">
-              <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">for students</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.forStudents.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[12px] w-[109px]">
-              <h3 className="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]">about us</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.aboutUs.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <LinkSection
+              title="projects"
+              links={footerLinks.projects}
+              titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+              linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+              width="w-[105px]"
+            />
+            <LinkSection
+              title="for non profits"
+              links={footerLinks.forNonProfits}
+              titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+              linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+              width="w-[184px]"
+            />
+            <LinkSection
+              title="for students"
+              links={footerLinks.forStudents}
+              titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+              linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+              width="w-[154px]"
+            />
+            <LinkSection
+              title="about us"
+              links={footerLinks.aboutUs}
+              titleClassName="text-[24px] font-normal leading-[1.3] tracking-[-0.48px]"
+              linkClassName="text-[#D9D9D9] text-[16px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+              width="w-[109px]"
+            />
           </div>
 
           <div className="flex flex-col gap-[24px]">
@@ -276,65 +249,38 @@ export default function FooterRevamp() {
           </div>
 
           <div className="flex flex-col gap-[36px]">
-            <div className="flex flex-col gap-[18px]">
-              <h3 className="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]">projects</h3>
-              <div className="flex flex-col gap-[8px]">
-                {footerLinks.projects.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[18px]">
-              <h3 className="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]">for non profits</h3>
-              <div className="flex flex-col gap-[8px]">
-                {footerLinks.forNonProfits.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[18px]">
-              <h3 className="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]">for students</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.forStudents.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-[18px]">
-              <h3 className="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]">about us</h3>
-              <div className="flex flex-col gap-[12px]">
-                {footerLinks.aboutUs.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    to={link.path}
-                    className="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+            <LinkSection
+              title="projects"
+              links={footerLinks.projects}
+              titleClassName="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]"
+              linkClassName="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+            />
+            <LinkSection
+              title="for non profits"
+              links={footerLinks.forNonProfits}
+              titleClassName="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]"
+              linkClassName="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+            />
+            <LinkSection
+              title="for students"
+              links={footerLinks.forStudents}
+              titleClassName="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]"
+              linkClassName="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+            />
+            <LinkSection
+              title="about us"
+              links={footerLinks.aboutUs}
+              titleClassName="text-[18px] font-normal leading-[1.3] tracking-[-0.36px]"
+              linkClassName="text-[#D9D9D9] text-[14px] font-normal hover:text-white active:text-[#0177E8] transition-colors"
+              titleGap="gap-[18px]"
+              linkGap="gap-[12px]"
+            />
           </div>
 
           <div className="flex flex-col gap-[24px]">
