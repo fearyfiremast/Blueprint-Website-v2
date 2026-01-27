@@ -3,9 +3,10 @@ import PageContainer from "../components/layout/PageContainer";
 
 const HomePage = () => {
   return (
+    // All margin values are placeholder
     <PageContainer>
       {/* Hero Section */}
-      <section>
+      <section class="m-4">
         <h1>we are sfu blueprint</h1>
         <p>we build tech for social good.</p>
         <button>Learn more placeholder</button>
@@ -13,7 +14,7 @@ const HomePage = () => {
       </section>
 
       {/* Mission Statement */}
-      <section>
+      <section class="m-4">
         <p>Introduction paragraph placeholder</p>
         <ul>
           <li>ALL NGO sectors Placeholder</li>
@@ -24,15 +25,17 @@ const HomePage = () => {
       </section>
 
       {/* Projects preview */}
-      <section>
+      <section class="m-4">
         <h2>our partnerships</h2>
-        <p>partnership card placeholder</p>
-        <p>partnership card placeholder</p>
-        <p>Sell all our projects placeholder</p>
+        <ul>
+          <li>partnership card placeholder</li>
+          <li>partnership card placeholder</li>
+        </ul>
+        <p>See all our projects placeholder</p>
       </section>
 
       {/* Partner info */}
-      <section>
+      <section class="m-4">
         <h2>launch a project for your non profit</h2>
         <p>Blueprint partner description placeholder</p>
         <button>Learn more placeholder</button>
@@ -40,7 +43,7 @@ const HomePage = () => {
       </section>
 
       {/* Blueprint Events */}
-      <section>
+      <section class="m-4">
         <h2>for students: turn real projects into real opportunities.</h2>
         <p>blueprinters internship stats placeholder</p>
         <button>Join us placeholder</button>
