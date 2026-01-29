@@ -32,9 +32,9 @@ const StudentsPage = () => {
         <h3>Work with a team</h3>
         <p>Teams of roughly 10 blueprint members will work together to bring a project from its earliest stages to final client handoff. Cross-functional collaboration is the core of all blueprint projects!</p>
         <ul>
-          <li>Project Manager Placeholer</li>
-          <li>Designer Placeholder</li>
-          <li>Developers Placeholder</li>
+          <li>Project Manager PLACEHOLDER</li>
+          <li>Designer PLACEHOLDER</li>
+          <li>Developers PLACEHOLDER</li>
         </ul>
       </section>
 
@@ -49,9 +49,9 @@ const StudentsPage = () => {
         <h3>socialize/attend events</h3>
         <p>Meet new people, build real connections, and join a community that supports your growth—both personally and professionally. </p>
         <ul>
-          <li>img placeholder</li>
-          <li>img placeholder</li>
-          <li>img placeholder</li>
+          <li>img PLACEHOLDER</li>
+          <li>img PLACEHOLDER</li>
+          <li>img PLACEHOLDER</li>
         </ul>
       </section>
 
