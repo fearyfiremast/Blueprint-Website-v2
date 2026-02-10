@@ -36,7 +36,7 @@ const NavBar = () => {
 
   return (
     <nav className="flex justify-center bg-blueprint-offwhite">
-      <div className="flex flex-col justify-between max-lg:flex-grow lg:flex-row lg:w-[80rem] lg:px-20">
+      <div className="flex flex-col justify-between max-lg:flex-grow lg:flex-row lg:w-nav-container-max lg:px-nav-px-desktop">
         <div className="flex justify-between items-center py-4 px-4 sm:px-0 sm:mx-4">
           <div className="ml-2">
             <Logo isDark={isDark} />
@@ -62,7 +62,7 @@ const NavBar = () => {
       {/* Comment out button to test dark features */}
       {/* <button  
         onClick={toggleDark}
-        className="ml-4 px-3 py-2 rounded transition-colors bg-[#0177E8] text-white hover:bg-[#0146BE] active:bg-[#002F80]"
+        className="ml-4 px-3 py-2 rounded transition-colors bg-blueprint-blue text-white hover:bg-blueprint-linkHover active:bg-blueprint-linkActive"
         aria-label="Toggle dark mode"
       >
         {isDark ? "Light Mode" : "Dark Mode"}
@@ -75,7 +75,7 @@ function MenuButton({ isMenuOpened, visibility, toggleMenu, isDark }) {
   return (
     <button
       className={`${visibility} w-10 h-10 rounded-[7.05px] p-[13px_11px] gap-[9px] flex items-center justify-center transition-colors ${
-        isDark ? 'bg-[#2A2A2A]' : 'bg-[#F3F3F3]'
+        isDark ? 'bg-blueprint-neutral-dark' : 'bg-blueprint-gray-light'
       }`}
       onClick={toggleMenu}
       aria-label={isMenuOpened ? "Close menu" : "Open menu"}
@@ -101,7 +101,7 @@ function NavLinks({ routes, isMenuOpened, currentPath, closeMenu, isDark}) {
       {/* MOBILE WRAPPER */}
       <div className={`
         max-lg:w-full max-lg:py-2 max-lg:px-4 max-lg:space-y-2
-        ${isDark ? 'max-lg:bg-[#2A2A2A]' : 'max-lg:bg-white'}
+        ${isDark ? 'max-lg:bg-blueprint-neutral-dark' : 'max-lg:bg-white'}
         lg:contents 
       `}>
         {routes.map((route, index) => (
@@ -112,28 +112,24 @@ function NavLinks({ routes, isMenuOpened, currentPath, closeMenu, isDark}) {
             // max-lg - Mobile width
             // lg - desktop width
             className={`
-              max-lg:w-full max-lg:h-[50px] max-lg:px-6 max-lg:py-3
+              max-lg:w-full max-lg:h-nav-mobile-h max-lg:px-nav-mobile-px max-lg:py-nav-mobile-py
               max-lg:flex max-lg:items-center max-lg:justify-start
               max-lg:rounded-md max-lg:text-left 
               max-lg:active:text-white
-              ${isDark ? 'max-lg:active:bg-[#777777] max-lg:bg-[#2A2A2A] max-lg:text-white' : 
-                'max-lg:active:bg-[#002F80] max-lg:bg-[#F3F3F3] max-lg:text-blueprint-black'}
+              ${isDark ? 'max-lg:active:bg-blueprint-neutral-mid max-lg:bg-blueprint-neutral-dark max-lg:text-white' : 
+                'max-lg:active:bg-blueprint-linkActive max-lg:bg-blueprint-gray-light max-lg:text-blueprint-black'}
               ${route.path === currentPath ? 'max-lg:font-semibold' : ''}
                
-              lg:relative lg:h-[60px] lg:px-9 lg:py-3
+              lg:relative lg:h-nav-desktop-h lg:px-nav-desktop-px lg:py-nav-desktop-py
               lg:flex lg:items-center lg:justify-between
-              ${isDark ? `lg:text-white lg:hover:bg-[#777777] lg:active:bg-[#AAAAAA]`: `lg:hover:bg-[#0146BE] lg:active:bg-[#002F80]`}
-              lg:bg-transparent 
-              lg:hover:bg-[#0146BE] 
-              lg:active:bg-[#002F80]
-              lg:hover:text-white 
-              lg:active:text-white
+              lg:bg-transparent lg:hover:text-white lg:active:text-white
+              ${isDark ? 'lg:text-white lg:hover:bg-blueprint-neutral-mid lg:active:bg-blueprint-neutral-mutedAlt' : 'lg:hover:bg-blueprint-linkHover lg:active:bg-blueprint-linkActive'}
               lg:rounded lg:transition-all
               
               ${route.path === currentPath && "text-blueprint-blue underline font-semibold"}
               ${index === 0 && "lg:hidden"}
               
-              font-poppins font-medium text-sm leading-[100%] uppercase
+              font-poppins text-nav-link uppercase
               whitespace-nowrap
               transition-all
             `}
