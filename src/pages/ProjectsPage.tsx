@@ -14,16 +14,16 @@ const ProjectsPage = () => {
       {/* current projects*/}
       <section className="m-4">
         <h2>Current projects</h2>
-          <ProjectCard />
-          <ProjectCard />
+          <ProjectCard project={null}/>
+          <ProjectCard project={null}/>
       </section>
 
       {/* Completed projects */}
       <section className="m-4">
         <h2>Completed projects</h2>
         <ul>
-          <ProjectCard />
-          <ProjectCard />
+          <ProjectCard project={null}/>
+          <ProjectCard project={null}/>
         </ul>
       </section>
 
