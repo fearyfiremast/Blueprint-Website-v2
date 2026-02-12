@@ -33,10 +33,10 @@ const ProjectCard = ({project=ProjectInfo}) => { // Change Placeholder Project I
             {/*  Title and Icons */}
             <div className="self-stretch inline-flex justify-start items-start gap-3 md:gap-16">
                 <div className="flex-1 max-w-96 md:max-w-none justify-start text-zinc-800 text-lg md:text-2xl font-normal font-['Poppins'] leading-6 md:leading-8">
-                    {ProjectInfo.TITLE_PLACEHOLDER}
+                    {project.TITLE_PLACEHOLDER}
                     </div>
                 <div className="hidden md:block w-20 h-20 bg-zinc-800 rounded-full"></div>
-                <img className="hidden md:block w-20 h-20" src={ProjectInfo.IMAGE_PLACEHOLDER} alt="Placeholder"/>
+                <img className="hidden md:block w-20 h-20" src={project.IMAGE_PLACEHOLDER} alt="Placeholder"/>
             </div>
             
             {/*  Divider */}
@@ -49,7 +49,7 @@ const ProjectCard = ({project=ProjectInfo}) => { // Change Placeholder Project I
                         CLIENT
                     </div>
                     <div className="justify-start md:self-stretch md:inline-flex text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">
-                        {ProjectInfo.CLIENT_PLACEHOLDER}
+                        {project.CLIENT_PLACEHOLDER}
                     </div>
                     </div>
                 <div className="w-28 md:w-36 flex flex-col justify-start items-start gap-1.5 md:gap-3">
@@ -57,7 +57,7 @@ const ProjectCard = ({project=ProjectInfo}) => { // Change Placeholder Project I
                         SERVICE
                     </div>
                     <div className="self-stretch justify-start md:inline-flex text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">
-                        {ProjectInfo.SERVICE_PLACEHOLDER}
+                        {project.SERVICE_PLACEHOLDER}
                     </div>
                 </div>
                 <div className="w-28 md:w-36 flex flex-col justify-start items-start gap-1.5 md:gap-3">
@@ -65,7 +65,7 @@ const ProjectCard = ({project=ProjectInfo}) => { // Change Placeholder Project I
                         SECTOR
                     </div>
                     <div className="justify-start md:self-stretch md:inline-flex text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">
-                        {ProjectInfo.SECTOR_PLACEHOLDER}
+                        {project.SECTOR_PLACEHOLDER}
                     </div>
                 </div>
             </div>
