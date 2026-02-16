@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as MenuHamburgerIcon } from "../assets/icons/hamburger.svg";
 import { ReactComponent as MenuXIcon } from "../assets/icons/x.svg";
-import {ReactComponent as GrayMenuHamburgerIcon} from "../assets/icons/TEMP_hamburger_gray.svg"
-import {ReactComponent as GrayMenuXIcon} from "../assets/icons/x_gray.svg"
+import { ReactComponent as GrayMenuHamburgerIcon } from "../assets/icons/TEMP_hamburger_gray.svg" // TEMPORARY ICON FOR DARK
+import { ReactComponent as GrayMenuXIcon } from "../assets/icons/x_gray.svg"
 import Logo from "./shared/Logo";
 
 
