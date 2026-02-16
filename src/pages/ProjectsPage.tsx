@@ -1,11 +1,12 @@
 import React from "react";
 import PageContainer from "../components/layout/PageContainer";
-
+import ProjectCard from "../components/shared/ProjectCard";
 const ProjectsPage = () => {
   return (
     // All margin values are placeholder
     <PageContainer>
       {/* Title */}
+      completedprojects
       <section className="m-4"> 
         <h1>all projects</h1>
       </section>
@@ -13,20 +14,16 @@ const ProjectsPage = () => {
       {/* current projects*/}
       <section className="m-4">
         <h2>Current projects</h2>
-        <ul>
-          <li>Project Card Placeholder</li>
-          <li>Project Card Placeholder</li>
-          <li>Project Card Placeholder</li>
-        </ul>
+          <ProjectCard project={null}/>
+          <ProjectCard project={null}/>
       </section>
 
       {/* Completed projects */}
       <section className="m-4">
         <h2>Completed projects</h2>
         <ul>
-          <li>Project Card Placeholder</li>
-          <li>Project Card Placeholder</li>
-          <li>Project Card Placeholder</li>
+          <ProjectCard project={null}/>
+          <ProjectCard project={null}/>
         </ul>
       </section>
 
