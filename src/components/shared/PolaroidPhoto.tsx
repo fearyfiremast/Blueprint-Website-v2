@@ -23,7 +23,7 @@ const PolaroidPhoto = ({imageSrc, caption, alt}: PolaroidPhotoProps) => {
         <div className="flex flex-col self-stretch shrink-0 items-center gap-[8px] md:gap-[10px]"> 
             {/* Image container */}
             <div className="h-[206px] overflow-hidden md:h-[267px]">
-                <img className="object-cover object-top" src={imageSrc} alt={alt}/>
+                <img className="object-cover object-top w-full h-full block" src={imageSrc} alt={alt}/>
             </div>
             <p className="decoration-blueprint-black text-center font-caveat text-2x1 md:text-[34px] text-wrap">{caption}</p>
         </div>  
