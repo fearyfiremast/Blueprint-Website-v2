@@ -28,6 +28,7 @@ module.exports = {
         },
       },
       fontFamily: {
+        caveat: ['Caveat', 'cursive'],
         poppins: ["Poppins", "sans-serif"],
         anek: ["Anek Bangla", "sans-serif"],
         sketch: ["Just Me Again Down Here", "sans-serif"],
