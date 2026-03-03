@@ -3,6 +3,7 @@ import React, { useId } from "react";
 export type EvaluationCardProps = {
   title: string;
   body: string;
+  colour?: string;
 };
 
 // <svg className="absolute w-0 h-0" aria-hidden>
@@ -19,7 +20,7 @@ export type EvaluationCardProps = {
  * EvaluationCard: vertical layout when viewport is tall enough (min-h 32rem),
  * horizontal (tablet) layout when viewport height is below that.
  */
-const EvaluationCard = ({ title, body }: EvaluationCardProps) => {
+const EvaluationCard = ({ title, body, colour="blueprint-navyblue" }: EvaluationCardProps) => {
     const clipId = useId();
   
     return (
@@ -32,7 +33,7 @@ const EvaluationCard = ({ title, body }: EvaluationCardProps) => {
             </clipPath>
           </svg>
           <div
-            className="absolute left-0 right-0 top-0 h-[102px] min-w-[302px] max-wfull max-w-[605px] bg-blueprint-navyblue rounded-xl m-3"
+            className={`absolute left-0 right-0 top-0 h-[102px] min-w-[302px] max-wfull max-w-[605px] bg-${colour} rounded-xl m-3`}
             style={{ clipPath: `url(#${clipId})` }}
             aria-hidden
           />
@@ -47,11 +48,11 @@ const EvaluationCard = ({ title, body }: EvaluationCardProps) => {
           <div className="self-stretch inline-flex justify-start items-center h-[121px] gap-2 my-2">
             <div className="relative w-64 h-32">
               <div
-                className="absolute bg-blueprint-navyblue rounded-l-xl inset-y-0 left-0 w-8 min-h-[121px]"
+                className={`absolute bg-${colour} rounded-l-xl inset-y-0 left-0 w-8 min-h-[121px]`}
                 aria-hidden
               />
               <div
-                className="relative min-h-[121px] bg-blueprint-navyblue text-white flex items-center justify-center h-full rounded-xl pl-7 pr-[31px] pt-6 pb-9 py-3 origin-bottom-left skew-x-[-8deg]"
+                className={`relative min-h-[121px] bg-${colour} text-white flex items-center justify-center h-full rounded-xl pl-7 pr-[31px] pt-6 pb-9 py-3 origin-bottom-left skew-x-[-8deg]`}
               >
                 <span className="text-left text-2xl font-medium font-['Poppins'] leading-8 skew-x-[8deg]">
                   {title}
