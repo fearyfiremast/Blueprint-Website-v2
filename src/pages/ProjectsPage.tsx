@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "../components/layout/PageContainer";
-import ProjectCard from "../components/shared/ProjectCard";
+import CommonProjectCard from "../components/shared/CommonProjectCard";
 
 const ProjectsPage = () => {
   return (
@@ -12,16 +12,16 @@ const ProjectsPage = () => {
       <section className="m-4">
         <h2>Current projects</h2>
         <div className="flex flex-col gap-6">
-          <ProjectCard />
-          <ProjectCard />
+          <CommonProjectCard />
+          <CommonProjectCard />
         </div>
       </section>
 
       <section className="m-4">
         <h2>Completed projects</h2>
-        <div className="flex flex-col gap-6">
-          <ProjectCard />
-          <ProjectCard />
+        <div className="flex flex-row gap-6">
+          <CommonProjectCard />
+          <CommonProjectCard />
         </div>
       </section>
 
