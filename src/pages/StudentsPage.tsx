@@ -234,7 +234,7 @@ const StudentsPage = () => {
               </h3>
 
           {/* Role Cards */}
-          <div className="flex flex-wrap justify-center items-start gap-6 max-md:flex-col max-md:items-center">
+          <div className="flex flex-wrap justify-center items-start gap-6 max-[1024px]:flex-col max-[1024px]:items-stretch">
             {ROLES.map((role, index) => (
               <RoleCard
                 key={role.title}
@@ -314,9 +314,10 @@ const StudentsPage = () => {
       {/* Open Positions Section */}
       <section
         id="open-positions"
-        className="w-full bg-blueprint-black rounded-[20px] mx-auto max-w-[1320px] px-6 md:px-[94px] py-[94px] max-md:py-[60px] max-md:px-[19px] max-md:rounded-[12px]"
+        className="bg-blueprint-black rounded-[20px] mx-[60px] flex justify-end items-start gap-[165px]
+                   pt-[94px] pr-[84px] pb-[94px] pl-[94px]
+                   max-md:flex-col max-md:gap-[40px] max-md:py-[60px] max-md:px-[19px] max-md:mx-[16px] max-md:rounded-[12px]"
       >
-        <div className="flex gap-[100px] items-start max-md:flex-col max-md:gap-[40px]">
           {/* Left side: heading + description + button */}
           <div className="flex flex-col gap-[48px] max-w-[376px] max-md:max-w-full shrink-0">
             <div className="flex flex-col gap-[24px] text-white">
@@ -353,11 +354,16 @@ const StudentsPage = () => {
               />
             ))}
           </div>
-        </div>
       </section>
 
       {/* Stay Updated Section */}
-      <section className="relative w-full bg-[#F5F5F5] bg-no-repeat bg-[58%_center] bg-[length:auto_100%] max-md:bg-none overflow-hidden">
+      <div className="overflow-x-hidden">
+      <section className="relative z-5
+                          bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
+                          bg-[calc(50%-409px)_-360px]
+                          max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(50%-277px)_-132px]
+                          [clip-path:inset(0_0_0_calc((100%-1320px)/2))]
+                          max-md:[clip-path:none]">
         <div className="relative z-10 px-6 md:px-10 xl:px-36 py-[100px] max-md:py-[60px]">
           {/* Header */}
           <div className="text-center mb-[48px] max-md:mb-[32px]">
@@ -390,6 +396,7 @@ const StudentsPage = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };
@@ -564,12 +571,18 @@ type RoleCardProps = {
 };
 
 function RoleCard({ title, description, color, offset }: RoleCardProps) {
-  const offsetClass =
+  const desktopOffset =
     offset === 0 ? "lg:mt-[120px]" : offset === 1 ? "lg:mt-[58px]" : "lg:mt-0";
+  const mobileAlign =
+    offset === 0
+      ? "max-[1024px]:self-start"
+      : offset === 1
+        ? "max-[1024px]:self-center max-[1024px]:-mt-[30px]"
+        : "max-[1024px]:self-end max-[1024px]:-mt-[30px]";
 
   return (
     <div
-      className={`w-[276px] max-md:w-[263px] bg-white rounded-[16px] flex flex-col p-[12px] gap-[65px] ${offsetClass}`}
+      className={`w-[276px] max-[1024px]:w-[75%] bg-white rounded-[16px] flex flex-col p-[12px] gap-[65px] ${desktopOffset} ${mobileAlign}`}
     >
       {/* Colored header */}
       <div className="relative h-[144px] w-full">
