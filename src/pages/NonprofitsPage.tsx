@@ -84,35 +84,35 @@ const NonprofitsPage = () => {
     </section>
 
     {/* NPO project proposal - full viewport width, breaks out of PageContainer padding */}
-    <section className="-mx-6 bg-blueprint-navyblue overflow-hidden px-6 pt-[45px] pb:6 sm:pb-8 pl-[23px] pr-[21px] flex min-w-96 min-h-[514px]
+    <section className="-mx-6 bg-blueprint-navyblue overflow-hidden px-6 pt-[45px] pb-[68px] pl-[23px] pr-[21px] flex min-w-96 
                 sm:mx-10% sm:px-[103px] sm:pt-[60px] sm:pb-[80px] sm:rounded-2xl sm:mb-[52px]">
                   {/* sm:px-[103px] sm:pt-[60px] sm:pb-[80px] sm:rounded-xl sm:inline-flex sm:flex-col sm:justify-start 
                   sm:items-start sm:gap-2.5 sm:overflow-hidden sm:mb-[52px] sm:max-w-[1360px] */}
                           
-      <div className="flex flex-col justify-start items-start gap-12 w-full">              
+      <div className="flex flex-col justify-start items-start gap-6 sm:gap-12 w-full">              
           {/* Heading */}
-          <h2 className="w-full text-white text-3xl font-normal font-['Poppins'] leading-8
-            sm:text-5xl sm:leading-[57.60px] lg:max-w-[655px] ">
+          <h2 className="w-full text-white text-3xl font-light font-poppins leading-8
+            sm:text-heading-m-reg sm:leading-[57.60px] lg:max-w-[655px]">
             are you part of an NPO with a project idea in mind?
           </h2>
           {/* Divider Line */}
-          <div className="self-stretch h-0 outline outline-[0.50px] outline-offset-[-0.25px] outline-white" />
+          <div className="self-stretch h-px bg-white scale-y-[0.5] origin-center" />
           
           {/* Content */}
-          <div className="flex flex-col justify-start items-start gap-3 w-full
+          <div className="flex flex-col justify-start items-start gap-3 w-full 
           sm:flex-row sm:justify-between sm:items-start sm:gap-6 lg:justify-between">
             
             {/* Text */}
             <div className="flex flex-col justify-start items-start gap-6 w-full sm:max-w-[588px] max-sm:mb-10">
-              <p className="text-white text-lg font-medium font-poppins leading-6
-               sm:self-stretch sm:text-2xl sm:leading-8 sm:gap-6">
+              <p className="text-white text-lg font-normal font-poppins leading-6 pr-24
+               sm:self-stretch sm:text-2xl sm:font-normal sm:leading-8 sm:pr-0 sm:gap-6">
                 Submit your project proposal through the form!
               </p>
-              <p className="text-white text-base font-normal font-poppins leading-6">
+              <p className="text-white text-base font-light font-poppins leading-6 max-w-100% max-h-100%">
                 If you have any questions, or haven&apos;t heard back from us within a week of submitting a proposal, feel free to reach out to{" "}
                 <a
                   href="mailto:sfublueprint@gmail.com"
-                  className="text-white font-medium underline hover:opacity-90"
+                  className="text-white font-normal underline hover:opacity-90"
                 >
                   sfublueprint@gmail.com
                 </a>
