@@ -6,53 +6,58 @@ import ProjectsCTA from "../components/shared/ProjectsCTA";
 import { Projects } from "../constants/projects";
 import { useState } from "react";
 
-// Map filter button labels to project tags they should match
+// Map filter button labels to project tags they should match - button label: [project tags]
 const FILTER_TO_TAGS: Record<string, string[]> = {
   "Web App": ["Admin", "AI / Bot"],
   "Website": ["Website"],
   "Plug-in": ["Innovation"],
-  "Current": ["Current"],
-  "Complete": ["Complete"],
+  // "Current": ["Current"],
+  // "Completed": ["Completed"],
 };
 
 const ProjectsPage = () => {
-  const filterNames = ["Web App", "Website", "Plug-in", "Current", "Complete"];
+  const filterNames = ["Web App", "Website", "Plug-in", 
+    // "Current", "Completed"
+  ]; // Filter button labels - Displayed in UI
   const [selectedFilter, setSelectedFilter] = useState("All");
-
+  
   const handleFilterClick = (filterName: string) => {
     setSelectedFilter((prev) => (prev === filterName ? "All" : filterName));
   };
 
+  // Filter projects based on selected filter
   const filteredProjects = Projects.filter((project) => {
     if (selectedFilter === "All") return true;
     const matchTags = FILTER_TO_TAGS[selectedFilter] ?? [];
-    if(matchTags.includes("Complete")){
+
+    // Filter based on status 
+    if(matchTags.includes("Completed")){
       return project.status?.toLowerCase() === "completed";
     }else if(matchTags.includes("Current")){
       return project.status?.toLowerCase() === "current";
-    }else {
+    }else { // Filter based on tags
       return project.tags?.some((tag) =>
         matchTags.some((t) => t.toLowerCase() === tag.toLowerCase())
       );
     }
   });
 
-  
-  return (
+    return (
     <PageContainer className="bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat bg-blueprint-gray-light 
                               min-[1280px]:bg-[calc(100%+585px)_-500px]
                               max-[1279px]:bg-[calc(100%+689px)_-500px]
-                              max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-132px]">
+                              max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-45px]">
 
       {/* Main Container Flex Column */}
-      <div className="flex flex-col gap-4 items-center justify-center pb-ppcard-bottom pt-main-top">
+      <div className="flex flex-col gap-4 items-center justify-center pb-ppcard-bottom pt-main-desktop-top max-md:pt-main-mobile-top">
           {/* Title */}
-          <h1 className="text-center justify-start text-zinc-800 text-5xl font-normal font-['Poppins']">
-              our projects
+          <h1 className="text-center justify-start text-zinc-800 max-md:text-3xl text-5xl font-normal font-['Poppins'] ">
+              <span className="max-md:hidden">our projects</span>
+              <span className="md:hidden">all our projects</span>
           </h1>
           
           {/* Filters Flex Row (Web app, Website, Plugin)*/}
-          <div className="flex flex-row gap-4 items-center justify-center pt-[42px] pb-[84px]">
+          <div className="flex flex-row gap-4 items-center justify-center pt-[42px] pb-[84px] max-md:gap-[6px] max-md:pb-6 max-md:pt-8">
             {filterNames.map((name) => (
               <Filters
                 key={name}
@@ -82,7 +87,8 @@ const ProjectsPage = () => {
 
       </div>
       {/* CTA - Sticky at bottom until footer, no extra white space */}
-      <div className="sticky bottom-0 left-0 right-0 z-20 flex justify-center pt-4 pb-4">
+      <div className="sticky bottom-0 left-0 right-0 z-20 flex justify-center pt-4 pb-4
+      md:bottom-[300px]">
         <ProjectsCTA />
       </div>
     </PageContainer>

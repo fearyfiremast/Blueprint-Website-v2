@@ -8,12 +8,12 @@ interface FiltersProps {
 }
 
 const Filters = ({ state = "outlined", title, onClick }: FiltersProps) => {
-    if (state === 'outlined') {
+    if (state === 'outlined') { // Outlined state - should be white bg and text, but using black text to see.
         return(
             <button
                 type="button"
                 onClick={onClick}
-                className="w-fit text-blueprint-black text-sm font-medium font-['Poppins'] uppercase py-3 px-[18px]
+                className="w-fit text-blueprint-black text-sm font-medium font-['Poppins'] uppercase py-3 px-[18px] flex-shrink-0
                 md:py-[10px] md:px-[30px] md:rounded-[10px] rounded-[5px] border border-blueprint-black bg-blueprint-white/20"
             >
                 {title}
@@ -25,7 +25,7 @@ const Filters = ({ state = "outlined", title, onClick }: FiltersProps) => {
             <button
                 type="button"
                 onClick={onClick}
-                className="w-fit text-blueprint-neutral-dark text-sm font-medium font-['Poppins'] uppercase 
+                className="w-fit text-blueprint-neutral-dark text-sm font-medium font-['Poppins'] uppercase flex-shrink-0
                 py-3 px-[18px] md:py-[10px] md:px-[30px] md:rounded-[10px] rounded-[5px] bg-blueprint-white"
             >
                 {title}
@@ -38,7 +38,7 @@ const Filters = ({ state = "outlined", title, onClick }: FiltersProps) => {
         <button
             type="button"
             onClick={onClick}
-            className="w-fit text-blueprint-neutral-dark text-sm font-medium font-['Poppins'] uppercase 
+            className="w-fit text-blueprint-neutral-dark text-sm font-medium font-['Poppins'] uppercase flex-shrink-0
             py-3 px-[18px] md:py-[10px] md:px-[30px] md:rounded-[10px] rounded-[5px] bg-blueprint-accent-veryLightBlue border border-blueprint-accent-lightBlue"
         >
             {title}
