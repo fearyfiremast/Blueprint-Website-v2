@@ -1,10 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import PageContainer from "../components/layout/PageContainer";
 import ProjectCard from "../components/projects-page/ProjectProjectCard";
 import Filters from "../components/shared/Filters";
 import ProjectsCTA from "../components/shared/ProjectsCTA";
 import { Projects } from "../constants/projects";
-import { useState } from "react";
 
 // Map filter button labels to project tags they should match - button label: [project tags]
 const FILTER_TO_TAGS: Record<string, string[]> = {
@@ -86,6 +85,31 @@ const ProjectsPage = () => {
               ))}
           </div>
 
+        {/* Filters */}
+        <div
+          className="flex flex-row flex-wrap gap-[10px] items-center justify-center pt-[42px] pb-[84px]"
+          role="group"
+          aria-label="Project type filters"
+        >
+          {filterNames.map((name, index) => (
+            <Filters
+              key={name}
+              variant="light"
+              state={selectedIndex === index ? "selected" : "default"}
+              title={name}
+              onClick={() => setSelectedIndex(index)}
+              aria-pressed={selectedIndex === index}
+            />
+          ))}
+        </div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 min-[962px]:grid-cols-2 gap-x-[42px] gap-y-9 w-full max-w-[1280px]">
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+          <ProjectCard />
+        </div>
       </div>
       {/* CTA - Sticky at bottom until footer, no extra white space */}
       <div className="sticky bottom-0 left-0 right-0 z-20 flex justify-center pt-4 pb-4
