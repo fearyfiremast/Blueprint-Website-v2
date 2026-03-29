@@ -163,6 +163,16 @@ module.exports = {
            bottom: "111px",
         },
       },
+
+      keyframes: {
+        popIn: {
+          '0%': { transform: 'scale(1.03) rotate(var(--rotation))' },
+          '100%': { transform: 'scale(1) rotate(var(--rotation))' },
+        },
+      },
+      animation: {
+        popIn: 'popIn 0.3s ease-out',
+      },
     },
   },
   plugins: [require("daisyui")],
