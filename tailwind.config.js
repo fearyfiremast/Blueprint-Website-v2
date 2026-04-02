@@ -60,9 +60,9 @@ module.exports = {
           // Role accent colors: dev green, pm orange, designer purple, executive light blue
           roleAccent: {
             dev: "#71EC59",
-            pm: "#F59E0B",
-            designer: "#A855F7",
-            executive: "#38BDF8",
+            pm: "#F49F00",
+            designer: "#D2A6FB",
+            executive: "#9CC0FF",
           },
         },
       },
@@ -159,6 +159,8 @@ module.exports = {
         "nav-desktop-py": "12px",
         "main-desktop-top": "40px",
         "main-mobile-top": "28px",
+        "content-desktop": "148px",
+        "content-mobile": "96px",
         ppcard:{
            bottom: "111px",
         },
