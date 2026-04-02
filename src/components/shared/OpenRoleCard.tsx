@@ -24,10 +24,10 @@ export type OpenRoleCardProps = {
 };
 
 const ROLE_ACCENT: Record<NonNullable<OpenRoleCardProps["roleType"]>, string> = {
-  dev: "#71EC59",
-  pm: "#F59E0B",
-  designer: "#A855F7",
-  executive: "#38BDF8",
+  dev: "#71EC59", // green
+  pm: "#F49F00", // orange
+  designer: "#D2A6FB", // purple
+  executive: "#9CC0FF", // blue
 };
 
 const ACCENT_SQUARE_SIZE_MOBILE_PX = 12;
