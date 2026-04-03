@@ -3,6 +3,19 @@ import PageContainer from "../components/layout/PageContainer";
 import CameraButton from "../components/shared/CameraButton";
 import PolaroidPhoto from "../components/shared/PolaroidPhoto";
 import { GroupImages } from "../constants/about-us-media";
+import InfoCard from "../components/shared/InfoCard";
+
+const OUR_MEMBERS_CONTENT = {
+  title: "Our members",
+  heading: "Our talented members come from diverse cultures, professions, and social backgrounds.",
+  body: "With a passion for social good and dedication to creating beautiful technology, our student project teams work alongside nonprofits to help them better serve their communities.",
+}
+
+const BLUEPRINT_MULTINATIONAL_CONTENT = {
+  title: "Blueprint Multinational",
+  heading: "This chapter of Blueprint is part of a much larger multinational community, originally started at UC Berkeley.",
+  body: "As the fifth established chapter in Canada, our team is based largely at Simon Fraser University, and operating as a registered non profit!",
+}
 
 /** Random tilt in degrees, roughly -maxDeg … +maxDeg (inclusive). */
 function randomTiltDeg(maxDeg: number, minDeg: number) {
@@ -31,13 +44,13 @@ const AboutPage = () => {
   const imagesToShow = GroupImages.slice(INITIAL_VISIBLE, visibleCount);
   
   return (
-    <PageContainer>
+    <PageContainer className="bg-blueprint-gray-light">
       {/* Main Container */}
         <div className="pt-main-mobile-top md:pt-main-desktop-top flex flex-col justify-between">
           
         {/* About us section */}
-        <div className="flex md:flex-row flex-col justify-between mb-[60px]">
-          <div className="flex flex-col md:justify-between">
+        <div className="flex md:flex-row flex-col justify-between mb-[100px]">
+          <div className="flex flex-col md:justify-between max-md:pb-[62px]">
           {/* Title/text */}
             <h1 className="font-poppins text-7xl leading-none tracking-[-0.96px] text-blueprint-black mb-[24px]">
               <strong>about</strong> us
@@ -55,7 +68,7 @@ const AboutPage = () => {
         </div>
         
         {/* Photos Container, 3 photos then on click of Camera button, new photo drops ontop of existing photos (randomized rotation)*/}
-        <div className="md:grid md:grid-cols-3 justify-items-center flex flex-col flex-wrap mb-[148px]"> 
+        <div className="md:grid md:grid-cols-3 justify-items-center flex flex-col flex-wrap mb-[50px]"> 
           {initialImages.map((image, index) => (
             <PolaroidPhoto
               key={image.id}
@@ -66,7 +79,7 @@ const AboutPage = () => {
             />
           ))}
           {/* Drops new photos on top of existing photos */}
-          <div className="absolute grid grid-cols-7 translate-y-4" >
+          <div className="absolute grid grid-rows-7 h-[500px] md:grid-cols-7 translate-y-4" >
             {imagesToShow.map((image, index) => (
               <PolaroidPhoto
                 key={image.id}
@@ -80,7 +93,17 @@ const AboutPage = () => {
               />
             ))}
           </div>
+
+          {/* Info Cards Container*/}
         </div>
+          <div className="pt-[108px] flex justify-center items-center flex flex-col lg:flex-row gap-2 justify-center items-center pb-[148px]">
+             {/* Our members  */}
+            <InfoCard title={OUR_MEMBERS_CONTENT.title} heading={OUR_MEMBERS_CONTENT.heading} body={OUR_MEMBERS_CONTENT.body} color="blueprint-navyblue" />
+            
+
+            {/* Blueprint Multinational */}
+            <InfoCard title={BLUEPRINT_MULTINATIONAL_CONTENT.title} heading={BLUEPRINT_MULTINATIONAL_CONTENT.heading} body={BLUEPRINT_MULTINATIONAL_CONTENT.body} color="blueprint-roleAccent-pm" />
+          </div>
 
 
     </div>
