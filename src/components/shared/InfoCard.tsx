@@ -1,11 +1,15 @@
 import PageContainer from "../layout/PageContainer"
 
+const INFO_CARD_ACCENT_SQUARE_BG = {
+  "blueprint-navyblue": "bg-blueprint-navyblue",
+  "blueprint-roleAccent-pm": "bg-blueprint-roleAccent-pm",
+} as const
 
 export type InfoCardProps = {
     title: string,
     heading: string,
     body: string,
-    color: string,
+    color: keyof typeof INFO_CARD_ACCENT_SQUARE_BG,
 }
 function InfoCard({ title, heading, body, color }: InfoCardProps) {
     return (
