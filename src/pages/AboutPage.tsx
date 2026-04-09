@@ -104,7 +104,8 @@ const AboutPage = () => {
         </div>
         
         {/* Photos Container, 3 photos then on click of Camera button, new photo drops ontop of existing photos (randomized rotation)*/}
-        <div className="relative md:grid md:grid-cols-3 md:justify-items-center flex flex-col flex-wrap mb-[50px]"> 
+        <div className="flex justify-center">
+        <div className="relative md:grid md:grid-cols-3 md:justify-items-center flex flex-col max-w-[1160px] flex-wrap mb-[50px]"> 
           {initialImages.map((image, index) => (
             <PolaroidPhoto
               key={image.id}
@@ -114,6 +115,7 @@ const AboutPage = () => {
               style={{ transform: `rotate(${rotations[index]}deg)` }}
             />
           ))}
+          </div>
           {/* Drops new photos on top of existing photos */}
           <div className="absolute grid grid-rows-7 h-[500px] md:grid-cols-7 translate-y-4 w-full justify-items-center">
             {imagesToShow.map((image, index) => (
@@ -128,8 +130,8 @@ const AboutPage = () => {
                 }as React.CSSProperties}
               />
             ))}
+          
           </div>
-
           {/* Info Cards Container*/}
         </div>
           <div className="relative z-10 bg-blueprint-gray-light pt-[108px] flex flex-col items-center justify-center gap-2 pb-[148px] lg:flex-row">
