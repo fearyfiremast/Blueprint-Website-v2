@@ -10,7 +10,7 @@ const NonprofitsPage = () => {
 
   return (
     <PageContainer
-      className="!pt-[148px] lg:!pt-[132px] overflow-x-hidden bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
+      className="!pt-[148px] lg:!pt-[132px] overflow-x-hidden bg-blueprint-gray-lightest bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
                               min-[1280px]:bg-[calc(100%+585px)_-360px]
                               max-[1279px]:bg-[calc(100%+689px)_-360px]
                               max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_14.5px]"
@@ -20,11 +20,13 @@ const NonprofitsPage = () => {
         className="mb-[180px]
                         max-[1024px]:mb-[30px]"
       >
-        {/* 939px text column; polaroid nudged from Figma 781.74 baseline (md:-ml / md:mt fine-tuned) */}
+        {/* Text column & body: width = viewport × (939|693.5)/1422; ref 1422px-wide screen */}
         <div
           className="flex w-full flex-row gap-0 max-[900px]:flex-col max-[900px]:gap-8"
         >
-          <div className="flex min-w-0 w-full max-w-full flex-col md:max-w-[939px] md:w-[939px] md:shrink-0">
+          <div
+            className="flex min-w-0 w-full max-w-full flex-col md:shrink-0 md:max-w-[min(100%,calc(100vw*939/1422))] md:w-[min(100%,calc(100vw*939/1422))]"
+          >
             <h1
               className="m-0 whitespace-pre-wrap text-left font-poppins text-blueprint-black text-[72px] tracking-[-1.44px] leading-none mb-[24px]
                         max-md:max-w-[233px] max-md:text-[46px] max-md:tracking-[-0.92px] max-md:leading-none max-md:mb-[12px]
@@ -37,8 +39,9 @@ const NonprofitsPage = () => {
             </h1>
 
             <p
-              className="m-0 max-w-[693.5px] min-w-0 self-stretch font-poppins text-black text-heading-xs-reg
-                        max-md:max-w-[351px] max-md:text-blueprint-black max-md:text-mobile-heading-xs-reg"
+              className="m-0 min-w-0 self-stretch font-poppins text-black text-heading-xs-reg
+                        max-md:max-w-[351px] max-md:text-blueprint-black max-md:text-mobile-heading-xs-reg
+                        md:max-w-[min(100%,calc(100vw*693.5/1422))]"
             >
               by working with us, your organization will{" "}
               <span className={`bg-[#D2A6FB] ${colouredRectCSSBase}`} /> gain fresh
@@ -51,7 +54,7 @@ const NonprofitsPage = () => {
           </div>
 
           <div
-            className="min-w-0 shrink-0 min-[1025px]:h-0 md:-ml-[72px] md:mt-[108px] max-[900px]:ml-0 max-[900px]:mt-[20px]"
+            className="min-w-0 shrink-0 min-[1025px]:h-0 md:-ml-[120px] md:mt-[108px] max-[900px]:ml-0 max-[900px]:mt-[20px]"
           >
             <PolaroidPhoto
               imageSrc="https://placehold.co/398x298"
@@ -205,55 +208,57 @@ const NonprofitsPage = () => {
         </section>
       </section>
 
-      {/* What our partners say ΓÇö hidden on mobile per design */}
+      {/* What our partners say — hidden on mobile; width ∝ viewport (1160px at 1422px ref) */}
       <section className="mb-0 max-md:hidden">
-        <h2
-          className="text-blueprint-neutral-dark font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px]
-                      max-md:text-[24px]/[110%] max-md:tracking-[-0.48px]"
-        >
-          what <span className="font-semibold">our partners</span> say
-        </h2>
+        <div className="w-full min-w-0 max-w-[min(100%,calc(100vw*1160/1422))]">
+          <h2
+            className="text-blueprint-neutral-dark font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px]
+                        max-md:text-[24px]/[110%] max-md:tracking-[-0.48px]"
+          >
+            what <span className="font-semibold">our partners</span> say
+          </h2>
 
-        <p
-          className="m-0 mt-12 max-w-[1160px] w-full min-w-0 self-stretch text-blueprint-black font-caveat text-heading-hand leading-[140%] mb-9"
-        >
-          [The work SFU Blueprint has done] is much appreciated and there is a lot
-          of thanks that cannot really be simply put into words... Volunteers at OCB
-          put in thousands of hours of work behind the scene to make everything
-          happen. The tool that you have created for us will streamline our process
-          to better support and facilitate all the volunteers at OCB. Time is a very
-          valuable and finite resource for us at a small non-profit organization and
-          it will allow us to manage it better and more efficiently.
-        </p>
+          <p
+            className="m-0 mt-12 w-full min-w-0 text-blueprint-black font-caveat text-heading-hand leading-[140%] mb-9"
+          >
+            [The work SFU Blueprint has done] is much appreciated and there is a lot
+            of thanks that cannot really be simply put into words... Volunteers at OCB
+            put in thousands of hours of work behind the scene to make everything
+            happen. The tool that you have created for us will streamline our process
+            to better support and facilitate all the volunteers at OCB. Time is a very
+            valuable and finite resource for us at a small non-profit organization and
+            it will allow us to manage it better and more efficiently.
+          </p>
 
-        <div className="max-w-[241px] w-full min-w-0 self-stretch">
-          <p className="m-0 text-blueprint-black font-poppins text-body-s-reg uppercase">
-            CAVAN HUA
-          </p>
-          <p className="m-0 text-blueprint-black font-poppins text-body-s-reg uppercase">
-            VOLUNTEER COORDINATOR AT OCB
-          </p>
+          <div className="w-full min-w-0 max-w-[min(100%,calc(100vw*241/1422))]">
+            <p className="m-0 text-blueprint-black font-poppins text-body-s-reg uppercase">
+              CAVAN HUA
+            </p>
+            <p className="m-0 text-blueprint-black font-poppins text-body-s-reg uppercase">
+              VOLUNTEER COORDINATOR AT OCB
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* NPO project proposal ΓÇö mobile: full-bleed bp-blue, white type, white CTA; md+: gray card (Figma) */}
+      {/* NPO project proposal — mobile: full-bleed #0146BE, white type, white CTA; md+: gray card */}
       <section
         className="mt-[148px] max-md:mt-16 mb-12 md:mb-16
                 -mx-6 min-w-0 md:-mx-10 xl:-mx-36
-                max-md:bg-blueprint-blue max-md:py-12 max-md:!px-6
+                max-md:bg-blueprint-navyblue max-md:py-12 max-md:!px-6
                 px-3 sm:px-4 md:px-5 xl:px-6 md:bg-transparent"
       >
         <div
           className="w-full box-border shrink-0 flex flex-col justify-center items-stretch
                 max-md:bg-transparent max-md:p-0 max-md:min-h-0
-                bg-blueprint-npoSection rounded-[20px]
+                md:bg-blueprint-gray-neutral rounded-[20px]
                 pt-[72px] pb-[96px] px-6 sm:px-10 md:px-[103px]
                 md:min-h-[560px]"
         >
           <div className="flex flex-col w-full max-w-[931px] mx-auto justify-center items-stretch">
             <div className="mb-8 flex w-full items-start gap-[26px] max-md:mb-10 md:mb-12 max-md:gap-0">
               <span
-                className="mt-4 hidden shrink-0 w-[22px] h-[22px] rounded-[5px] bg-blueprint-blue md:block"
+                className="mt-4 hidden shrink-0 w-[22px] h-[22px] rounded-[5px] bg-blueprint-navyblue md:block"
                 aria-hidden
               />
               <h2
@@ -292,9 +297,9 @@ const NonprofitsPage = () => {
                 href="/nonprofits/proposal"
                 className="inline-flex w-full shrink-0 items-center justify-center gap-[10px] rounded-[5px] transition-colors
                 max-md:mt-10 max-md:min-h-[52px] max-md:px-6 max-md:py-3.5 max-md:bg-white max-md:hover:bg-blueprint-offwhite
-                md:mt-0 md:box-border md:h-[60px] md:w-[200px] md:max-w-full md:self-start md:px-[44px] md:py-[14px] md:bg-blueprint-black md:hover:bg-blueprint-darkestGrey"
+                md:mt-0 md:box-border md:h-[60px] md:w-[200px] md:max-w-full md:self-start md:px-[44px] md:py-[14px] md:bg-blueprint-black md:hover:bg-blueprint-darkestGrey md:active:bg-blueprint-neutral-mid"
               >
-                <span className="whitespace-nowrap text-center font-poppins uppercase leading-[normal] text-mobile-body-m-bold text-blueprint-blue md:text-body-m-bold md:text-blueprint-white">
+                <span className="whitespace-nowrap text-center font-poppins uppercase leading-[normal] text-mobile-body-m-bold text-blueprint-navyblue md:text-body-m-bold md:text-blueprint-white">
                   PROPOSAL FORM
                 </span>
               </a>

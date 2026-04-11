@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       colors: {
         blueprint: {
-          // Brand
+          // Brand (#0146BE = navyblue / bp blue for primary fills; blue = brighter UI/link blue)
           blue: "#0177E8",
           black: "#2A2A2A",
           white: "#FFFFFF",
