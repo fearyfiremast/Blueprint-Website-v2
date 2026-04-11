@@ -155,12 +155,11 @@ const StudentsPage = () => {
       {/* Hero Section - Dark Background */}
       <section className="relative bg-blueprint-black z-5
                           bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
-                          min-[1280px]:bg-[calc(100%+585px)_-360px]
+                          min-[1622.1px]:bg-[calc((50vw+800px)-1689px)_-360px]
+                          max-[1622px]:bg-[calc(100%+585px)_-360px]
                           max-[1279px]:bg-[calc(100%+689px)_-360px]
                           max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-132px]">
-
-
-        <div className="relative z-10 w-full px-6 md:px-10 xl:px-36 pt-[142px] pb-[100px] max-md:pt-[90px] max-md:pb-[60px]">
+        <div className="relative z-10 w-full px-6 md:px-10 xl:px-36 pt-[142px] pb-[100px] max-md:pt-[90px] max-md:pb-[60px] std-max">
           {/* Title + Button row */}
           <div className="flex justify-between items-start gap-8 max-md:flex-col max-md:gap-6 mb-[60px] max-md:mb-[35px]">
             {/* Title Block */}
@@ -203,7 +202,7 @@ const StudentsPage = () => {
         </div>
       </section>
 
-      <div>
+      <div className="std-max">
       {/* Typical Experience Section */}
       <section className="w-full px-6 md:px-10 xl:px-36 pt-[108px] max-md:pt-[60px] bg-blueprint-gray-light">
         {/* Section Intro */}
@@ -332,6 +331,14 @@ const StudentsPage = () => {
                 Join our discord for hiring announcements and the opportunity to
                 ask any question in our #questions channel
               </p>
+              <Button
+                onClick={() =>
+                  window.open("https://discord.gg/sfublueprint", "_blank")
+                }
+                className="w-full"
+              >
+                JOIN OUR DISCORD
+              </Button>
             </div>
             <Button
               variant="secondary"
@@ -375,7 +382,7 @@ const StudentsPage = () => {
       </section>
 
       {/* Stay Updated Section */}
-      <div className="overflow-x-hidden">
+      <div className="overflow-x-hidden std-max">
       <section className="relative z-5
                           bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
                           bg-[calc(50%-409px)_-360px]
