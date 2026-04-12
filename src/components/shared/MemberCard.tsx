@@ -15,11 +15,11 @@ export type MemberCardProps = {
 
 // Role-based hover/click background (solid brand colors per palette)
 const ROLE_HOVER_BG_CLASS: Record<NonNullable<MemberCardProps["roleType"]>, string> = {
-  designer: "bg-blueprint-accent-purple",
-  pm: "bg-blueprint-orange",
-  dev: "bg-blueprint-accent-lightBlue",
-  exec: "bg-blueprint-accent-veryLightBlue",
-  techLead: "bg-blueprint-accent-mediumBlue",
+  designer: "bg-bp-accent-purple",
+  pm: "bg-bp-orange",
+  dev: "bg-bp-accent-light-blue",
+  exec: "bg-bp-accent-very-light-blue",
+  techLead: "bg-bp-accent-medium-blue",
 };
 // [#71EC59]
 const BORDER_RADIUS = 10;
@@ -48,7 +48,7 @@ export default function MemberCard({
     <div className="flex flex-col items-start w-full flex-1 min-h-0">
       {/* Photo placeholder or image: phone 153×127; tablet/desktop full width, aspect-square */}
       <div
-        className="w-min-[153px] h-[127px] w-full tablet:aspect-square tablet:max-h-[180px] tablet:h-auto tablet:min-h-[120px] rounded-md bg-blueprint-gray-lightest overflow-hidden shrink-0"
+        className="w-min-[153px] h-[127px] w-full tablet:aspect-square tablet:max-h-[180px] tablet:h-auto tablet:min-h-[120px] rounded-md bg-bp-lightest-grey overflow-hidden shrink-0"
       >
         {photoUrl ? (
           <img
@@ -57,7 +57,7 @@ export default function MemberCard({
             className="w-full h-full object-cover"
           />
         ) : (
-          <div className="w-full h-full bg-blueprint-grey" aria-hidden />
+          <div className="w-full h-full bg-bp-grey" aria-hidden />
         )}
       </div>
 

@@ -26,10 +26,10 @@ function FooterLink({ name, path }: { name: string; path: string }) {
       className="relative flex items-center group"
     >
       <div
-        className="absolute -left-[30px] w-[18px] h-[18px] rounded-[3px] bg-blueprint-accent-purple opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute -left-[30px] w-[18px] h-[18px] rounded-[3px] bg-bp-accent-purple opacity-0 group-hover:opacity-100 transition-opacity"
       />
       <span
-        className="font-poppins text-body-l-reg text-blueprint-darkGrey group-hover:text-blueprint-black transition-colors"
+        className="font-poppins text-body-l-reg text-bp-dark-grey group-hover:text-bp-black transition-colors"
       >
         {name}
       </span>
@@ -50,7 +50,7 @@ export default function FooterRevamp() {
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <LogoIcon className="w-[33px] h-[31px]" style={{ fill: '#0146BE' }} />
-                  <span className="text-footer-logo-desktop text-blueprint-navyblue">blueprint</span>
+                  <span className="text-footer-logo-desktop text-bp-blue">blueprint</span>
                 </Link>
 
                 <div className="flex items-center gap-[22.74px]">
@@ -60,7 +60,7 @@ export default function FooterRevamp() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`${social.name === "Discord" ? "w-[33px] h-[28px]" : "w-[33px] h-[27px]"} text-blueprint-darkGrey hover:text-blueprint-black transition-colors`}
+                      className={`${social.name === "Discord" ? "w-[33px] h-[28px]" : "w-[33px] h-[27px]"} text-bp-dark-grey hover:text-bp-black transition-colors`}
                       aria-label={social.name}
                     >
                       <social.icon className="w-full h-full" />
@@ -72,10 +72,10 @@ export default function FooterRevamp() {
               {/* Tagline + links */}
               <div className="flex items-start gap-[117px]">
                 <div className="shrink-0">
-                  <p className="font-poppins text-heading-m-reg text-blueprint-black">
+                  <p className="font-poppins text-heading-m-reg text-bp-black">
                     tech for
                   </p>
-                  <p className="font-caveat font-bold text-[80px] leading-[0.7] tracking-[-2.4px] text-blueprint-black">
+                  <p className="font-caveat font-bold text-[80px] leading-[0.7] tracking-[-2.4px] text-bp-black">
                     social good
                   </p>
                 </div>
@@ -90,12 +90,12 @@ export default function FooterRevamp() {
 
             {/* Bottom section */}
             <div className="flex flex-col gap-[24px]">
-              <div className="w-full h-[1px] bg-blueprint-grey" />
-              <div className="flex items-center justify-between text-[14px] font-medium text-blueprint-darkGrey uppercase">
+              <div className="w-full h-[1px] bg-bp-grey" />
+              <div className="flex items-center justify-between text-[14px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex items-center gap-[18px]">
-                  <Link to="/privacy" className="hover:text-blueprint-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-blueprint-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function FooterRevamp() {
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                   <LogoIcon className="w-[26px] h-[24px]" style={{ fill: '#0146BE' }} />
-                  <span className="text-footer-logo-mobile text-blueprint-navyblue">blueprint</span>
+                  <span className="text-footer-logo-mobile text-bp-blue">blueprint</span>
                 </Link>
 
                 <div className="flex items-center gap-[18px]">
@@ -122,7 +122,7 @@ export default function FooterRevamp() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`${social.name === "Discord" ? "w-[27px] h-[23px]" : "w-[27px] h-[22px]"} text-blueprint-darkGrey hover:text-blueprint-black transition-colors`}
+                      className={`${social.name === "Discord" ? "w-[27px] h-[23px]" : "w-[27px] h-[22px]"} text-bp-dark-grey hover:text-bp-black transition-colors`}
                       aria-label={social.name}
                     >
                       <social.icon className="w-full h-full" />
@@ -133,10 +133,10 @@ export default function FooterRevamp() {
 
               {/* Tagline */}
               <div>
-                <p className="font-poppins text-heading-m-reg text-blueprint-black">
+                <p className="font-poppins text-heading-m-reg text-bp-black">
                   tech for
                 </p>
-                <p className="font-caveat font-bold text-[60px] leading-[0.7] tracking-[-1.8px] text-blueprint-black">
+                <p className="font-caveat font-bold text-[60px] leading-[0.7] tracking-[-1.8px] text-bp-black">
                   social good
                 </p>
               </div>
@@ -151,12 +151,12 @@ export default function FooterRevamp() {
 
             {/* Bottom */}
             <div className="flex flex-col gap-[24px]">
-              <div className="w-full h-[1px] bg-blueprint-grey" />
-              <div className="flex items-start justify-between text-[14px] font-medium text-blueprint-darkGrey uppercase">
+              <div className="w-full h-[1px] bg-bp-grey" />
+              <div className="flex items-start justify-between text-[14px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex items-center gap-[18px]">
-                  <Link to="/privacy" className="hover:text-blueprint-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-blueprint-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>
@@ -172,15 +172,15 @@ export default function FooterRevamp() {
             <div className="flex flex-col gap-[44px]">
               <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <LogoIcon className="w-[23px] h-[21px]" style={{ fill: '#0146BE' }} />
-                <span className="text-footer-logo-mobile text-blueprint-navyblue">blueprint</span>
+                <span className="text-footer-logo-mobile text-bp-blue">blueprint</span>
               </Link>
 
               {/* Tagline */}
               <div>
-                <p className="font-poppins text-mobile-heading-m-reg text-blueprint-black">
+                <p className="font-poppins text-mobile-heading-m-reg text-bp-black">
                   tech for
                 </p>
-                <p className="font-caveat font-bold text-[44px] leading-[0.7] tracking-[-1.32px] text-blueprint-black">
+                <p className="font-caveat font-bold text-[44px] leading-[0.7] tracking-[-1.32px] text-bp-black">
                   social good
                 </p>
               </div>
@@ -194,7 +194,7 @@ export default function FooterRevamp() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${social.name === "Discord" ? "w-[27px] h-[23px]" : "w-[27px] h-[22px]"} text-blueprint-darkGrey hover:text-blueprint-black transition-colors`}
+                  className={`${social.name === "Discord" ? "w-[27px] h-[23px]" : "w-[27px] h-[22px]"} text-bp-dark-grey hover:text-bp-black transition-colors`}
                   aria-label={social.name}
                 >
                   <social.icon className="w-full h-full" />
@@ -208,7 +208,7 @@ export default function FooterRevamp() {
                 <Link
                   key={idx}
                   to={link.path}
-                  className="font-poppins text-mobile-body-l-reg text-blueprint-darkGrey hover:text-blueprint-black transition-colors"
+                  className="font-poppins text-mobile-body-l-reg text-bp-dark-grey hover:text-bp-black transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -217,12 +217,12 @@ export default function FooterRevamp() {
 
             {/* Bottom */}
             <div className="flex flex-col gap-[16px]">
-              <div className="w-full h-[1px] bg-blueprint-grey" />
-              <div className="flex flex-col gap-[6px] text-[10px] font-medium text-blueprint-darkGrey uppercase">
+              <div className="w-full h-[1px] bg-bp-grey" />
+              <div className="flex flex-col gap-[6px] text-[10px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex gap-[12px]">
-                  <Link to="/privacy" className="hover:text-blueprint-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-blueprint-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>

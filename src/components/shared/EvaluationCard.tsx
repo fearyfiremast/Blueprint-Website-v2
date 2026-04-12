@@ -20,7 +20,7 @@ export type EvaluationCardProps = {
  * EvaluationCard: vertical layout when viewport is tall enough (min-h 32rem),
  * horizontal (tablet) layout when viewport height is below that.
  */
-const EvaluationCard = ({ title, body, colour="blueprint-navyblue" }: EvaluationCardProps) => {
+const EvaluationCard = ({ title, body, colour="bp-blue" }: EvaluationCardProps) => {
     const clipId = useId();
   
     return (
