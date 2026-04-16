@@ -12,7 +12,7 @@ import IndividualProject from "./pages/IndividualProject";
 import FooterRevamp from "./components/footer/FooterRevamp";
 import ScrollToHashElement from "./components/shared/ScrollToHash";
 
-const DARK_NAV_ROUTES = ["/students"];
+const DARK_NAV_ROUTES = [""];
 
 function App() {
   const { pathname } = useLocation();

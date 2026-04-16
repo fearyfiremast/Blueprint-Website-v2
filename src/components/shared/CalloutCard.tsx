@@ -86,7 +86,7 @@ export default function CalloutCard({
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
           <h2
             id="callout-card-title"
-            className={titleColor == null ? defaultTitleClass : "font-bold text-[24px] uppercase tracking-tight"}
+            className={titleColor == null ? defaultTitleClass : "font-medium text-[24px] uppercase tracking-tight"}
             style={titleColor != null ? { color: titleColor } : undefined}
           >
             {title}
