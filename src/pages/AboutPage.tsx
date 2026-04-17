@@ -16,14 +16,14 @@ const OUR_MEMBERS_CONTENT = {
   title: "Our members",
   heading: "Our talented members come from diverse cultures, professions, and social backgrounds.",
   body: "With a passion for social good and dedication to creating beautiful technology, our student project teams work alongside nonprofits to help them better serve their communities.",
-  color: "blueprint-navyblue",
+  color: "bp-blue",
 } as const;
 
 const BLUEPRINT_MULTINATIONAL_CONTENT = {
   title: "Blueprint Multinational",
   heading: "This chapter of Blueprint is part of a much larger multinational community, originally started at UC Berkeley.",
   body: "As the fifth established chapter in Canada, our team is based largely at Simon Fraser University, and operating as a registered non profit!",
-  color: "blueprint-roleAccent-pm",
+  color: "bp-orange",
 } as const;
 
 type TeamMember = {
@@ -220,19 +220,19 @@ const AboutPage = () => {
   const imagesToShow = GroupImages.slice(baseVisible, baseVisible + extraCount);
 
   return (
-    <PageContainer className="bg-blueprint-gray-lightest max-md:overflow-x-hidden">
+    <PageContainer className="bg-bp-lightest-grey max-md:overflow-x-hidden">
       {/* Main Container */}
       <div className="pt-main-mobile-top md:pt-main-desktop-top flex flex-col justify-between">
         {/* About us section */}
         <div className="flex md:flex-row flex-col justify-between md:mb-[100px] flex-wrap">
           <div className="flex flex-col md:justify-between max-md:pb-[62px] gap-3 md:gap-6">
             {/* Title/text */}
-            <h1 className="font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-blueprint-black ">
+            <h1 className="font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-bp-black ">
               <strong>about</strong> us
             </h1>
 
             {/* Text */}
-            <p className="font-poppins text-xl md:text-3xl leading-7 md:leading-10 text-blueprint-black w-90 md:w-[684px]">
+            <p className="font-poppins text-xl md:text-3xl leading-7 md:leading-10 text-bp-black w-90 md:w-[684px]">
               building innovative, tech-based solutions for communities and public welfare is the mission that brings us together.
             </p>
           </div>
@@ -327,7 +327,7 @@ const AboutPage = () => {
         </div>
 
         {/* Values Section — Rive needs a real URL from Vite (?url) and a sized box for the canvas */}
-        <div className="relative z-10 w-full shrink-0 pb-[280px] max-md:pb-[420px] md:pb-0 max-md:overflow-hidden">
+        <div className="relative z-10 w-full shrink-0 pb-[280px] max-md:pb-[420px] md:z-0 md:pb-0 max-md:overflow-hidden">
           <div className="pointer-events-none relative z-10 flex flex-col md:gap-10 md:pb-[566px]">
             <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl">
               our <strong>values</strong>
