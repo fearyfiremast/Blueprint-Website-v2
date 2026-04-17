@@ -151,28 +151,28 @@ const StudentsPage = () => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden bg-bp-lightest-grey">
-      {/* Hero Section - Dark Background */}
-      <section className="relative bg-bp-black z-5
+    <div className="w-full overflow-x-hidden bg-blueprint-gray-light max-md:pt-content-mobile">
+      {/* Hero Section - Dark Background */} 
+      <section className="relative bg-blueprint-gray-light z-5
                           bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
                           min-[1622.1px]:bg-[calc((50vw+800px)-1689px)_-360px]
                           max-[1622px]:bg-[calc(100%+585px)_-360px]
                           max-[1279px]:bg-[calc(100%+689px)_-360px]
                           max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-132px]">
-        <div className="relative z-10 w-full px-6 md:px-10 xl:px-36 pt-[142px] pb-[100px] max-md:pt-[90px] max-md:pb-[60px] std-max">
+        <div className="relative z-10 w-full px-6 md:px-10 xl:px-36 pt-[142px] pb-[100px] max-md:pt-[50px] max-md:pb-[60px]">  {/* HERE std-max */}
           {/* Title + Button row */}
           <div className="flex justify-between items-start gap-8 max-md:flex-col max-md:gap-6 mb-[60px] max-md:mb-[35px]">
             {/* Title Block */}
             <div className="flex flex-col gap-6 max-md:gap-3 text-white max-w-[954px]">
               <h1
-                className="font-poppins text-[96px] leading-none tracking-[-1.92px]
-                           max-md:text-[56px] max-md:tracking-[-1.12px]"
+                className="font-poppins md:text-7xl leading-none tracking-[-1.92px] text-blueprint-black
+                           max-md:text-5xl max-md:tracking-[-1.12px]"
               >
                 <strong className="font-bold">{HERO_CONTENT.title.bold}</strong>
                 <span className="font-normal">{HERO_CONTENT.title.regular}</span>
               </h1>
               <p
-                className="font-poppins text-[30px] leading-[1.4] tracking-[-0.6px] max-w-[790px]
+                className="font-poppins text-3xl leading-[1.4] tracking-[-0.6px] max-w-[579px] text-blueprint-black
                            max-md:text-[20px] max-md:leading-[1.4] max-md:tracking-[-0.4px]"
               >
                 {HERO_CONTENT.subtitle}
@@ -180,8 +180,8 @@ const StudentsPage = () => {
             </div>
 
             {/* Open Positions Button */}
-            <div className="shrink-0 lg:mt-[138px]">
-              <Button onClick={scrollToPositions} className="w-[200px] max-md:w-full">
+            <div className="shrink-0 lg:mt-[138px] max-md:w-full ">
+              <Button variant="tertiary" onClick={scrollToPositions} className="w-[200px] max-md:w-full">
                 OPEN POSITIONS
               </Button>
             </div>
@@ -194,29 +194,29 @@ const StudentsPage = () => {
               body={HERO_CONTENT.callout.body}
               stripeColor="#71EC59"
               variant="dark"
-              backgroundColor="#404040"
-              titleColor="#FFFFFF"
-              bodyColor="#FFFFFF"
+              backgroundColor="#FFFFFF"
+              titleColor="#2A2A2A"
+              bodyColor="#2A2A2A"
             />
           </div>
         </div>
       </section>
 
-      <div className="std-max">
+      <div className=""> {/* HERE std-max */}
       {/* Typical Experience Section */}
-      <section className="w-full px-6 md:px-10 xl:px-36 pt-[108px] max-md:pt-[60px] bg-bp-lightest-grey">
+      <section className="w-full px-6 md:px-10 xl:px-36 bg-blueprint-gray-light">
         {/* Section Intro */}
         <div className="max-w-[852px] mb-[90px] max-md:mb-[50px]">
           <h2
-            className="font-poppins text-[48px] leading-none tracking-[-0.96px] text-bp-black mb-[24px]
+            className="font-poppins text-4xl leading-none tracking-[-0.96px] text-blueprint-black mb-[24px]
                        max-md:text-[28px] max-md:tracking-[-0.56px] max-md:mb-[16px]"
           >
             <span className="font-normal">a </span>
-            <strong className="font-bold">typical experience</strong>
+            <strong className="font-semibold">typical experience</strong>
             <span className="font-normal"> at sfu blueprint</span>
           </h2>
           <p
-            className="font-poppins text-[16px] leading-normal text-bp-black max-w-[852px]
+            className="font-poppins text-[16px] leading-normal text-blueprint-black max-w-[652px]
                        max-md:text-[14px]"
           >
             {EXPERIENCE_CONTENT.body}
@@ -226,14 +226,14 @@ const StudentsPage = () => {
         {/* Work with a Team */}
         <div className="mb-[90px] max-md:mb-[50px]">
         <h3
-                className="font-poppins text-[36px] leading-[1.4] tracking-[-0.72px] text-bp-black font-semibold
+                className="font-poppins text-3xl leading-[1.4] tracking-[-0.72px] text-blueprint-black font-normal
                            max-md:text-[22px] max-md:tracking-[-0.44px] max-md:pb-6"
               >
-            <span>work with a team</span>
+            <span>work with a </span> <span className="font-semibold">cross-functional team</span>
               </h3>
 
           {/* Role Cards */}
-          <div className="flex flex-wrap justify-center items-start gap-6 max-[1024px]:flex-col max-[1024px]:items-stretch max-md:gap-12">
+          <div className="flex flex-wrap justify-center items-start gap-8 max-[1024px]:flex-col max-[1024px]:items-stretch max-md:gap-12">
             {ROLES.map((role, index) => (
               <RoleCard
                 key={role.title}
@@ -331,14 +331,6 @@ const StudentsPage = () => {
                 Join our discord for hiring announcements and the opportunity to
                 ask any question in our #questions channel
               </p>
-              <Button
-                onClick={() =>
-                  window.open("https://discord.gg/sfublueprint", "_blank")
-                }
-                className="w-full"
-              >
-                JOIN OUR DISCORD
-              </Button>
             </div>
             <Button
               variant="secondary"
@@ -371,10 +363,11 @@ const StudentsPage = () => {
               ask any question in our #questions channel
             </p>
             <Button
+              variant="secondary"
               onClick={() =>
                 window.open("https://discord.gg/sfublueprint", "_blank")
               }
-              className="w-full"
+              className="w-full !text-blueprint-black"
             >
               JOIN OUR DISCORD
             </Button>
@@ -560,43 +553,45 @@ function ApplicationProcessSection() {
         <div className="flex flex-col gap-[38px]">
           {/* Info session card - only show on MEET BLUEPRINT tab */}
           {activeTab === "MEET BLUEPRINT" && (
-            <div className="bg-bp-lighter-grey rounded-[10px] p-[48px] max-md:p-[24px] flex flex-col gap-[32px]">
+            <div className="bg-blueprint-gray-neutral rounded-[10px] p-[48px] max-md:px-[24px] max-md:py-[48px] flex flex-col gap-[32px]">
               {/* Top section */}
               <div className="flex flex-col gap-[12px]">
                 <div className="flex items-start justify-between max-md:flex-col max-md:gap-[16px]">
-                  <div className="flex flex-col gap-[4px] text-bp-black w-[366px] max-md:w-full ">
-                    <p className="font-poppins font-medium text-[14px] uppercase leading-normal ">
+                  <div className="flex flex-col gap-[4px] text-blueprint-black w-[366px] max-md:w-full ">
+                    <p className="font-poppins md:font-medium max-md:font-normal md:text-[14px] text-[10px] uppercase leading-normal ">
                       upcoming event:
                     </p>
-                    <p className="font-poppins text-[36px] leading-[1.4] tracking-[-0.72px] max-md:text-[24px]">
+                    <p className="font-poppins max-md:font-normal max-md:leading-8 text-[36px] leading-[1.4] tracking-[-0.72px] max-md:text-2xl">
                       blueprint info session
                     </p>
                   </div>
-                  <Button
-                    variant="tertiary"
-                    className="shrink-0 w-[149px] max-md:w-full"
-                  >
-                    <span className="font-light">RSVP</span>
-                  </Button>
+                  
+                    <Button
+                      variant="primary"
+                      className="shrink-0 w-[149px] max-md:w-full"
+                    >
+                      <span className="font-normal">RSVP</span>
+                    </Button>
+
                 </div>
-                <div className="w-full h-px bg-black/10" />
+                <div className="w-full h-px bg-black/10 " />
               </div>
 
               {/* Bottom section: date + location */}
-              <div className="flex gap-[52px] text-bp-black max-md:flex-col max-md:gap-[24px]">
-                <div className="flex flex-col gap-[10px] w-[199px] ">
-                  <p className="font-poppins font-medium text-[14px] uppercase leading-normal">
+              <div className="flex gap-[52px] text-blueprint-black max-md:flex-col max-md:gap-[24px]">
+                <div className="flex flex-col md:gap-[10px] gap-[6px] w-[199px] ">
+                  <p className="font-poppins md:font-medium max-md:font-normal text-[10px] md:text-[14px] uppercase leading-normal">
                     DATE AND TIME:
                   </p>
-                  <p className="font-poppins text-[16px] leading-normal max-md:text-[14px]">
+                  <p className="font-poppins max-md:font-normal text-sm md:text-[16px] leading-normal max-md:text-[14px]">
                     September 10, 2026, 7 PM
                   </p>
                 </div>
-                <div className="flex flex-col gap-[10px] w-[253px]">
-                  <p className="font-poppins font-medium text-[14px] uppercase leading-normal">
+                <div className="flex flex-col gap-[6px] md:gap-[10px] w-[253px]">
+                  <p className="font-poppins md:font-medium max-md:font-normal text-[10px] md:text-[14px] uppercase leading-normal">
                     LOCATION:
                   </p>
-                  <p className="font-poppins text-[16px] leading-normal max-md:text-[14px]">
+                  <p className="font-poppins max-md:font-normal text-[16px] leading-normal max-md:text-sm">
                     SFU Burnaby Campus, ASB 9720
                   </p>
                 </div>
@@ -631,19 +626,19 @@ function RoleCard({ title, description, color, offset }: RoleCardProps) {
 
   return (
     <div 
-      className={`w-[276px] max-[1024px]:w-[75%] bg-white rounded-[16px] flex flex-col p-[12px] gap-[65px] ${desktopOffset} ${mobileAlign}`}
+      className={` w-full max-w-[360px] min-w-[300px] max-[1024px]:w-[75%] bg-white rounded-[16px] flex flex-col p-[12px] pb-[28px] md:pb-9 gap-10 md:gap-[65px]  ${desktopOffset} ${mobileAlign}`}
     >
       {/* Colored header */}
-      <div className="relative h-[144px] w-full">
+      <div className="relative h-[144px] w-[276px] m-auto">
         <svg viewBox="0 0 275 144" fill="none" preserveAspectRatio="none" className="absolute inset-0 w-full h-full">
-          <path d="M16.1151 143.798L261.115 125.535C268.945 124.951 275 118.428 275 110.576L275 9.99995C275 4.4771 270.523 -6.06438e-05 265 -6.01609e-05L10 -3.78681e-05C4.47716 -3.73853e-05 1.82327e-05 4.47711 1.87155e-05 9.99995L2.91048e-05 128.84C2.98675e-05 137.564 7.41568 144.447 16.1151 143.798Z" fill={color} />
+          <path d="M16.1151 143.798L261.115 125.535C268.945 124.951 275 118.428 275 110.576L275 9.99995C275 4.4771 270.523 -6.06438e-05 265 -6.01609e-05L10 -3.78681e-05C4.47716 -3.73853e-05 1.82327e-05 4.47711 1.87155e-05 9.99995L2.91048e-05 128.84C2.98675e-05 137.564 7.41568 144.447 16.1151 143.798Z" fill={color} className="bottom-0" />
         </svg>
         <p className="relative z-10 font-poppins text-white text-[30px] font-semibold leading-none tracking-[-0.6px] p-[23px] max-md:text-[22px]">
           {title}
         </p>
       </div>
       {/* Description */}
-      <p className="font-poppins text-[16px] leading-normal text-bp-black max-md:text-[14px]">
+      <p className="font-poppins text-[16px] leading-normal text-blueprint-black w-[243px] max-md:text-[14px] m-auto">
         {description}
       </p>
     </div>
