@@ -79,13 +79,13 @@ const AlumniPage = () => {
   const memberData: memberCardData[] = getMemberData();
 
   return (
-  <PageContainer className="bg-blueprint-gray-lightest items-center flex-col flex">
+  <PageContainer className="bg-bp-lightest-grey items-center flex-col flex">
     {/* Hero Section */}
     <section className="flex items-center flex-col tablet:mt-[39px] tablet:mb-[69px] mt-[31px] mb-[44px]">
       <h1 className="decoration-[#2E2E2E] font-poppins text-center mb-[30px] tablet:text-heading-m-reg text-heading-m-reg-mobile">
         thank you, sfu blueprint alumni!
       </h1>
-      <p className="font-caveat  text-center max-w-[786px] tablet:decoration-blueprint-black tablet:mb-[81px] mb-[61px] tablet:text-heading-hand text-mobile-heading-hand decoration-black">
+      <p className="font-caveat  text-center max-w-[786px] tablet:decoration-bp-black tablet:mb-[81px] mb-[61px] tablet:text-heading-hand text-mobile-heading-hand decoration-black">
         The impact you've created, for our projects and our community, continues to define who we are as a team.
       </p>
       {/* Filter buttons */}
