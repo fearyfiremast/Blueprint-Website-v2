@@ -5,17 +5,18 @@ import MemberCard from "../shared/MemberCard";
 import { CaseStudyContent } from "../../constants/caseStudies";
 import PolaroidPhoto from "../shared/PolaroidPhoto";
 
-export type CaseStudyLayoutProp = CaseStudyContent & {
+export type CaseStudyLayoutProps = CaseStudyContent & {
     backNav: ReactElement;
 }
 
 /**
  * Layout for reusable case study content. Data is sourced from caseStudies.tsx in constants
- * @param {CaseStudyLayoutProps} case - Parameter that encompasses 
+ * @param {CaseStudyLayoutProps} case - Parameter that contains all information for a case study
+ * @see CaseStudyLayoutProps
  * @see CaseStudyContent
  * @returns {ReactElement}
  */
-const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyLayoutProp) => {
+const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyLayoutProps) => {
   const enableRandomRotation = true;
 
   const heroCategory = (title: string, body: ReactNode): ReactElement => {
