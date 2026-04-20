@@ -29,7 +29,7 @@ const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyL
   }
 
   const heroImagePile: ReactElement = (
-    <div className="flex desktop:flex-row desktop:ml-auto desktop:mb-0 items-center tablet:mb-[70px] flex-col mb-[20px] self-start">
+    <div className="flex desktop:flex-row desktop:ml-auto desktop:mb-0 items-center tablet:mb-[70px] flex-col mb-[20px] desktop:self-start">
         <img className="z-20 
                         desktop:translate-x-[30px] desktop:translate-y-[-90px] desktop:m-[-10px] desktop:mt-0 desktop:self-auto
                         tablet:max-w-[229px] tablet:max-h-[201px] tablet:mt-[-170px] tablet:translate-x-[30px] tablet:translate-y-[170px] tablet:rotate-0 tablet:ml-0
