@@ -17,6 +17,7 @@ import { Mosaic } from "./Team/Mosaic.ts";
 import { Pedals } from "./Team/Pedals.ts";
 import { Blueprint } from "./Team/Blueprint.ts";
 import { ReelYouth } from "./Team/ReelYouth.ts";
+import { OurCommunityBikes } from "./Team/OurCommunityBikes.ts";
 
 export const Projects = [
   {
@@ -80,5 +81,21 @@ export const Projects = [
       "To address the issue of information and accessibility to the public, the SFU Blueprint team will be developing a website for Reel Youth, helping them build a more diverse audience and a central place to distribute information among the community.",
     page: "https://reelyouth.ca",
     team: ReelYouth,
+  },
+  {
+    name: "Our Community Bikes",
+    slug: "our-community-bikes",
+    status: "TEMP",
+    description: "TEMP",
+    date: "Feb - Nov 2024",
+    tags: ["TEMP"],
+    image: "TEMP",
+    popupimage: "TEMP",
+    nonProfitDescription:
+      "PLACEHOLDER DESCRIPTION",
+    projectDescription:
+      "PLACEHOLDER DESCRIPTION",
+    page: "PLACEHOLDER_LINK",
+    team: OurCommunityBikes,
   },
 ];
