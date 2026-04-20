@@ -1,75 +1,77 @@
+import { MemberCardProps } from "../../components/shared/MemberCard"
+
 /**
  * PLACEHOLDER VALUES
  */
-export const OurCommunityBikes = [
+export const OurCommunityBikes: MemberCardProps[] = [
     {
-        title: "Steve B", 
+        name: "Steve B", 
         role: "Designer", 
-        lastPosition: "designer", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "designer", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Chris T", 
+        name: "Chris T", 
         role: "project manager", 
-        lastPosition: "pm", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "pm", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Sarah J", 
+        name: "Sarah J", 
         role: "developer", 
-        lastPosition: "dev", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "dev", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Langley L", 
+        name: "Langley L", 
         role: "executive", 
-        lastPosition: "exec", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "exec", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Taylor S", 
+        name: "Taylor S", 
         role: "tech lead", 
-        lastPosition: "techLead", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "techLead", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Osmosis J", 
+        name: "Osmosis J", 
         role: "Designer", 
-        lastPosition: "designer", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "designer", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Cailey Z", 
+        name: "Cailey Z", 
         role: "project manager", 
-        lastPosition: "pm", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "pm", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Amanda Y", 
+        name: "Amanda Y", 
         role: "developer", 
-        lastPosition: "dev", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "dev", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "Elliott S", 
+        name: "Elliott S", 
         role: "executive", 
-        lastPosition: "exec", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "exec", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
     {
-        title: "LongNameJane D", 
+        name: "LongNameJane D", 
         role: "tech lead", 
-        lastPosition: "techLead", 
-        img: "https://placehold.co/153x127", 
-        linkedin: "PLACEHOLDER-LINKEDIN"
+        roleType: "techLead", 
+        photoUrl: "https://placehold.co/153x127", 
+        linkedinUrl: "PLACEHOLDER-linkedinUrl"
     },
 ]

@@ -1,107 +1,109 @@
-export const Mosaic = [
+import { MemberCardProps } from "../../components/shared/MemberCard"
+
+export const Mosaic: MemberCardProps[] = [
   {
-    title: "Peiman Zhiani",
-    img: "Peiman.jpg",
-    linkedin: "https://www.linkedin.com/in/peiman-zhiani/",
-    lastPosition: "Developer",
+    name: "Peiman Zhiani",
+    photoUrl: "Peiman.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/peiman-zhiani/",
+    roleType: "dev",
     role:"Senior Developer"
   },
   {
-    title: "Johnson Luong",
-    img: "Johnson.jpg",
-    linkedin: "https://www.linkedin.com/in/johnson-luong/",
-    lastPosition: "Developer",
+    name: "Johnson Luong",
+    photoUrl: "Johnson.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/johnson-luong/",
+    roleType: "dev",
     role:"Senior Developer"
   },
   {
-    title: "Duy Nguyen",
-    img: "Duy.jpg",
-    linkedin: "https://www.linkedin.com/in/duwe-ng/",
-    lastPosition: "Developer",
+    name: "Duy Nguyen",
+    photoUrl: "Duy.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/duwe-ng/",
+    roleType: "dev",
     role:"AI Developer"
   },
   {
-    title: "Zahila Rehman",
-    img: "Zahila.jpg",
-    linkedin: "https://www.linkedin.com/in/zahila-rehman-9118a4217/",
-    lastPosition: "Lead",
+    name: "Zahila Rehman",
+    photoUrl: "Zahila.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/zahila-rehman-9118a4217/",
+    roleType: "pm",
     role:"Project Manager"
   },
   {
-    title: "Kasey Le",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/kasey-le-43aa31255/",
-    lastPosition: "Designer",
+    name: "Kasey Le",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/kasey-le-43aa31255/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Alison Lu",
-    img: "Alison.jpg",
-    linkedin: "https://www.linkedin.com/in/alisonlu3/",
-    lastPosition: "Designer",
+    name: "Alison Lu",
+    photoUrl: "Alison.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/alisonlu3/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Manpreet Sarna",
-    img: "blueprint.jpg",
-    linkedin: "",
-    lastPosition: "Designer",
+    name: "Manpreet Sarna",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Kian Hoseinkhani",
-    img: "Kian.jpg",
-    linkedin: "https://www.linkedin.com/in/kian-hosseinkhani-716a311b6/",
-    lastPosition: "Lead",
+    name: "Kian Hoseinkhani",
+    photoUrl: "Kian.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/kian-hosseinkhani-716a311b6/",
+    roleType: "pm",
     role:"Project Manager"
   },
   {
-    title: "Enoch Muwanguzi",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/enoch-muwanguzi-42491425b/",
-    lastPosition: "Developer",
+    name: "Enoch Muwanguzi",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/enoch-muwanguzi-42491425b/",
+    roleType: "dev",
     role:"AI Developer"
   },
   {
-    title: "Derek Huang",
-    img: "Derek.jpg",
-    linkedin: "https://www.linkedin.com/in/derekhuang1/",
-    lastPosition: "Developer",
+    name: "Derek Huang",
+    photoUrl: "Derek.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/derekhuang1/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   {
-    title: "Fabian Siswanto",
-    img: "Fabian.jpg",
-    linkedin: "https://www.linkedin.com/in/fabiansiswanto/",
-    lastPosition: "Developer",
+    name: "Fabian Siswanto",
+    photoUrl: "Fabian.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/fabiansiswanto/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   {
-    title: "Kousha Amouzesh",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/kousha-amouzesh/",
-    lastPosition: "Lead",
+    name: "Kousha Amouzesh",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/kousha-amouzesh/",
+    roleType: "techLead",
     role:"Tech Lead"
   },
   {
-    title: "Iris Au-Yeung",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/irisau-yeung/",
-    lastPosition: "Designer",
+    name: "Iris Au-Yeung",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/irisau-yeung/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Lauren Yip",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/lauren-yip/",
-    lastPosition: "Developer",
+    name: "Lauren Yip",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedinUrl.com/in/lauren-yip/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   {
-    title: "Teeya Li",
-    img: "blueprint.jpg",
-    linkedin: "",
-    lastPosition: "Developer",
+    name: "Teeya Li",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "",
+    roleType: "dev",
     role:"Junior Developer"
   },
 ]
