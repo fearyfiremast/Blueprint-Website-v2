@@ -93,7 +93,7 @@ const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyL
         </PageContainer>
         <PageContainer className="flex flex-col gap-[90px] tablet:gap-[6.75rem]
                                   tablet:bg-[url('/images/individual-projects/crosspoint.svg')] bg-no-repeat
-                                  bg-[calc(50%-120px)_-433px] max-[629.9px]:pt-[98px] ">
+                                  bg-[calc(50%-125px)_-437px] max-[629.9px]:pt-[98px] ">
             {/* Solution */}
             <section className="decoration-blueprint-black std-max tablet:max-w-[728px] tablet:gap-24 flex flex-col self-center font-poppins gap-[4.5rem]">
 
