@@ -12,14 +12,14 @@ const OUR_MEMBERS_CONTENT = {
   title: "Our members",
   heading: "Our talented members come from diverse cultures, professions, and social backgrounds.",
   body: "With a passion for social good and dedication to creating beautiful technology, our student project teams work alongside nonprofits to help them better serve their communities.",
-  color: "blueprint-navyblue",
+  color: "bp-blue",
 } as const;
 
 const BLUEPRINT_MULTINATIONAL_CONTENT = {
   title: "Blueprint Multinational",
   heading: "This chapter of Blueprint is part of a much larger multinational community, originally started at UC Berkeley.",
   body: "As the fifth established chapter in Canada, our team is based largely at Simon Fraser University, and operating as a registered non profit!",
-  color: "blueprint-roleAccent-pm",
+  color: "bp-orange",
 } as const
 
 /** Random tilt in degrees, roughly -maxDeg … +maxDeg (inclusive). */
