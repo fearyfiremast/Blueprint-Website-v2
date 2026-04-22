@@ -218,7 +218,7 @@ const AboutPage = () => {
           {/* Values Section — Rive needs a real URL from Vite (?url) and a sized box for the canvas */}
           <div className="relative w-full shrink-0 pb-[280px] md:pb-0">
             <div className="pointer-events-none relative z-10 flex flex-col md:gap-10 md:pb-[566px]">
-              <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl 2xl:mx-48">
+              <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl md:ml-[-40px] 2xl:ml-[160px] 2xl:mx-48">
                 our <strong>values</strong>
               </h2>
             </div>
