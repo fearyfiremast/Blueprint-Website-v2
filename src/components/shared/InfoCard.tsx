@@ -13,7 +13,7 @@ export type InfoCardProps = {
 }
 function InfoCard({ title, heading, body, color }: InfoCardProps) {
     return (
-        <div className="flex flex-col gap-6 bg-bp-white rounded-[5px] w-full min-w-[357px] md:min-w-[569px] h-[321px] md:h-[382px] px-7 pt-6 pb-12 
+        <div className="flex flex-col gap-6 bg-bp-white rounded-[5px] w-full min-w-[357px] md:max-w-[569px] h-[321px] md:h-[382px] px-7 pt-6 pb-12 
         md:px-12 md:pt-9 md:pb-16">
               {/* Gray Tag */}
               <div className="bg-bp-lightest-grey text-zinc-800 text-[10px] font-medium uppercase font-['Poppins'] w-fit rounded-[5px] whitespace-nowrap
