@@ -20,7 +20,7 @@ type PolaroidPhotoProps = {
 const PolaroidPhoto = ({imageSrc, caption, alt, className = "", style}: PolaroidPhotoProps) => {
     // Outer container for component
     return (
-    <div className={`bg-blueprint-white gap-[8px] shadow-[2px_4px_10px_0px_rgba(0,0,0,0.07)] w-[306px] h-[270px] pt-[11px] pr-[12px] pb-[15px] pl-[13px] 
+    <div className={`bg-bp-white gap-[8px] shadow-[2px_4px_10px_0px_rgba(0,0,0,0.07)] w-[306px] h-[270px] pt-[11px] pr-[12px] pb-[15px] pl-[13px] 
                     md:h-[345px] md:w-[377px] md:px-[18px] md:pt[20px] md:pb[24px] overflow-hidden ${className}`}
          style={style}>
         {/* Inner container for all elements */}
