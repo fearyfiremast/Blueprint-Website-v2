@@ -133,13 +133,18 @@ module.exports = {
           '0%': { transform: 'scale(1.03) rotate(var(--rotation))' },
           '100%': { transform: 'scale(1) rotate(var(--rotation))' },
         },
+        "infinite-scroll": {
+          '0%': { transform: 'translateX(calc(-50% - 2px))' },
+          '100%': { transform: 'translateX(0)' },
+        },
       },
       animation: {
         popIn: 'popIn 0.3s ease-out',
+        "infinite-scroll": 'infinite-scroll 40s linear infinite',
       },
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("tailwind-scrollbar-hide")],
   daisyui: {
     // Disable dark mode
     themes: [],
