@@ -26,6 +26,7 @@ module.exports = {
         "bp-accent-medium-blue": "#5387E3",
         "bp-accent-light-blue": "#A5C6FF",
         "bp-accent-very-light-blue": "#D3E3FF",
+        "bp-accent-blue": "#0178E7",
         "bp-accent-purple": "#D2A6FB",
       },
       fontFamily: {
