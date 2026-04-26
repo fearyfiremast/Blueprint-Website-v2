@@ -73,6 +73,16 @@ function AboutValuesRiveMobile() {
 }
 
 const AboutPage = () => {
+  useEffect(() => {
+    const images = GroupImages.map(({ image }) => {
+      const img = new Image();
+      img.src = image;
+      return img.decode().catch(() => undefined); // avoid unhandled rejection
+    });
+  
+    void Promise.all(images);
+  }, []);
+
   const INITIAL_VISIBLE = 3;
   const INITIAL_VISIBLE_MOBILE = 2;
   const MAX_VISIBLE = 10;
