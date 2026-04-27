@@ -4,14 +4,16 @@ const Carousel = ({ children}) => {
     const childrenArray = React.Children.toArray(children);
     
     return (
-        <div className="relative overflow-hidden flex">
-            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 bg-gradient-to-r from-bp-white to-transparent" />
-            <ul className="flex gap-2 animate-infinite-scroll">
+        <div className="flex overflow-hidden bg-bp-lightest-grey ">
+            <ul className="flex gap-6 animate-infinite-scroll">
                 {[...childrenArray, ...childrenArray].map((child, index)=>(
-                    <li key={index}>{child}</li>
+                    <li key={index}>
+                        <div className="w-28 h-14 rounded-md flex">
+                            {child}
+                        </div>
+                    </li>
                 ))}
             </ul>
-                <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-48 bg-gradient-to-l from-bp-white to-transparent" />
         </div>
     )
 }

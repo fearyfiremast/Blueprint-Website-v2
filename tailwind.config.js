@@ -134,13 +134,13 @@ module.exports = {
           '100%': { transform: 'scale(1) rotate(var(--rotation))' },
         },
         "infinite-scroll": {
-          '0%': { transform: 'translateX(calc(-50% - 2px))' },
-          '100%': { transform: 'translateX(0)' },
+          '0%': { transform: "translateX(0)" },
+          '100%': { transform: "translateX(calc(-50% - 12px))" },
         },
       },
       animation: {
         popIn: 'popIn 0.3s ease-out',
-        "infinite-scroll": 'infinite-scroll 40s linear infinite',
+        "infinite-scroll": 'infinite-scroll 30s linear infinite',
       },
     },
   },
