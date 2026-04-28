@@ -85,17 +85,18 @@ export const Projects = [
   {
     name: "Our Community Bikes",
     slug: "our-community-bikes",
-    status: "TEMP",
-    description: "TEMP",
+    status: "completed",
+    description:
+      "Reducing volunteer management time with a digital volunteer hour logbook.",
     date: "Feb - Nov 2024",
-    tags: ["TEMP"],
-    image: "TEMP",
-    popupimage: "TEMP",
+    tags: ["Community", "Admin"],
+    image: "/images/projects/our-community-bikes/logo.svg",
+    popupimage: "/images/projects/our-community-bikes/check-in-1.png",
     nonProfitDescription:
-      "PLACEHOLDER DESCRIPTION",
+      "Our Community Bikes is a Vancouver non-profit dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
     projectDescription:
-      "PLACEHOLDER DESCRIPTION",
-    page: "PLACEHOLDER_LINK",
+      "SFU Blueprint built a web app to simplify volunteer hour tracking, reduce manual data entry, and help coordinators manage volunteer records more efficiently.",
+    page: "https://ourcommunitybikes.org/",
     team: OurCommunityBikes,
   },
 ];
