@@ -17,6 +17,7 @@ import { Mosaic } from "./Team/Mosaic.ts";
 import { Pedals } from "./Team/Pedals.ts";
 import { Blueprint } from "./Team/Blueprint.ts";
 import { ReelYouth } from "./Team/ReelYouth.ts";
+import { OurCommunityBikes } from "./Team/OurCommunityBikes.ts";
 
 export const Projects = [
   {
@@ -80,5 +81,22 @@ export const Projects = [
       "To address the issue of information and accessibility to the public, the SFU Blueprint team will be developing a website for Reel Youth, helping them build a more diverse audience and a central place to distribute information among the community.",
     page: "https://reelyouth.ca",
     team: ReelYouth,
+  },
+  {
+    name: "Our Community Bikes",
+    slug: "our-community-bikes",
+    status: "completed",
+    description:
+      "Reducing volunteer management time with a digital volunteer hour logbook.",
+    date: "Feb - Nov 2024",
+    tags: ["Community", "Admin"],
+    image: "/images/projects/our-community-bikes/logo.svg",
+    popupimage: "/images/projects/our-community-bikes/check-in-1.png",
+    nonProfitDescription:
+      "Our Community Bikes is a Vancouver non-profit dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
+    projectDescription:
+      "SFU Blueprint built a web app to simplify volunteer hour tracking, reduce manual data entry, and help coordinators manage volunteer records more efficiently.",
+    page: "https://ourcommunitybikes.org/",
+    team: OurCommunityBikes,
   },
 ];

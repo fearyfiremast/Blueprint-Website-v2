@@ -27,6 +27,12 @@ const BORDER_RADIUS = 10;
 // Tablet: 224×308, padding 12 10 26 12
 // Desktop: 273×309, padding 14 13 30 13
 
+/**
+ * The name prop must be less than 15 chars in length. Preferred format is 'FirstName LastInitial'. e.g: Jonathan G
+ * @param {MemberCardProps} prop - see type definition for more infor
+ * @see MemberCardProps
+ * @see memberRoleType
+ */
 export default function MemberCard({
   name,
   role,
@@ -82,7 +88,7 @@ export default function MemberCard({
             showHoverStyle ? "desktop:hidden" : ""
           }`}
         >
-          {name}
+          {name.toLowerCase()}
         </span>
 
         {/* LinkedIn: phone/tablet = icon only; desktop = full row when hovered */}
@@ -117,6 +123,11 @@ export default function MemberCard({
   const rotationStyle: React.CSSProperties = { "--customRot": `${rotationDegree}deg` } as React.CSSProperties;
   const wrapperBgClass = showHoverStyle ? hoverBgClass : "bg-white";
   const rotationClass = showHoverStyle ? "desktop:rotate-[--customRot]" : "";
+
+  if (name.length >= 15) {
+    console.error(`name attribute exceeds 15 chars. '${name}' is ${name.length} chars long. Abandoning.`);
+    return <></>;
+  }
 
   if (linkedinUrl) {
     return (
