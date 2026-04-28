@@ -14,14 +14,16 @@ import MemberCard, { memberRoleType } from "../components/shared/MemberCard";
 
 const OUR_MEMBERS_CONTENT = {
   title: "Our members",
-  heading: "Our talented members come from diverse cultures, professions, and social backgrounds.",
+  heading:
+    "Our talented members come from diverse cultures, professions, and social backgrounds.",
   body: "With a passion for social good and dedication to creating beautiful technology, our student project teams work alongside nonprofits to help them better serve their communities.",
   color: "bp-blue",
 } as const;
 
 const BLUEPRINT_MULTINATIONAL_CONTENT = {
   title: "Blueprint Multinational",
-  heading: "This chapter of Blueprint is part of a much larger multinational community, originally started at UC Berkeley.",
+  heading:
+    "This chapter of Blueprint is part of a much larger multinational community, originally started at UC Berkeley.",
   body: "As the fifth established chapter in Canada, our team is based largely at Simon Fraser University, and operating as a registered non profit!",
   color: "bp-orange",
 } as const;
@@ -109,21 +111,25 @@ const TEAM_MEMBERS: TeamMember[] = [
   },
 ];
 
-/** Random tilt in degrees, roughly -maxDeg … +maxDeg (inclusive). */
+/** Random tilt in degrees, roughly -maxDeg … +maxDeg inclusive. */
 function randomTiltDeg(maxDeg: number, minDeg: number) {
   return Math.floor(Math.random() * (maxDeg - minDeg + 1)) + minDeg;
 }
 
-/** Slots in the camera-click overlay row (0 = empty, 1 = polaroid). */
+/** Slots in the camera-click overlay row, 0 = empty, 1 = polaroid. */
 const POLAROID_GRID_COLS = 7;
 
-/** Pick a random free column; if all 7 are used, pick any column (stack). */
+/** Pick a random free column; if all 7 are used, pick any column and stack. */
 function pickRandomGridColumn(occupiedColumns: number[]): number {
   const used = new Set(occupiedColumns);
-  const available = Array.from({ length: POLAROID_GRID_COLS }, (_, i) => i).filter((c) => !used.has(c));
+  const available = Array.from({ length: POLAROID_GRID_COLS }, (_, i) => i).filter(
+    (c) => !used.has(c)
+  );
+
   if (available.length > 0) {
     return available[Math.floor(Math.random() * available.length)]!;
   }
+
   return Math.floor(Math.random() * POLAROID_GRID_COLS);
 }
 
@@ -138,10 +144,14 @@ function AboutValuesRiveDesktop() {
     autoBind: true,
     layout: new Layout({
       fit: Fit.FitHeight,
-      alignment: Alignment.BottomLeft,
+      alignment: Alignment.TopLeft,
+      layoutScaleFactor: 1,
     }),
   });
-  return <RiveComponent className="h-full w-[2000px] translate-x-[-380px]" />;
+
+  return (
+    <RiveComponent className="h-[950px] w-[1200px] ml-[-400px] 2xl:ml-[-200px]" />
+  );
 }
 
 function AboutValuesRiveMobile() {
@@ -155,39 +165,56 @@ function AboutValuesRiveMobile() {
       alignment: Alignment.Center,
     }),
   });
+
   return <RiveComponent className="relative h-[1000px] w-full translate-y-[-450px]" />;
 }
 
 const AboutPage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const images = GroupImages.map(({ image }) => {
+      const img = new Image();
+      img.src = image;
+      return img.decode().catch(() => undefined);
+    });
+
+    void Promise.all(images);
+  }, []);
+
   const INITIAL_VISIBLE = 3;
   const INITIAL_VISIBLE_MOBILE = 2;
   const MAX_VISIBLE = 10;
-  /** Column index (0…POLAROID_GRID_COLS-1) for each camera-added polaroid, in click order. */
+
+  /** Column index, 0 to POLAROID_GRID_COLS - 1, for each camera-added polaroid. */
   const [extraPlacements, setExtraPlacements] = useState<number[]>([]);
   const [selectedRoles, setSelectedRoles] = useState<memberRoleType[]>([]);
 
-  // Create and memoize rotations for each image
   const rotations = useMemo(() => {
     return GroupImages.map(() => randomTiltDeg(20, -20));
   }, []);
 
-  // Custom hook to check if the window is at least a certain width return true if window is at least the width
   function useMinWidth(minWidthPx: number): boolean {
     const [matches, setMatches] = useState(false);
+
     useEffect(() => {
       const m = window.matchMedia(`(min-width: ${minWidthPx}px)`);
       setMatches(m.matches);
+
       const listener = () => setMatches(m.matches);
       m.addEventListener("change", listener);
+
       return () => m.removeEventListener("change", listener);
     }, [minWidthPx]);
+
     return matches;
   }
 
   const isMinMobileWidth = useMinWidth(520);
-  /** Align with Tailwind `md` (768px) so only one values Rive mounts. */
+
+  /** Align with Tailwind md, 768px, so only one values Rive mounts. */
   const isMdUp = useMinWidth(768);
+
   const baseVisible = isMinMobileWidth ? INITIAL_VISIBLE : INITIAL_VISIBLE_MOBILE;
   const extraCount = extraPlacements.length;
   const visibleCount = Math.min(MAX_VISIBLE, baseVisible + extraCount);
@@ -202,7 +229,9 @@ const AboutPage = () => {
 
   const toggleRole = (roleType: memberRoleType) => {
     setSelectedRoles((prev) =>
-      prev.includes(roleType) ? prev.filter((r) => r !== roleType) : [...prev, roleType]
+      prev.includes(roleType)
+        ? prev.filter((r) => r !== roleType)
+        : [...prev, roleType]
     );
   };
 
@@ -211,13 +240,14 @@ const AboutPage = () => {
       selectedRoles.length === 0
         ? TEAM_MEMBERS
         : TEAM_MEMBERS.filter((m) => selectedRoles.includes(m.roleType));
+
     return [...base].sort((a, b) =>
       a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
     );
   }, [selectedRoles]);
 
   const initialImages = GroupImages.slice(0, baseVisible);
-  const imagesToShow = GroupImages.slice(baseVisible, baseVisible + extraCount);
+  const imagesToShow = GroupImages.slice(baseVisible, visibleCount);
 
   return (
     <PageContainer className="bg-bp-lightest-grey max-md:overflow-x-hidden">
@@ -226,14 +256,13 @@ const AboutPage = () => {
         {/* About us section */}
         <div className="flex md:flex-row flex-col justify-between md:mb-[100px] flex-wrap">
           <div className="flex flex-col md:justify-between max-md:pb-[62px] gap-3 md:gap-6">
-            {/* Title/text */}
-            <h1 className="font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-bp-black ">
+            <h1 className="font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-bp-black">
               <strong>about</strong> us
             </h1>
 
-            {/* Text */}
             <p className="font-poppins text-xl md:text-3xl leading-7 md:leading-10 text-bp-black w-90 md:w-[684px]">
-              building innovative, tech-based solutions for communities and public welfare is the mission that brings us together.
+              building innovative, tech-based solutions for communities and public
+              welfare is the mission that brings us together.
             </p>
           </div>
 
@@ -242,7 +271,7 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* Photos Container, 3 photos then on click of Camera button, new photo drops ontop of existing photos (randomized rotation)*/}
+        {/* Photos Container */}
         <div className="flex justify-center">
           {/* Desktop photos container */}
           <div className="max-md:hidden">
@@ -267,7 +296,7 @@ const AboutPage = () => {
                   imageSrc={initialImages[0].image}
                   caption={initialImages[0].caption}
                   alt={initialImages[0].caption}
-                  style={{ transform: `rotate(10deg)` }}
+                  style={{ transform: "rotate(10deg)" }}
                 />
               </span>
               <span className="relative z-0 -translate-x-20 translate-y-[-150px]">
@@ -275,7 +304,7 @@ const AboutPage = () => {
                   imageSrc={initialImages[1].image}
                   caption={initialImages[1].caption}
                   alt={initialImages[1].caption}
-                  style={{ transform: `rotate(-8deg)` }}
+                  style={{ transform: "rotate(-8deg)" }}
                 />
               </span>
             </div>
@@ -285,6 +314,8 @@ const AboutPage = () => {
           <div className="absolute grid h-[200px] md:h-[500px] grid-cols-7 grid-rows-1 translate-y-12 w-full justify-items-center z-20">
             {imagesToShow.map((image, index) => {
               const col = extraPlacements[index] ?? index % POLAROID_GRID_COLS;
+              const rotation = rotations[baseVisible + index];
+
               return (
                 <PolaroidPhoto
                   key={`${image.id}-${index}-${col}`}
@@ -296,20 +327,19 @@ const AboutPage = () => {
                     {
                       gridColumn: col + 1,
                       gridRow: 1,
-                      transform: `rotate(${rotations[baseVisible + index]}deg)`,
+                      transform: `rotate(${rotation}deg)`,
                       zIndex: index,
-                      "--rotation": `${rotations[baseVisible + index]}deg`,
+                      "--rotation": `${rotation}deg`,
                     } as React.CSSProperties
                   }
                 />
               );
             })}
           </div>
-
-          {/* Info Cards Container*/}
         </div>
-        <div className="relative z-10 md:pt-[108px] flex flex-col items-center justify-center gap-2 pb-[148px] lg:flex-row">
-          {/* Our members  */}
+
+        {/* Info Cards Container */}
+        <div className="relative z-10 md:pt-[108px] flex flex-col items-center justify-center gap-6 pb-[148px] lg:flex-row">
           <InfoCard
             title={OUR_MEMBERS_CONTENT.title}
             heading={OUR_MEMBERS_CONTENT.heading}
@@ -317,7 +347,6 @@ const AboutPage = () => {
             color={OUR_MEMBERS_CONTENT.color}
           />
 
-          {/* Blueprint Multinational */}
           <InfoCard
             title={BLUEPRINT_MULTINATIONAL_CONTENT.title}
             heading={BLUEPRINT_MULTINATIONAL_CONTENT.heading}
@@ -329,10 +358,11 @@ const AboutPage = () => {
         {/* Values Section — Rive needs a real URL from Vite (?url) and a sized box for the canvas */}
         <div className="relative z-10 w-full shrink-0 pb-[280px] max-md:pb-[420px] md:z-0 md:pb-0 max-md:overflow-hidden">
           <div className="pointer-events-none relative z-10 flex flex-col md:gap-10 md:pb-[566px]">
-            <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl">
+            <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl md:ml-[-40px] 2xl:ml-[160px]">
               our <strong>values</strong>
             </h2>
           </div>
+
           <div className="absolute md:inset-x-0 bottom-0 z-0 h-[400px] w-full md:w-full md:h-[1000px] lg:translate-y-[-50px]">
             {isMdUp ? <AboutValuesRiveDesktop /> : <AboutValuesRiveMobile />}
           </div>
@@ -364,6 +394,7 @@ const AboutPage = () => {
         >
           {FILTER_TABS.map(({ label, roleType }) => {
             const selected = selectedRoles.includes(roleType);
+
             return (
               <div key={roleType} className="contents">
                 <span className="max-md:contents md:hidden">
