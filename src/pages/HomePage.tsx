@@ -220,14 +220,15 @@ const TechForGoodSection = () => (
               Mobile @390: Poppins 28/120%/-0.56/600
               Desktop @1440: Poppins 50/100%/-1/500 */}
           <h1
-            className="font-poppins font-semibold leading-[1.2] text-bp-lightest-grey text-[length:var(--tfg-h1-m)] tracking-[var(--tfg-h1-m-ls)] min-[780px]:font-medium min-[780px]:leading-none min-[780px]:text-[length:var(--tfg-h1)] min-[780px]:tracking-[var(--tfg-h1-ls)] min-[780px]:mt-[var(--tfg-h1-mt)]"
+            className="font-poppins font-semibold leading-none text-bp-lightest-grey text-[length:var(--tfg-h1-m)] tracking-[var(--tfg-h1-m-ls)] max-[779px]:mt-[var(--tfg-h1-m-mt)] min-[780px]:font-medium min-[780px]:text-[length:var(--tfg-h1)] min-[780px]:tracking-[var(--tfg-h1-ls)] min-[780px]:mt-[var(--tfg-h1-mt)]"
             style={
               {
                 "--tfg-h1-m": ms(28),
                 "--tfg-h1-m-ls": ms(-0.56),
+                "--tfg-h1-m-mt": ms(-4),
                 "--tfg-h1": s(50),
                 "--tfg-h1-ls": s(-1),
-                "--tfg-h1-mt": s(4),
+                "--tfg-h1-mt": s(-6),
               } as React.CSSProperties
             }
           >
