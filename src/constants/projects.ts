@@ -24,11 +24,11 @@ export const Projects = [
     name: "Mosaic",
     slug: "mosaic",
     status: "completed",
-    description: "Aiding New Comers to Canada",
+    description: "improving access to immigration resources with a chatbot and admin ",
     date: "November 2023 - Current",
     tags: ["Immigration", "AI / Bot"],
-    image: "Mosaic.png",
-    popupimage: "mosaic-popup.png",
+    image: "/images/projects/mosaic/mosaic-logo.svg",
+    popupimage: "/images/projects/mosaic/mosaic-popup.png",
     nonProfitDescription:
       "Mosaic is one of Canada’s largest settlement and employment services organisations. Founded in 1976, Mosaic has since served 26,000 newcomers, has 1200 employer partnerships and a client satisfaction rate of 93%. Their mission is to enrich communities through services and advocacy, furthering the success and sense of belonging of newcomers and individuals from diverse backgrounds.",
     projectDescription:
@@ -53,6 +53,56 @@ export const Projects = [
     team: Pedals,
   },
   {
+    name: "Reel Youth",
+    slug: "reel-youth",
+    status: "current",
+    description: "Supporting the creative expression of youth worldwide with a modernized website",
+    date: "August 2024 - Current",
+    tags: ["Community", "Website"],
+    image: "/images/projects/reel-youth/reel-youth-logo.svg",
+    popupimage: "/images/projects/reel-youth/reel-youth-popup.png",
+    nonProfitDescription:
+      "Reel Youth is a media empowerment NPO supporting youth to create and distribute films reflecting their vision for positive change. Reel Youth aims to build momentum for change, particularly in areas like conservation and community development",
+    projectDescription:
+      "To address the issue of information and accessibility to the public, the SFU Blueprint team will be developing a website for Reel Youth, helping them build a more diverse audience and a central place to distribute information among the community.",
+    page: "https://reelyouth.ca",
+    team: ReelYouth,
+  },
+  {
+    name: "Our Community Bikes",
+    slug: "our-community-bikes",
+    status: "completed",
+    description:
+      "Reducing volunteer management time with a digital volunteer hour logbook",
+    date: "Feb - Nov 2024",
+    tags: ["Community", "Admin"],
+    image: "/images/projects/our-community-bikes/ocb-logo.svg",
+    popupimage: "/images/projects/our-community-bikes/check-in-1.png",
+    nonProfitDescription:
+      "Our Community Bikes is a Vancouver non-profit dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
+    projectDescription:
+      "SFU Blueprint built a web app to simplify volunteer hour tracking, reduce manual data entry, and help coordinators manage volunteer records more efficiently.",
+    page: "https://ourcommunitybikes.org/",
+    team: OurCommunityBikes,
+  },
+  { // Missing final values for "slug", "status", "date", "nonProfitDesc", "projectDescription", "page", and "team" keys
+    name: "Regional Animal Protection Society",
+    slug: "raps",
+    status: "",
+    description:
+      "Increasing organizational growth and coordination with a volunteer management system",
+    date: "",
+    tags: ["Web-app", "Animal Care"],
+    image: "/images/projects/raps/raps-logo.svg",
+    popupimage: "/images/projects/raps/raps-popup.png",
+    nonProfitDescription:
+      "",
+    projectDescription:
+      "",
+    page: "",
+    team: [],
+  },
+  {
     name: "Blueprint Website",
     slug: "blueprint-website",
     description: "Taking SFU Blueprint LIVE",
@@ -66,37 +116,5 @@ export const Projects = [
       "To address the issue of accessibility and information dissemination, the SFU Blueprint team opted to develop a website utilizing React, Tailwind CSS, and Vercel. This strategic choice was made to ensure a responsive website that effectively communicates information about our projects to a diverse audience, including experienced individuals, students, and older users within the nonprofit community.",
     team: Blueprint,
   },
-  {
-    name: "Reel Youth",
-    slug: "reel-youth",
-    status: "current",
-    description: "Helping Reel Youth build website",
-    date: "August 2024 - Current",
-    tags: ["Community", "Website"],
-    image: "Reelyouth.png",
-    popupimage: "Reelyouth-popup.png",
-    nonProfitDescription:
-      "Reel Youth is a media empowerment NPO supporting youth to create and distribute films reflecting their vision for positive change. Reel Youth aims to build momentum for change, particularly in areas like conservation and community development",
-    projectDescription:
-      "To address the issue of information and accessibility to the public, the SFU Blueprint team will be developing a website for Reel Youth, helping them build a more diverse audience and a central place to distribute information among the community.",
-    page: "https://reelyouth.ca",
-    team: ReelYouth,
-  },
-  {
-    name: "Our Community Bikes",
-    slug: "our-community-bikes",
-    status: "completed",
-    description:
-      "Reducing volunteer management time with a digital volunteer hour logbook.",
-    date: "Feb - Nov 2024",
-    tags: ["Community", "Admin"],
-    image: "/images/projects/our-community-bikes/logo.svg",
-    popupimage: "/images/projects/our-community-bikes/check-in-1.png",
-    nonProfitDescription:
-      "Our Community Bikes is a Vancouver non-profit dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
-    projectDescription:
-      "SFU Blueprint built a web app to simplify volunteer hour tracking, reduce manual data entry, and help coordinators manage volunteer records more efficiently.",
-    page: "https://ourcommunitybikes.org/",
-    team: OurCommunityBikes,
-  },
+  
 ];
