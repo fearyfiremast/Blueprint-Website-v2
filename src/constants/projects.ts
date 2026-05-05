@@ -42,7 +42,7 @@ export const Projects = [
     status: "completed",
     description: "Empowering Communities Through Bicycles",
     date: "January 2024 - Current",
-    tags: ["Community", "Admin"],
+    tags: ["Admin", "Community"],
     image: "Pedals.png",
     popupimage: "pedals-popup.png",
     nonProfitDescription:
@@ -58,7 +58,7 @@ export const Projects = [
     status: "current",
     description: "Supporting the creative expression of youth worldwide with a modernized website",
     date: "August 2024 - Current",
-    tags: ["Community", "Website"],
+    tags: ["Website", "Community"],
     image: "/images/projects/reel-youth/reel-youth-logo.svg",
     popupimage: "/images/projects/reel-youth/reel-youth-popup.png",
     nonProfitDescription:
@@ -75,7 +75,7 @@ export const Projects = [
     description:
       "Reducing volunteer management time with a digital volunteer hour logbook",
     date: "Feb - Nov 2024",
-    tags: ["Community", "Admin"],
+    tags: ["Admin", "Community"],
     image: "/images/projects/our-community-bikes/ocb-logo.svg",
     popupimage: "/images/projects/our-community-bikes/check-in-1.png",
     nonProfitDescription:
@@ -107,7 +107,7 @@ export const Projects = [
     slug: "blueprint-website",
     description: "Taking SFU Blueprint LIVE",
     date: "September 2023 - December 2023",
-    tags: ["Innovation", "Website"],
+    tags: ["Website", "Innovation"],
     image: "logo_icon_blue.svg",
     popupimage: "blueprint-popup.svg",
     nonProfitDescription:
