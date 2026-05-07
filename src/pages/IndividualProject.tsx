@@ -1,6 +1,8 @@
 import React, { ReactElement, ReactNode } from "react";
 import { useParams, Link } from "react-router-dom";
 
+import { ReactComponent as ArrowLeftIcon } from "../assets/icons/arrow-left-black.svg";
+
 import { Projects } from "../constants/projects";
 import CaseStudies from "../constants/caseStudies";
 
@@ -20,8 +22,14 @@ const IndividualProject = () => {
    */
   const BackNav = (description: string) => {
     return (
-        <nav className="tablet:mb-[3.75rem] w-fit font-poppins decoration-black hover:bg-blueprint-grey rounded-[5px] tablet:pl-2 tablet:pr-4 tablet:py-2 tablet:text-body-m-bold text-mobile-body-m-bold px-2 py-2 mb-2">
-          <Link to="/projectspage" className="flex flex-row items-center gap-[6px]"> <img className="tablet:size-[26px] size-[21px] inline-block" src="/src/assets/icons/arrow-left-black.svg"/> {description.toUpperCase()} </Link>
+        <nav className="tablet:mb-[3.75rem] w-fit font-poppins rounded-[5px] tablet:pl-2 tablet:pr-4 tablet:py-2 tablet:text-body-m-bold text-mobile-body-m-bold px-2 py-2 mb-2">
+          <Link
+            to="/projectspage"
+            className="flex flex-row items-center gap-[6px] text-bp-black transition-colors [@media(hover:hover)]:hover:text-bp-grey"
+          >
+            <ArrowLeftIcon className="size-[21px] shrink-0 tablet:size-[26px]" aria-hidden />
+            {description.toUpperCase()}
+          </Link>
         </nav>   
     );
   }

@@ -36,8 +36,8 @@ const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyL
                         max-w-[197px] max-h-[184px] rotate-[13deg] translate-x-[100px]" 
                         src={hero.logoURL}/>
         <div className="flex desktop:flex-col desktop:translate-y-[30px] tablet:flex-row tablet:mt-0 mt-[-150px] flex-col">
-            <PolaroidPhoto imageSrc={hero.img1.url} caption={hero.img1.caption} alt={hero.img1.alt} className="z-10 desktop:translate-x-0 desktop:translate-y-0 tablet:rotate-[9deg] tablet:translate-x-[30px] rotate-[-4deg] translate-x-[-60px]"/>
-            <PolaroidPhoto imageSrc={hero.img2.url} caption={hero.img2.caption} alt={hero.img2.alt} className="desktop:mt-[-160px] desktop:translate-x-[-100px] desktop:translate-y-0 tablet:rotate-[-7deg] tablet:translate-x-[-30px] tablet:translate-y-[50px] tablet:mt-0 mt-[-40px] rotate-[7deg] translate-x-[50px]"/>
+            <PolaroidPhoto imageSrc={hero.img1.url} caption={hero.img1.caption} alt={hero.img1.alt} imageCropClassName={hero.img1.polaroidImgClassName} className="z-10 desktop:translate-x-0 desktop:translate-y-0 tablet:rotate-[9deg] tablet:translate-x-[30px] rotate-[-4deg] translate-x-[-60px]"/>
+            <PolaroidPhoto imageSrc={hero.img2.url} caption={hero.img2.caption} alt={hero.img2.alt} imageCropClassName={hero.img2.polaroidImgClassName} className="desktop:mt-[-160px] desktop:translate-x-[-100px] desktop:translate-y-0 tablet:rotate-[-7deg] tablet:translate-x-[-30px] tablet:translate-y-[50px] tablet:mt-0 mt-[-40px] rotate-[7deg] translate-x-[50px]"/>
         </div>
     </div>
   );
@@ -93,7 +93,8 @@ const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyL
         </PageContainer>
         <PageContainer className="flex flex-col gap-[90px] tablet:gap-[6.75rem]
                                   tablet:bg-[url('/images/individual-projects/crosspoint.svg')] bg-no-repeat
-                                  bg-[calc(50%-125px)_-437px] max-[629.9px]:pt-[98px] ">
+                                  bg-[calc(50%-125px)_-437px] max-[629.9px]:pt-[98px]
+                                  max-[1024px]:pb-28">
             {/* Solution */}
             <section className="decoration-blueprint-black std-max tablet:max-w-[728px] tablet:gap-24 flex flex-col self-center font-poppins gap-[4.5rem]">
 

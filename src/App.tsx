@@ -44,7 +44,9 @@ function App() {
         <Route path="/projects/:slug" element={<IndividualProject />} />
       </Routes>
       </main>
-      <FooterRevamp />
+      <div className="hidden desktop:block">
+        <FooterRevamp />
+      </div>
     </div>
   );
 }
