@@ -74,7 +74,7 @@ export const Projects = [
     status: "completed",
     description:
       "Reducing volunteer management time with a digital volunteer hour logbook",
-    date: "Feb - Nov 2024",
+    date: "FEB - NOV 2024",
     tags: ["Admin", "Community"],
     image: "/images/projects/our-community-bikes/ocb-logo.svg",
     popupimage: "/images/projects/our-community-bikes/check-in-1.png",
