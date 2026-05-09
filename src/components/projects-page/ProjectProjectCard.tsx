@@ -8,7 +8,7 @@ import React from 'react';
  * @returns {JSX.Element} JSX representation of the ProjectCard component.
  */
 
-type ProjectCardProps = {
+export type ProjectCardProps = {
     logo_url: string;
     logo_url_alt?: string;
     card_cover_url: string;
