@@ -82,7 +82,7 @@ const ProjectsPage = () => {
               />
             ))}
           </div>
-          <div className="flex flex-col min-[409px]:items-end pt-4 std-max md:mt-[15px] mt-[10px]">
+          <div className="flex flex-col items-center pt-4 std-max md:mt-[15px] mt-[10px]">
             <ProjectsCTA />
           </div>
         </section>
