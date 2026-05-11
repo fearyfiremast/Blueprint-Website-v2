@@ -24,11 +24,11 @@ export const Projects = [
     name: "Mosaic",
     slug: "mosaic",
     status: "completed",
-    description: "improving access to immigration resources with a chatbot and admin ",
+    description: "Improving access to immigration resources with a chatbot and admin ",
     date: "November 2023 - Current",
     tags: ["Immigration", "AI / Bot"],
     image: "/images/projects/mosaic/mosaic-logo.svg",
-    popupimage: "/images/projects/mosaic/mosaic-popup.png",
+    popupimage: "/images/projects/mosaic/mosaic-card-cover.png",
     nonProfitDescription:
       "Mosaic is one of Canada’s largest settlement and employment services organisations. Founded in 1976, Mosaic has since served 26,000 newcomers, has 1200 employer partnerships and a client satisfaction rate of 93%. Their mission is to enrich communities through services and advocacy, furthering the success and sense of belonging of newcomers and individuals from diverse backgrounds.",
     projectDescription:
@@ -60,7 +60,7 @@ export const Projects = [
     date: "August 2024 - Current",
     tags: ["Website", "Community"],
     image: "/images/projects/reel-youth/reel-youth-logo.svg",
-    popupimage: "/images/projects/reel-youth/reel-youth-popup.png",
+    popupimage: "/images/projects/reel-youth/reel-youth-card-cover.png",
     nonProfitDescription:
       "Reel Youth is a media empowerment NPO supporting youth to create and distribute films reflecting their vision for positive change. Reel Youth aims to build momentum for change, particularly in areas like conservation and community development",
     projectDescription:
@@ -77,7 +77,7 @@ export const Projects = [
     date: "FEB - NOV 2024",
     tags: ["Admin", "Community"],
     image: "/images/projects/our-community-bikes/ocb-logo.svg",
-    popupimage: "/images/projects/our-community-bikes/check-in-1.png",
+    popupimage: "/images/projects/our-community-bikes/ocb-card-cover.png",
     nonProfitDescription:
       "Our Community Bikes is a Vancouver non-profit dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
     projectDescription:
@@ -94,7 +94,7 @@ export const Projects = [
     date: "",
     tags: ["Web-app", "Animal Care"],
     image: "/images/projects/raps/raps-logo.svg",
-    popupimage: "/images/projects/raps/raps-popup.png",
+    popupimage: "/images/projects/raps/raps-card-cover.png",
     nonProfitDescription:
       "",
     projectDescription:

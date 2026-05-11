@@ -64,31 +64,28 @@ const ProjectsPage = () => {
         </div>
         */}
 
-        <div className="grid grid-cols-1 min-[962px]:grid-cols-2 gap-x-[42px] gap-y-9 w-full max-w-[1280px]">
-          {filteredProjects.map((project) => (
-
-            <ProjectCard
-              key={project.slug}
-              project={{
-                LOGO_PLACEHOLDER: project.image
-                  ? project.image
-                  : "https://placehold.co/76x76",
-                COVER_PLACEHOLDER: project.popupimage
-                  ? project.popupimage
-                  : "https://placehold.co/517x354",
-                TITLE_PLACEHOLDER: project.description,
-                CLIENT_PLACEHOLDER: project.name,
-                SERVICE_PLACEHOLDER: project.tags?.[0] ?? "Web App",
-                SECTOR_PLACEHOLDER:
-                  project.tags?.[1] ?? project.tags?.[0] ?? "NPO",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col min-[409px]:items-end pt-4 pb-4 md:mt-[25px] mt-[10px]">
-        <ProjectsCTA />
+        <section className="max-w-[1280px]">
+          <div className="grid grid-cols-1 min-[962px]:grid-cols-2 gap-x-[42px] gap-y-9 w-full ">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                logo_url={project.image
+                    ? project.image
+                    : "https://placehold.co/76x76"}
+                card_cover_url={project.popupimage
+                    ? project.popupimage
+                    : "https://placehold.co/517x354"}
+                description={project.description}
+                client_name={project.name}
+                service={project.tags?.[0] ?? "Web App"}
+                sector={project.tags?.[1] ?? project.tags?.[0] ?? "Web-app"}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col items-center pt-4 std-max md:mt-[15px] mt-[10px]">
+            <ProjectsCTA />
+          </div>
+        </section>
       </div>
     </PageContainer>
   );
