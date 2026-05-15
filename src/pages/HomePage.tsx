@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PageContainer from "../components/layout/PageContainer";
 import Button from "../components/shared/Button";
 import { ReactComponent as WindmillIcon } from "../assets/home/windmill.svg";
 import { ReactComponent as HandshakeIcon } from "../assets/home/handshake.svg";
 import { ReactComponent as GiftIcon } from "../assets/home/gift.svg";
+import { createPortal } from "react-dom";
 
 const HERO_SCROLLBAR_BG = "#2A2A2A";
+const WHO_WE_ARE_VIDEO_SRC = "/videos/who-we-are.mp4";
 
 const TFG_SCALE_STYLE = {
   // Desktop / tablet reference: 1440px — scales linearly between 780-1440,
@@ -59,107 +61,157 @@ const PlayIcon = ({ className = "" }: { className?: string }) => (
 //   padding: 8px 16px 8px 12px, gap 10px, radius 5px, 12px text
 //   color state transitions follow the desktop pattern.
 const WhoWeArePill = () => (
-  <button
-    type="button"
-    aria-label="Play: who we are"
+  <span
+    aria-hidden="true"
     className={[
       "inline-flex items-center font-poppins font-medium whitespace-nowrap",
-      "transition-colors duration-150 select-none cursor-pointer",
+      "transition-colors duration-150 select-none",
       // Mobile: padding 8/16/8/12, gap 10, 12px text, radius 5
       "max-[779px]:rounded-[5px] max-[779px]:pt-2 max-[779px]:pr-4 max-[779px]:pb-2 max-[779px]:pl-3 max-[779px]:gap-[10px] max-[779px]:text-[12px]",
-      // Mobile color states (same pattern as desktop)
       "max-[779px]:bg-[#1F1F1F]/90 max-[779px]:text-bp-white",
-      "max-[779px]:hover:bg-bp-white max-[779px]:hover:text-bp-black",
-      "max-[779px]:active:bg-bp-light-grey max-[779px]:active:text-bp-black",
-      // Desktop: padding 12/18/12/12, gap 10, 14px text, radius 10
+      "group-hover:max-[779px]:bg-bp-white group-hover:max-[779px]:text-bp-black",
+      "group-active:max-[779px]:bg-bp-light-grey group-active:max-[779px]:text-bp-black",
+      // Desktop
       "min-[780px]:rounded-[10px] min-[780px]:pt-3 min-[780px]:pr-[18px] min-[780px]:pb-3 min-[780px]:pl-3 min-[780px]:gap-[10px] min-[780px]:text-[14px]",
-      // Desktop states
       "min-[780px]:bg-[#1F1F1F]/90 min-[780px]:text-bp-white",
-      "min-[780px]:hover:bg-bp-white min-[780px]:hover:text-bp-black",
-      "min-[780px]:active:bg-bp-light-grey min-[780px]:active:text-bp-black",
+      "group-hover:min-[780px]:bg-bp-white group-hover:min-[780px]:text-bp-black",
+      "group-active:min-[780px]:bg-bp-light-grey group-active:min-[780px]:text-bp-black",
     ].join(" ")}
   >
     <PlayIcon className="max-[779px]:h-3 max-[779px]:w-2.5 min-[780px]:h-[14px] min-[780px]:w-[12px]" />
     Who we are
-  </button>
+  </span>
 );
 
-const VideoCardStack = () => (
-  // Shared hover group so every layer (and the pill) rotates together.
-  // Mobile: default only (no hover transforms).
-  <div
-    className={[
-      "relative group",
-      // Mobile: 85% of the column width (was w-full) — explicit 15% reduction
-      // per design. aspect-square keeps it a square so the height shrinks too.
-      "max-[779px]:w-[85%] max-[779px]:aspect-square",
-    ].join(" ")}
-  >
-    {/* Desktop sizing wrapper: picks up the scaled width/height from CSS vars.
-        Uses the TIGHT scale (st) so the card stack shrinks faster between
-        780-1440 than the rest of the section, preventing crowding/overflow
-        at narrow desktop widths. */}
-    <div
-      className="relative w-full h-full min-[780px]:w-[var(--tfg-card-w)] min-[780px]:h-[var(--tfg-card-h)]"
-      style={
-        {
-          "--tfg-card-w": st(634),
-          "--tfg-card-h": st(646),
-        } as React.CSSProperties
-      }
-    >
-      {/* Purple backing card — 634x634 square, rounded 10px, rotate 4.704deg.
-          Offset up-and-right so it pokes out from behind the blue card. The
-          nudge uses translate (doesn't affect the card's angle). */}
-      <div
-        aria-hidden="true"
-        className={[
-          "absolute top-0 left-0 w-full aspect-square rounded-[10px] bg-bp-accent-purple",
-          "origin-center rotate-[4.704deg] translate-x-[var(--tfg-purple-tx)] translate-y-[var(--tfg-purple-ty)]",
-          "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
-          "min-[780px]:group-hover:rotate-[6.417deg]",
-        ].join(" ")}
-        style={
-          {
-            "--tfg-purple-tx": `calc(16 * var(--tfg-scale-tight))`,
-            "--tfg-purple-ty": `calc(-4 * var(--tfg-scale-tight))`,
-          } as React.CSSProperties
-        }
-      />
-      {/* Blue backing card — 634x634 square, rounded 10px, rotate 4.704deg */}
-      <div
-        aria-hidden="true"
-        className={[
-          "absolute top-0 left-0 w-full aspect-square rounded-[10px] bg-bp-accent-blue",
-          "origin-center rotate-[4.704deg]",
-          "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
-          "min-[780px]:group-hover:-rotate-[2.277deg]",
-        ].join(" ")}
-      />
-      {/* Main video card (front) */}
+const VideoCardStack = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
+  const openVideo = () => setIsVideoOpen(true);
+  const closeVideo = () => setIsVideoOpen(false);
+
+  const handleCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openVideo();
+    }
+  };
+
+  return (
+    <>
+      {/* Shared hover group so every layer and the pill rotate together. */}
       <div
         className={[
-          "relative h-full w-full rounded-[10px] bg-bp-darkest-grey overflow-hidden",
-          "origin-center rotate-0",
-          "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
-          "min-[780px]:group-hover:rotate-[3.5deg]",
+          "relative group",
+          "max-[779px]:w-[85%] max-[779px]:aspect-square",
         ].join(" ")}
       >
-        {/* Video placeholder surface (swap in a real <video> later). Rendered
-            first and at z-0 so it sits behind the pill. */}
-        <div aria-hidden="true" className="absolute inset-0 z-0 bg-bp-darkest-grey" />
-        {/* Pill lives on the card so it rotates with it. z-10 keeps it above
-            the video/placeholder surface. */}
         <div
-          className="absolute z-10 max-[779px]:top-3 max-[779px]:left-3 min-[780px]:top-[var(--tfg-pill-inset)] min-[780px]:left-[var(--tfg-pill-inset)]"
-          style={{ "--tfg-pill-inset": st(20) } as React.CSSProperties}
+          className="relative w-full h-full min-[780px]:w-[var(--tfg-card-w)] min-[780px]:h-[var(--tfg-card-h)]"
+          style={
+            {
+              "--tfg-card-w": st(634),
+              "--tfg-card-h": st(646),
+            } as React.CSSProperties
+          }
         >
-          <WhoWeArePill />
+          {/* Purple backing card */}
+          <div
+            aria-hidden="true"
+            className={[
+              "absolute top-0 left-0 w-full aspect-square rounded-[10px] bg-bp-accent-purple",
+              "origin-center rotate-[4.704deg] translate-x-[var(--tfg-purple-tx)] translate-y-[var(--tfg-purple-ty)]",
+              "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
+              "min-[780px]:group-hover:rotate-[6.417deg]",
+            ].join(" ")}
+            style={
+              {
+                "--tfg-purple-tx": `calc(16 * var(--tfg-scale-tight))`,
+                "--tfg-purple-ty": `calc(-4 * var(--tfg-scale-tight))`,
+              } as React.CSSProperties
+            }
+          />
+
+          {/* Blue backing card */}
+          <div
+            aria-hidden="true"
+            className={[
+              "absolute top-0 left-0 w-full aspect-square rounded-[10px] bg-bp-accent-blue",
+              "origin-center rotate-[4.704deg]",
+              "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
+              "min-[780px]:group-hover:-rotate-[2.277deg]",
+            ].join(" ")}
+          />
+
+          {/* Main video card */}
+          <div
+            role="button"
+            tabIndex={0}
+            aria-label="Play Who we are video"
+            onClick={openVideo}
+            onKeyDown={handleCardKeyDown}
+            className={[
+              "relative h-full w-full rounded-[10px] bg-bp-darkest-grey overflow-hidden cursor-pointer",
+              "origin-center rotate-0",
+              "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-bp-white",
+              "min-[780px]:transition-transform min-[780px]:duration-300 min-[780px]:ease-out",
+              "min-[780px]:group-hover:rotate-[3.5deg]",
+            ].join(" ")}
+          >
+            {/* Dark preview surface. Replace this later with a thumbnail if design provides one. */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 z-0 bg-bp-darkest-grey"
+            />
+
+            {/* Pill lives on the card so it rotates with it. */}
+            <div
+              className="absolute z-10 max-[779px]:top-3 max-[779px]:left-3 min-[780px]:top-[var(--tfg-pill-inset)] min-[780px]:left-[var(--tfg-pill-inset)]"
+              style={{ "--tfg-pill-inset": st(20) } as React.CSSProperties}
+            >
+              <WhoWeArePill />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+
+      {isVideoOpen &&
+  createPortal(
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 px-4 py-6"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Who we are video"
+      onClick={closeVideo}
+    >
+      <div
+        className="relative w-full max-w-[1000px]"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          aria-label="Close video"
+          onClick={closeVideo}
+          className="absolute right-0 top-[-48px] rounded-[5px] bg-bp-white px-4 py-2 font-poppins text-sm font-medium text-bp-black hover:bg-bp-light-grey"
+        >
+          Close
+        </button>
+
+        <video
+          className="w-full rounded-[10px] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+          src={WHO_WE_ARE_VIDEO_SRC}
+          controls
+          autoPlay
+          playsInline
+        >
+          Sorry, your browser does not support embedded videos.
+        </video>
+      </div>
+    </div>,
+    document.body
+  )}
+    </>
+  );
+};
 
 const HomeHeroFeatureCards = () => {
   const cards: Array<{
