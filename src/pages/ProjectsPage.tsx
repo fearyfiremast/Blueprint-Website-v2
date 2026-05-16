@@ -13,12 +13,14 @@ const FILTER_TO_TAGS: Record<string, string[]> = {
 };
 
 const ProjectsPage = () => {
-  const filterNames = ["Web App", "Website", "Plug-in"];
+  // const filterNames = ["Web App", "Website", "Plug-in"];
   const [selectedFilter, setSelectedFilter] = useState("All");
 
+  /*
   const handleFilterClick = (filterName: string) => {
     setSelectedFilter((prev) => (prev === filterName ? "All" : filterName));
   };
+  */
 
   const filteredProjects = Projects.filter((project) => {
     if (selectedFilter === "All") return true;
@@ -38,11 +40,12 @@ const ProjectsPage = () => {
                  max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-45px]"
     >
       <div className="flex flex-col gap-4 items-center justify-center pb-ppcard-bottom pt-main-desktop-top max-md:pt-main-mobile-top">
-        <h1 className="text-center justify-start text-zinc-800 max-md:text-3xl text-5xl font-normal font-['Poppins']">
+        <h1 className="text-center justify-start text-zinc-800 max-md:text-3xl text-5xl font-normal font-['Poppins'] desktop:mb-[74px] md:mb-[50px] mb-[30px]">
           <span className="max-md:hidden">our projects</span>
           <span className="md:hidden">all our projects</span>
         </h1>
 
+        {/* Filter component
         <div
           className="flex flex-row flex-wrap gap-[10px] items-center justify-center pt-10 pb-16 max-md:gap-[6px] max-md:pb-6 max-md:pt-8"
           role="group"
@@ -59,31 +62,30 @@ const ProjectsPage = () => {
             />
           ))}
         </div>
+        */}
 
-        <div className="grid grid-cols-1 min-[962px]:grid-cols-2 gap-x-[42px] gap-y-9 w-full max-w-[1280px]">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.slug}
-              project={{
-                LOGO_PLACEHOLDER: project.image
-                  ? project.image
-                  : "https://placehold.co/76x76",
-                COVER_PLACEHOLDER: project.popupimage
-                  ? project.popupimage
-                  : "https://placehold.co/517x354",
-                TITLE_PLACEHOLDER: project.description,
-                CLIENT_PLACEHOLDER: project.name,
-                SERVICE_PLACEHOLDER: project.tags?.[0] ?? "Web App",
-                SECTOR_PLACEHOLDER:
-                  project.tags?.[1] ?? project.tags?.[0] ?? "NPO",
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="sticky bottom-0 left-0 right-0 z-20 flex justify-center pt-4 pb-4 md:bottom-[300px]">
-        <ProjectsCTA />
+        <section className="max-w-[1280px]">
+          <div className="grid grid-cols-1 min-[962px]:grid-cols-2 gap-x-[42px] gap-y-9 w-full ">
+            {filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.slug}
+                logo_url={project.image
+                    ? project.image
+                    : "https://placehold.co/76x76"}
+                card_cover_url={project.popupimage
+                    ? project.popupimage
+                    : "https://placehold.co/517x354"}
+                description={project.description}
+                client_name={project.name}
+                service={project.tags?.[0] ?? "Web App"}
+                sector={project.tags?.[1] ?? project.tags?.[0] ?? "Web-app"}
+              />
+            ))}
+          </div>
+          <div className="flex flex-col items-center pt-4 std-max md:mt-[15px] mt-[10px]">
+            <ProjectsCTA />
+          </div>
+        </section>
       </div>
     </PageContainer>
   );

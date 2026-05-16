@@ -17,11 +17,13 @@ export type CaseStudyContent = {
           url: string;
           caption: string;
           alt?: string;
+          polaroidImgClassName?: string;
       };
       img2: {
           url: string;
           caption: string;
           alt?: string;
+          polaroidImgClassName?: string;
       };
     };
     solution: {
@@ -45,14 +47,29 @@ const CaseStudies: CaseStudyContent[] = [
     { /* Our Community Bikes */
       slug: "our-community-bikes",
       hero: {
-        title: "Our Community Bikes",
-        date: "Feb - Nov 2024",
-        partnerContent: "Our Community Bikes (OCB) is a non-profit based in Vancouver, Canada dedicated to providing bikes to underserved communities, empowering people to fix their own bikes, and increasing diversity in the repair industry.",
+        title: "our community bikes",
+        date: "FEB - NOV 2024",
+        partnerContent: (
+          <>
+            <a
+              href="https://ourcommunitybikes.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
+            >
+              Our Community Bikes (OCB)
+            </a>{" "}
+            is a non-profit based in Vancouver, Canada dedicated to providing bikes to underserved communities,
+            empowering people to fix their own bikes, and increasing diversity in the repair industry.
+          </>
+        ),
         problemContent: "OCB was struggling to meet growing service demands. Many processes that should have been automated were consuming hours of coordinators' time each month—time that could have been spent running workshops and engaging directly with the community.",
-        logoURL: "/images/projects/our-community-bikes/logo.svg",
+        logoURL: "/images/projects/our-community-bikes/ocb-sticky-logo.svg",
         img1: {
           url: "/images/projects/our-community-bikes/fixing-bike.png",
           caption: "building bikes & community",
+          /** Zoom past loose framing so the opening matches the density of the timesheet polaroid */
+          polaroidImgClassName: "object-[50%_44%] scale-[1.52]",
         },
         img2: {
           url: "/images/projects/our-community-bikes/paper-timesheet.png",
@@ -83,7 +100,7 @@ const CaseStudies: CaseStudyContent[] = [
         name: "Cavan Hua",
         title: "volunteer coordinator at OCB",
       },
-      team: OurCommunityBikes,
+      team: [...OurCommunityBikes].sort((a, b) => a.name.localeCompare(b.name)),
     },
 ];
 
