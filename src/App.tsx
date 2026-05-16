@@ -20,7 +20,7 @@ function ScrollToTop() {
   return null;
 }
 
-const DARK_NAV_ROUTES = ["/students"];
+const DARK_NAV_ROUTES = ["/", "/students"];
 
 function App() {
   const { pathname } = useLocation();

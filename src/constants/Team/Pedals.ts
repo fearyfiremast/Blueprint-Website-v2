@@ -1,110 +1,112 @@
-export const Pedals = [
+import { MemberCardProps } from "../../components/shared/MemberCard"
+
+export const Pedals:MemberCardProps[] = [
   
   {
-    title: "Amy Zhao",
-    img: "Amy.jpg",
-    linkedin: "https://www.linkedin.com/in/amy-zhao-/",
-    lastPosition: "Designer",
+    name: "Amy Zhao",
+    photoUrl: "Amy.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/amy-zhao-/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Ayana Hussain",
-    img: "Ayana.jpg",
-    linkedin: "https://www.linkedin.com/in/ayana-hussain-a3399a227/",
-    lastPosition: "Developer",
+    name: "Ayana Hussain",
+    photoUrl: "Ayana.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/ayana-hussain-a3399a227/",
+    roleType: "dev",
     role:"Senior Developer"
   },
   {
-    title: "Vinh Dang",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/quang-vinh-dang-788ab0194/",
-    lastPosition: "Developer",
+    name: "Vinh Dang",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/quang-vinh-dang-788ab0194/",
+    roleType: "dev",
     role:"Senior Developer"
   },
   {
-    title: "Eugene Zhu",
-    img: "Eugene.jpg",
-    linkedin: "https://www.linkedin.com/in/eugenezhu/",
-    lastPosition: "Designer",
+    name: "Eugene Zhu",
+    photoUrl: "Eugene.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/eugenezhu/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Kate Simone",
-    img: "Kate.jpg",
-    linkedin: "https://www.linkedin.com/in/kate-simone-866335284/",
-    lastPosition: "Designer",
+    name: "Kate Simone",
+    photoUrl: "Kate.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/kate-simone-866335284/",
+    roleType: "designer",
     role:"Designer"
   },
   {
-    title: "Arthur Zhang",
-    img: "Arthur.jpg",
-    linkedin: "https://www.linkedin.com/in/arthur0z/",
-    lastPosition: "Developer",
+    name: "Arthur Zhang",
+    photoUrl: "Arthur.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/arthur0z/",
+    roleType: "dev",
     role:"Senior Developer"
   },{
-    title: "Ronney Lok",
-    img: "Ronney.jpg",
-    linkedin: "https://www.linkedin.com/in/ronneylok/",
-    lastPosition: "Developer",
+    name: "Ronney Lok",
+    photoUrl: "Ronney.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/ronneylok/",
+    roleType: "dev",
     role:"Senior Developer"
   },{
-    title: "Sallin Koutev",
-    img: "Sallin.jpg",
-    linkedin: "https://www.linkedin.com/in/sallin-koutev-216b0016b/",
-    lastPosition: "Lead",
+    name: "Sallin Koutev",
+    photoUrl: "Sallin.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/sallin-koutev-216b0016b/",
+    roleType: "techLead",
     role:"Tech Lead"
   },{
-    title: "Caitlin Syho",
-    img: "Caitlin.jpg",
-    linkedin: "https://www.linkedin.com/in/caitlinsyho/",
-    lastPosition: "Lead",
+    name: "Caitlin Syho",
+    photoUrl: "Caitlin.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/caitlinsyho/",
+    roleType: "techLead",
     role:"Product Lead"
   },{
-    title: "Hinako Kamiya",
-    img: "Hinako.jpg",
-    linkedin: "https://www.linkedin.com/in/hinako-kamiya/",
-    lastPosition: "Lead",
+    name: "Hinako Kamiya",
+    photoUrl: "Hinako.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/hinako-kamiya/",
+    roleType: "techLead",
     role:"Project Manager"
   },{
-    title: "Duc Dang",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/ddang2001/",
-    lastPosition: "Lead",
+    name: "Duc Dang",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/ddang2001/",
+    roleType: "techLead",
     role:"Tech Lead"
   },
   {
-    title: "Tomi Lui",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/tomi-lui-3955631b3/",
-    lastPosition: "Developer",
+    name: "Tomi Lui",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/tomi-lui-3955631b3/",
+    roleType: "dev",
     role:"Senior Developer"
   },
   {
-    title: "Terry Kwok",
-    img: "Terry.jpg",
-    linkedin: "https://www.linkedin.com/in/lai-chit-kwok-6074472b5/",
-    lastPosition: "Developer",
+    name: "Terry Kwok",
+    photoUrl: "Terry.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/lai-chit-kwok-6074472b5/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   {
-    title: "Supriya Dua",
-    img: "Supriya.jpg",
-    linkedin: "https://www.linkedin.com/in/supriya-dua-a8a576204/",
-    lastPosition: "Developer",
+    name: "Supriya Dua",
+    photoUrl: "Supriya.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/supriya-dua-a8a576204/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   {
-    title: "Kumar Shivam",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/kumarshivam0002/",
-    lastPosition: "Lead",
+    name: "Kumar Shivam",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/kumarshivam0002/",
+    roleType: "techLead",
     role:"Tech Lead"
   },
   {
-    title: "Monishka Gautam",
-    img: "blueprint.jpg",
-    linkedin: "https://www.linkedin.com/in/monishka-gautam/",
-    lastPosition: "Developer",
+    name: "Monishka Gautam",
+    photoUrl: "blueprint.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/monishka-gautam/",
+    roleType: "dev",
     role:"Junior Developer"
   },
   

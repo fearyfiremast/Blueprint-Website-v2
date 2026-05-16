@@ -76,7 +76,7 @@ const InteractiveCarousel = ({ children, autoScrollSpeed = 0.7 }) => {
 
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-16 md:w-48 bg-gradient-to-r from-bp-lightest-grey to-transparent" />
+      <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-20 md:w-48 bg-gradient-to-r from-bp-lightest-grey to-transparent" />
 
       <div
         ref={trackRef}
@@ -94,7 +94,7 @@ const InteractiveCarousel = ({ children, autoScrollSpeed = 0.7 }) => {
         </ul>
       </div>
 
-      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-16 md:w-48 bg-gradient-to-l from-bp-lightest-grey to-transparent" />
+      <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-20 md:w-48 bg-gradient-to-l from-bp-lightest-grey to-transparent" />
     </div>
   );
 };

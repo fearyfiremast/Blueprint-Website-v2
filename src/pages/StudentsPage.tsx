@@ -163,16 +163,16 @@ const StudentsPage = () => {
           {/* Title + Button row */}
           <div className="flex justify-between items-start gap-8 max-md:flex-col max-md:gap-6 mb-[60px] max-md:mb-[35px]">
             {/* Title Block */}
-            <div className="flex flex-col gap-6 max-md:gap-3 text-white max-w-[954px]">
+            <div className="flex flex-col gap-6 max-md:gap-3 text-bp-black max-w-[954px]">
               <h1
-                className="font-poppins md:text-7xl leading-none tracking-[-1.92px] text-blueprint-black
+                className="font-poppins md:text-7xl leading-none tracking-[-1.92px] text-bp-black
                            max-md:text-5xl max-md:tracking-[-1.12px]"
               >
                 <strong className="font-bold">{HERO_CONTENT.title.bold}</strong>
                 <span className="font-normal">{HERO_CONTENT.title.regular}</span>
               </h1>
               <p
-                className="font-poppins text-3xl leading-[1.4] tracking-[-0.6px] max-w-[579px] text-blueprint-black
+                className="font-poppins text-3xl leading-[1.4] tracking-[-0.6px] max-w-[579px] text-bp-black
                            max-md:text-[20px] max-md:leading-[1.4] max-md:tracking-[-0.4px]"
               >
                 {HERO_CONTENT.subtitle}
@@ -204,7 +204,7 @@ const StudentsPage = () => {
 
       <div className=""> {/* HERE std-max */}
       {/* Typical Experience Section */}
-      <section className="w-full px-6 md:px-10 xl:px-36 bg-blueprint-gray-light">
+      <section className="w-full px-6 md:px-10 xl:px-36 bg-bp-lightest-grey">
         {/* Section Intro */}
         <div className="max-w-[852px] mb-[90px] max-md:mb-[50px]">
           <h2
@@ -524,7 +524,7 @@ function ApplicationProcessSection() {
                     <span
                       className={`absolute inset-0 flex items-center justify-center ${
                         isSelected
-                          ? "font-semibold text-[#0146be]"
+                          ? "font-semibold text-bp-blue"
                           : "font-normal text-[#2a2a2a] group-hover:font-semibold"
                       }`}
                     >
@@ -538,14 +538,14 @@ function ApplicationProcessSection() {
           {/* Tab indicator line */}
           <div ref={indicatorContainerRef} className="relative w-full">
             <div
-              className="absolute top-0 h-[5px] bg-[#0146be] rounded-t-[10px]"
+              className="absolute top-0 h-[5px] bg-bp-blue rounded-t-[10px]"
               style={{
                 left: indicatorStyle.left,
                 width: indicatorStyle.width,
                 transition: "left 0.2s ease, width 0.2s ease",
               }}
             />
-            <div className="w-full h-px bg-[#aaaaaa] mt-[5px]" />
+            <div className="w-full h-px bg-bp-grey mt-[5px]" />
           </div>
         </div>
 
@@ -553,7 +553,7 @@ function ApplicationProcessSection() {
         <div className="flex flex-col gap-[38px]">
           {/* Info session card - only show on MEET BLUEPRINT tab */}
           {activeTab === "MEET BLUEPRINT" && (
-            <div className="bg-blueprint-gray-neutral rounded-[10px] p-[48px] max-md:px-[24px] max-md:py-[48px] flex flex-col gap-[32px]">
+            <div className="bg-bp-lighter-grey rounded-[10px] p-[48px] max-md:px-[24px] max-md:py-[48px] flex flex-col gap-[32px]">
               {/* Top section */}
               <div className="flex flex-col gap-[12px]">
                 <div className="flex items-start justify-between max-md:flex-col max-md:gap-[16px]">
@@ -567,7 +567,7 @@ function ApplicationProcessSection() {
                   </div>
                   
                     <Button
-                      variant="primary"
+                      variant="tertiary"
                       className="shrink-0 w-[149px] max-md:w-full"
                     >
                       <span className="font-normal">RSVP</span>

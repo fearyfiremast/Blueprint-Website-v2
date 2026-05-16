@@ -8,7 +8,7 @@ const Carousel = ({ children}) => {
             <ul className="flex gap-6 animate-infinite-scroll">
                 {[...childrenArray, ...childrenArray].map((child, index)=>(
                     <li key={index}>
-                        <div className="w-28 h-14 rounded-md flex">
+                        <div className="w-24 h-14 rounded-md flex">
                             {child}
                         </div>
                     </li>
