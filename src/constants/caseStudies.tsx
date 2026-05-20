@@ -30,7 +30,17 @@ export type CaseStudyContent = {
           polaroidImgClassName?: string;
           polaroidComponentClassName?: string;
       };
-      imgPileFormat?: (logo: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) => ReactElement;
+      /**
+       * when defined overides the default image pile layout in caseStudyLayout.tsx. Does not overide the overall layout of the hero section.
+       * @param logoUrl - Url to image
+       * @param img1PolaroidComponent - A PolaroidPhoto component
+       * @param img2PolaroidComponent - A PolaroidPhoto component
+       * @param logoAlt - Optional argument, an alt tag for the logo
+       * @see CaseStudyLayout.tsx
+       * @returns {ReactElement}
+       * 
+       */
+      imgPileFormat?: (logoUrl: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) => ReactElement;
     };
     solution: {
       summary: ReactNode;
