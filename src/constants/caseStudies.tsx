@@ -1,9 +1,11 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import { MemberCardProps } from "../components/shared/MemberCard";
 import { OurCommunityBikes } from "./Team/OurCommunityBikes";
 
 /**
  * Format that describes valid CaseStudies. Used locally and in CaseStudyLayout.tsx as a basis for its props.
+ * The imgPileFormat function allows the user to create a custom implementation of the imgPile layout found in the hero section. If
+ * left blank will resort to a default layout
  */
 export type CaseStudyContent = {
     slug: string;
@@ -13,18 +15,22 @@ export type CaseStudyContent = {
       partnerContent: ReactNode;
       problemContent: ReactNode;
       logoURL: string;
+      logoAlt?: string;
       img1: {
           url: string;
           caption: string;
           alt?: string;
           polaroidImgClassName?: string;
+          polaroidComponentClassName?: string;
       };
       img2: {
           url: string;
           caption: string;
           alt?: string;
           polaroidImgClassName?: string;
+          polaroidComponentClassName?: string;
       };
+      imgPileFormat?: (logo: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) => ReactElement;
     };
     solution: {
       summary: ReactNode;
