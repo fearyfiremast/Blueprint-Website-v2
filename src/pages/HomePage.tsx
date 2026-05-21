@@ -690,7 +690,8 @@ const HomePage = () => {
 
       {/* Impact + projects: mx-auto wrapper so centering works at every breakpoint */}
       <section className="w-full pt-[120px] max-md:pt-[75px]">
-        <div className="mx-auto flex w-full max-w-[1196px] flex-col items-center gap-12 xl:gap-24 xl:flex-row xl:items-start xl:justify-center">
+        <div className="mx-auto flex w-full flex-col items-center gap-12 xl:gap-24 xl:flex-row xl:items-start 
+        justify-between"> {/* max-w-[1196px] xl:justify-center */}
         {/* Left side Heading and logos */}
         <div className="w-full max-w-[440px] shrink-0 max-md:max-w-[90vw] xl:sticky xl:top-[25%] z-[10] xl:pl-[1.5vw]">
           {/* Bullet points and logos */}
@@ -740,7 +741,7 @@ const HomePage = () => {
           
 
         {/* Projects preview */}
-        <div className="flex w-full min-w-0 max-w-[708px] shrink-0 justify-center max-md:pt-[30px] xl:sticky xl:top-[40px]">
+        <div className="flex flex-1 w-full min-w-0 shrink-0 justify-center max-md:pt-[30px] xl:sticky xl:top-[40px]">
           <ProjectsCardStack />
         </div>
         </div>
@@ -821,7 +822,7 @@ const HomePage = () => {
               <div className="flex flex-col gap-[16px] w-[366px] max-md:w-full ">
                 <p className=" max-md:font-normal  
                 md:text-body-s-reg  text-[10px] uppercase leading-normal ">
-                  upcoming event:
+                  upcoming event: 
                 </p>
                 <p className="font-poppins max-md:font-normal max-md:leading-8 text-[36px] leading-8 tracking-[-0.72px] max-md:text-2xl">
                   blueprint info session
@@ -849,8 +850,8 @@ const HomePage = () => {
                 DATE AND TIME:
               </p>
               <p className="flex flex-col md:flex-row gap-1 text-body-s-reg font-light">
-                September 10,
-                <span>2026, 7 PM</span>
+                September 10, {/* date */}
+                <span>2026, 7 PM</span> {/* time */}
                   
               </p>
             </div>
@@ -859,8 +860,8 @@ const HomePage = () => {
                 LOCATION:
               </p>
               <p className="font-poppins leading-normal flex flex-col md:flex-row gap-1 text-body-s-reg font-light">
-                SFU Burnaby
-                <span>Campus, ASB 9720</span>
+                SFU Burnaby {/* location */}
+                <span>Campus, ASB 9720</span> {/* location */}
               </p>
             </div>
           </div>
