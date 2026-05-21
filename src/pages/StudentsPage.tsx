@@ -163,16 +163,16 @@ const StudentsPage = () => {
           {/* Title + Button row */}
           <div className="flex justify-between items-start gap-8 max-md:flex-col max-md:gap-6 mb-[60px] max-md:mb-[35px]">
             {/* Title Block */}
-            <div className="flex flex-col gap-6 max-md:gap-3 text-white max-w-[954px]">
+            <div className="flex flex-col gap-6 max-md:gap-3 text-bp-black max-w-[954px]">
               <h1
-                className="font-poppins md:text-7xl leading-none tracking-[-1.92px] text-blueprint-black
+                className="font-poppins md:text-7xl leading-none tracking-[-1.92px] text-bp-black
                            max-md:text-5xl max-md:tracking-[-1.12px]"
               >
                 <strong className="font-bold">{HERO_CONTENT.title.bold}</strong>
                 <span className="font-normal">{HERO_CONTENT.title.regular}</span>
               </h1>
               <p
-                className="font-poppins text-3xl leading-[1.4] tracking-[-0.6px] max-w-[579px] text-blueprint-black
+                className="font-poppins text-3xl leading-[1.4] tracking-[-0.6px] max-w-[579px] text-bp-black
                            max-md:text-[20px] max-md:leading-[1.4] max-md:tracking-[-0.4px]"
               >
                 {HERO_CONTENT.subtitle}

@@ -9,7 +9,7 @@ const Logo = ({isDark}) => {
         <Link
             to="/"
             className={`flex space-x-2 items-center w-[156px] h-[60px] rounded-[5px] px-4 transition-all group
-              ${isDark ? 'bg-[#2A2A2A] hover:bg-[#777777] active:bg-[#AAAAAA]' : 'bg-transparent hover:bg-[#0146BE] active:bg-[#002F80]'}
+              ${isDark ? 'bg-bp-darkest-grey hover:bg-bp-dark-grey active:bg-bp-grey' : 'bg-transparent hover:bg-[#0146BE] active:bg-[#002F80]'}
            
             `}
         >
