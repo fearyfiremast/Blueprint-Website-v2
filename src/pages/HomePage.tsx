@@ -692,11 +692,11 @@ const HomePage = () => {
       <section className="w-full pt-[120px] max-md:pt-[75px]">
         <div className="mx-auto flex w-full max-w-[1196px] flex-col items-center gap-12 xl:gap-24 xl:flex-row xl:items-start xl:justify-center">
         {/* Left side Heading and logos */}
-        <div className="w-full max-w-[440px] shrink-0 max-md:max-w-[90vw] xl:sticky xl:top-[40px] z-[10]">
+        <div className="w-full max-w-[440px] shrink-0 max-md:max-w-[90vw] xl:sticky xl:top-[25%] z-[10] xl:pl-[1.5vw]">
           {/* Bullet points and logos */}
-          <div className="flex w-full flex-col gap-12">
-            <span className="text-bp-black text-3xl font-normal font-['Poppins'] 
-            md:w-72 justify-start md:text-4xl leading-8 md:leading-[50.40px]">
+          <div className="flex w-full flex-col gap-9 md:gap-12">
+            <span className="text-bp-black text-mobile-heading-m-reg font-normal font-['Poppins'] 
+            md:w-72 justify-start md:text-heading-s-reg leading-8 md:leading-[50.40px]">
               <h2>
                 impact that 
               </h2>
@@ -740,7 +740,7 @@ const HomePage = () => {
           
 
         {/* Projects preview */}
-        <div className="flex w-full min-w-0 max-w-[708px] shrink-0 justify-center max-md:pt-[50px] xl:sticky xl:top-[40px]">
+        <div className="flex w-full min-w-0 max-w-[708px] shrink-0 justify-center max-md:pt-[30px] xl:sticky xl:top-[40px]">
           <ProjectsCardStack />
         </div>
         </div>
@@ -753,22 +753,23 @@ const HomePage = () => {
 
       {/* Students / testimonials */}
         {/* Students: turn real projects into real opportunities */}
-        <div className="flex flex-row justify-between pt-[73px] md:pt-[120px] pb-[60px] font-['Poppins']">
-              <div className="flex flex-col gap-6 w-[660px] text-zinc-800 max-md:min-w-[345px]">
-                  <div className="text-heading-s-reg max-md:text-mobile-heading-m-reg max-md:min-w-[345px] md:min-w-[518px]">students: turn real projects into 
+        <div className="flex flex-row w-full min-w-0 justify-between pt-[73px] md:pt-[120px] md:pb-[60px] font-['Poppins'] justify-between gap-12">
+              <div className="flex flex-1 w-full min-w-0 flex-col gap-6 max-w-[660px] text-zinc-800 max-md:min-w-[345px]">
+                  <div className="text-heading-s-reg max-md:text-mobile-heading-m-reg max-md:max-w-[300px] max-md:min-w-[345px] md:min-w-[518px] max-w-[400px]">students: turn real projects into 
                   <span className="font-semibold "> real opportunities. </span>
                   </div>
-                <div className="flex flex-1 text-body-m-reg leading-8 max-md:text-mobile-body-m-reg">By working with a passionate interdisciplinary team and making a real impact in their community, our members have gained invaluable skills,
-                   allowing them to pursue successful careers in tech. Join us to see the Blueprint difference. </div>
+                  <div className="flex flex-1 text-body-m-reg leading-8 max-md:text-mobile-body-m-reg">By working with a passionate interdisciplinary team and making a real impact in their community, our members have gained invaluable skills,
+                    allowing them to pursue successful careers in tech. Join us to see the Blueprint difference. 
+                   </div>
                 </div>
               {/* button */}
-              <div className="max-md:hidden">
+              <div className="max-md:hidden justify-end shrink-0">
                 <Button variant="tertiary" className="uppercase !font-light !w-48 !h-16">join us</Button>             
               </div>
         </div>
 
         {/* testimonials */}
-        <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] h-[390px] w-screen pt-[60px] max-md:pt-[50px]">
+        <div className="relative left-1/2 right-1/2 ml-[-50vw] mr-[-50vw] h-[390px] w-screen pt-[60px] max-md:pt-[52px]">
               <InteractiveCarousel autoScrollSpeed={1}>
                 {blueprintTestimonials.map((testimonial) => (
                   <TestimonialCard key={testimonial.id} name={testimonial.name} role={testimonial.role} picture={testimonial.image} caption={testimonial.caption} />
@@ -784,7 +785,7 @@ const HomePage = () => {
 
     {/* Upcoming Events Section*/}
     {/* Upcoming Events Image */}
-    <div className="md:min-w-[82vw] h-full overflow-hidden rounded-[5px] max-md:pb-6 md:pr-[2vw] xl:pr-[6vw] 2xl:pr-[2vw]">
+    <div className="md:min-w-[82vw] h-full overflow-hidden rounded-[5px] max-md:pt-[54px] md:pt-[120px] max-md:pb-6 md:pr-[2vw] xl:pr-[6vw] 2xl:pr-[2vw]">
         <img
           className="w-full h-full"
           src="/images/home/photos/group.png"
