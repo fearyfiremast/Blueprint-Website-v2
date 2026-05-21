@@ -691,7 +691,7 @@ const HomePage = () => {
       {/* Impact + projects: mx-auto wrapper so centering works at every breakpoint */}
       <section className="w-full pt-[120px] max-md:pt-[75px]">
         <div className="mx-auto flex w-full flex-col items-center gap-12 xl:gap-24 xl:flex-row xl:items-start 
-        justify-between"> {/* max-w-[1196px] xl:justify-center */}
+        w-full justify-between"> {/* max-w-[1196px] xl:justify-center */}
         {/* Left side Heading and logos */}
         <div className="w-full max-w-[440px] shrink-0 max-md:max-w-[90vw] xl:sticky xl:top-[25%] z-[10] xl:pl-[1.5vw]">
           {/* Bullet points and logos */}
@@ -741,7 +741,7 @@ const HomePage = () => {
           
 
         {/* Projects preview */}
-        <div className="flex flex-1 w-full min-w-0 shrink-0 justify-center max-md:pt-[30px] xl:sticky xl:top-[40px]">
+        <div className="flex flex-1 w-full max-w-[708px] min-w-0 shrink-0 justify-center max-md:pt-[30px] xl:sticky xl:top-[40px]">
           <ProjectsCardStack />
         </div>
         </div>
@@ -756,7 +756,7 @@ const HomePage = () => {
         {/* Students: turn real projects into real opportunities */}
         <div className="flex flex-row w-full min-w-0 justify-between pt-[73px] md:pt-[120px] md:pb-[60px] font-['Poppins'] justify-between gap-12">
               <div className="flex flex-1 w-full min-w-0 flex-col gap-6 max-w-[660px] text-zinc-800 max-md:min-w-[345px]">
-                  <div className="text-heading-s-reg max-md:text-mobile-heading-m-reg max-md:max-w-[300px] max-md:min-w-[345px] md:min-w-[518px] max-w-[400px]">students: turn real projects into 
+                  <div className="text-heading-s-reg max-md:text-mobile-heading-m-reg md:min-w-[518px] max-w-[400px]">students: turn real projects into 
                   <span className="font-semibold "> real opportunities. </span>
                   </div>
                   <div className="flex flex-1 text-body-m-reg leading-8 max-md:text-mobile-body-m-reg">By working with a passionate interdisciplinary team and making a real impact in their community, our members have gained invaluable skills,
