@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { MemberCardProps } from "../components/shared/MemberCard";
 import { OurCommunityBikes } from "./Team/OurCommunityBikes";
+import { ReelYouth } from "./Team/ReelYouth";
 
 /**
  * Format that describes valid CaseStudies. Used locally and in CaseStudyLayout.tsx as a basis for its props.
@@ -101,6 +102,53 @@ const CaseStudies: CaseStudyContent[] = [
         title: "volunteer coordinator at OCB",
       },
       team: [...OurCommunityBikes].sort((a, b) => a.name.localeCompare(b.name)),
+    },
+    {
+      slug: "reel-youth",
+      hero: {
+        title: "reel youth",
+        date: "FEB - NOV 2024",
+        partnerContent: (
+          <>
+            <a
+              href=" https://reelyouth-demo.xyz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
+            >
+              Reel Youth
+            </a>{" "}
+            is a non-profit organization that empowers youth through filmmaking, producing over 120 films annually.
+             Their programs are designed to empower young people by building confidence, advocacy & media skills.
+          </>
+        ),
+        problemContent: "Reel Youth's website was outdated and difficult to navigate, reducing accessibility and user engagement. It did not effectively showcase the stories and voices at the core of its mission.",
+        logoURL: "/images/projects/reel-youth/reel-youth-logo-sticky.svg",
+        img1: {
+          url: "/images/projects/reel-youth/reel-youth-polaroid-img1.png",
+          caption: "youth empowerment!",
+        },
+        img2: {
+          url: "/images/projects/reel-youth/reel-youth-polaroid-img2.png",
+          caption: "outdated website :(",
+        },
+      },
+      solution: {
+        summary:<p>We built a new website to better <span className="tablet:text-body-l-bold"> showcase Reel Youth's activities and services,</span> with clear access to social channels, the project portfolio, media content, and donation pathways.</p>,
+        contentList: [
+          {
+            description: "Youth participants can easily explore past projects through visual content and detailed descriptions, helping them identify areas aligned with their interests.",
+            imgURL: "/images/projects/reel-youth/reel-youth-gallery-page.png",
+            caption: "The new gallery page with search and filtering functionality allows users to sort projects by program, theme, and location for easier navigation and discovery.",
+          },
+          {
+            description: "For collaborators, the new website clearly showcases Reel Youth’s impact on communities both locally and internationally.",
+            imgURL: "/images/projects/reel-youth/reel-youth-international-page.png",
+            caption: "The new international page dynamically highlights global programs by country and features selected films, effectively demonstrating international reach and impact."
+          }
+        ],
+      },
+      team: [...ReelYouth].sort((a, b) => a.name.localeCompare(b.name)),
     },
 ];
 
