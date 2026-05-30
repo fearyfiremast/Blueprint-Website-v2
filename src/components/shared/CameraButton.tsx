@@ -1,18 +1,16 @@
 import React from 'react';
 import { ReactComponent as CameraIcon } from '../../assets/icons/camera-white.svg';
-
-// type CameraButtonProps = {
-//   onClick?: () => void;
-//   className?: string;
-//   size?: 'desktop' | 'mobile';
-//   'aria-label'?: string;
-// };
+import cameraSound from '../../assets/camera.sound.mp3';
 
 const CameraButton = ({ onClick }: { onClick: () => void }) => {
-  
+  const handleClick = () => {
+      const audio = new Audio(cameraSound);
+      audio.play();
+      onClick();
+  };
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className={`w-20 h-18 md:w-28 md:h-24 flex flex-col text-bp-white rounded-[10px] cursor-pointer
       bg-bp-black hover:bg-bp-darkest-grey active:bg-bp-dark-grey`}
     >
@@ -26,44 +24,5 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
   );
 };
 
-
-// const CameraButton = ({
-//   onClick,
-//   className = '',
-//   size = 'desktop',
-//   'aria-label': ariaLabel = 'Upload photo',
-// }: CameraButtonProps) => {
-//   const [pressed, setPressed] = useState(false);
-//   const [hovered, setHovered] = useState(false);
-
-//   const isDesktop = size === 'desktop';
-//   const dimension = isDesktop ? 'w-[120px] h-[120px]' : 'w-[72px] h-[72px]';
-
-//   let bgClass = 'bg-bp-blue';
-//   let iconColor = 'white';
-//   if (pressed) {
-//     bgClass = 'bg-bp-accent-light-blue';
-//     iconColor = '#0146BE';
-//   } else if (hovered) {
-//     bgClass = 'bg-bp-accent-very-light-blue';
-//     iconColor = '#0146BE';
-//   }
-
-//   return (
-//     <button
-//       type="button"
-//       onClick={onClick}
-//       aria-label={ariaLabel}
-//       onMouseEnter={() => setHovered(true)}
-//       onMouseLeave={() => { setHovered(false); setPressed(false); }}
-//       onMouseDown={() => setPressed(true)}
-//       onMouseUp={() => setPressed(false)}
-//       className={`flex items-center justify-center rounded-[10px] cursor-pointer transition-colors duration-150 ${bgClass} ${dimension} ${className}`}
-//       style={{ '--stroke-0': iconColor, '--fill-0': iconColor } as React.CSSProperties}
-//     >
-//       <CameraIcon className="w-[52%] h-[43%]" />
-//     </button>
-//   );
-// };
 
 export default CameraButton;
