@@ -278,13 +278,13 @@ const AboutPage = () => {
       {/* Main Container */}
       <div className="pt-main-mobile-top md:pt-main-desktop-top flex flex-col justify-between">
         {/* About us section */}
-        <div className="flex md:flex-row flex-col justify-between md:mb-[100px] flex-wrap">
+        <div className="flex md:flex-row flex-col justify-between md:mb-[100px] md:gap-28">
           <div className="flex flex-col md:justify-between max-md:pb-[62px] gap-3 md:gap-6">
             <h1 className="font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-bp-black">
               <strong>about</strong> us
             </h1>
 
-            <p className="font-poppins text-xl md:text-3xl leading-7 md:leading-10 text-bp-black w-90 md:w-[684px]">
+            <p className="font-poppins text-xl md:text-3xl leading-7 md:leading-10 text-bp-black w-90 md:max-w-[684px] md:flex md:flex-1 md:w-full">
               building innovative, tech-based solutions for communities and public
               welfare is the mission that brings us together.
             </p>
