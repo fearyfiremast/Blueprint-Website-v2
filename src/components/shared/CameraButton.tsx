@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ReactComponent as CameraIcon } from '../../assets/icons/camera-white.svg';
 import cameraSound from '../../assets/camera.sound.mp3';
 import { useWebHaptics } from 'web-haptics/react';
@@ -10,6 +10,15 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
   const audioPoolRef = useRef<HTMLAudioElement[]>([]);
   const poolIndexRef = useRef(0);
 
+  function useWindowWidth() {
+    const [width, setWidth] = useState(0);
+    useEffect(() => {
+      setWidth(window.innerWidth);
+    }, []);
+    return width;
+  }
+  const width = useWindowWidth();
+  
   useEffect(() => {
     audioPoolRef.current = Array.from({ length: AUDIO_POOL_SIZE }, () => {
       const audio = new Audio(cameraSound);
@@ -31,7 +40,10 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
   const handleClick = () => {
     playCameraSound();
     onClick();
-    void trigger("nudge");
+
+    if (width < 768) {
+      void trigger('success');
+    }
   };
 
   return (
