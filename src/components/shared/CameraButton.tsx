@@ -1,13 +1,34 @@
 import React from 'react';
 import { ReactComponent as CameraIcon } from '../../assets/icons/camera-white.svg';
 import cameraSound from '../../assets/camera.sound.mp3';
+import { useState, useEffect } from 'react';
+
+
+function useWindowWidth() {
+  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return width;
+}
 
 const CameraButton = ({ onClick }: { onClick: () => void }) => {
   const handleClick = () => {
-      const audio = new Audio(cameraSound);
-      audio.play();
-      onClick();
-  };
+    const audio = new Audio(cameraSound);
+    audio.play();
+    onClick();
+    
+    if(useWindowWidth() < 768 && 'vibrate' in navigator) {
+      navigator.vibrate([1000]);
+    }
+  };  
   return (
     <button
       onClick={handleClick}
