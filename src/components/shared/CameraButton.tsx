@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ReactComponent as CameraIcon } from '../../assets/icons/camera-white.svg';
 import cameraSound from '../../assets/camera.sound.mp3';
+import { useWebHaptics } from 'web-haptics/react';
 
-function useWindowWidth() {
-  const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  return width;
-}
+const AUDIO_POOL_SIZE = 4;
 
 const CameraButton = ({ onClick }: { onClick: () => void }) => {
-  const width = useWindowWidth();
+  const { trigger } = useWebHaptics();
+  const audioPoolRef = useRef<HTMLAudioElement[]>([]);
+  const poolIndexRef = useRef(0);
+
+  useEffect(() => {
+    audioPoolRef.current = Array.from({ length: AUDIO_POOL_SIZE }, () => {
+      const audio = new Audio(cameraSound);
+      audio.preload = 'auto';
+      return audio;
+    });
+  }, []);
+
+  const playCameraSound = () => {
+    const pool = audioPoolRef.current;
+    if (!pool.length) return;
+
+    const audio = pool[poolIndexRef.current % pool.length];
+    poolIndexRef.current += 1;
+    audio.currentTime = 0;
+    void audio.play().catch(() => {});
+  };
 
   const handleClick = () => {
-    const audio = new Audio(cameraSound);
-    audio.play();
+    playCameraSound();
     onClick();
-
-    if (width < 768 && 'vibrate' in navigator) {
-      navigator.vibrate(200);
-    }
+    void trigger(200);
   };
 
   return (
@@ -45,5 +49,5 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
     </button>
   );
 };
-2
+
 export default CameraButton;
