@@ -3,13 +3,9 @@ import { ReactComponent as CameraIcon } from '../../assets/icons/camera-white.sv
 import cameraSound from '../../assets/camera.sound.mp3';
 import { useWebHaptics } from 'web-haptics/react';
 
-const AUDIO_POOL_SIZE = 4;
+const AUDIO_POOL_SIZE = 7;
 
 const CameraButton = ({ onClick }: { onClick: () => void }) => {
-  const { trigger } = useWebHaptics();
-  const audioPoolRef = useRef<HTMLAudioElement[]>([]);
-  const poolIndexRef = useRef(0);
-
   function useWindowWidth() {
     const [width, setWidth] = useState(0);
     useEffect(() => {
@@ -19,6 +15,10 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
   }
   const width = useWindowWidth();
   
+  const { trigger } = useWebHaptics();
+  const audioPoolRef = useRef<HTMLAudioElement[]>([]);
+  const poolIndexRef = useRef(0);
+
   useEffect(() => {
     audioPoolRef.current = Array.from({ length: AUDIO_POOL_SIZE }, () => {
       const audio = new Audio(cameraSound);
@@ -42,13 +42,13 @@ const CameraButton = ({ onClick }: { onClick: () => void }) => {
     onClick();
 
     if (width < 768) {
-      void trigger('success');
+      trigger('success');
     }
   };
 
   return (
     <button
-      onClick={handleClick}
+      onClick={() => {handleClick(); if (width < 768) {trigger('success')};}}
       className={`w-20 h-18 md:w-28 md:h-24 flex flex-col text-bp-white rounded-[10px] cursor-pointer
       bg-bp-black hover:bg-bp-darkest-grey active:bg-bp-dark-grey`}
     >
