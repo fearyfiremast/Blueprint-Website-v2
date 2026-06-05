@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import PageContainer from "../components/layout/PageContainer";
 import CameraButton from "../components/shared/CameraButton";
@@ -134,7 +134,6 @@ function pickRandomGridColumn(occupiedColumns: number[]): number {
 }
 
 const RIVE_VALUES_STATE_MACHINE = "MainStateMachine";
-
 /** Own hook instance + canvas; mount only one at a time so hidden WebGL canvases don’t break Rive. */
 function AboutValuesRiveDesktop() {
   const { RiveComponent } = useRive({
@@ -150,7 +149,7 @@ function AboutValuesRiveDesktop() {
   });
 
   return (
-    <RiveComponent className="h-[950px] w-[1200px] ml-[-400px] 2xl:ml-[-200px]" />
+    <RiveComponent className="h-[900px] lg:h-[950px] w-[1500px] ml-[-350px]" />
   );
 }
 
@@ -166,7 +165,7 @@ function AboutValuesRiveMobile() {
     }),
   });
 
-  return <RiveComponent className="relative h-[1000px] w-full translate-y-[-450px]" />;
+  return <RiveComponent className="h-[1100px] w-full translate-y-[-460px]" />;
 }
 
 const AboutPage = () => {
@@ -181,6 +180,31 @@ const AboutPage = () => {
 
     void Promise.all(images);
   }, []);
+
+  function useIsVisible(ref: React.RefObject<HTMLDivElement>) {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      if (isVisible || !ref.current) return;
+      if (!ref.current) return;
+
+      const observer = new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      });
+
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, [ref, isVisible]);
+
+    return isVisible;
+  }
+  
+  const isComponentVisible = useRef<HTMLDivElement>(null);
+  const isVisible = useIsVisible(isComponentVisible);
+  
 
   const INITIAL_VISIBLE = 3;
   const INITIAL_VISIBLE_MOBILE = 2;
@@ -339,7 +363,7 @@ const AboutPage = () => {
         </div>
 
         {/* Info Cards Container */}
-        <div className="relative z-10 md:pt-[108px] flex flex-col items-center justify-center gap-6 pb-[148px] lg:flex-row">
+        <div className="relative z-10 md:pt-[108px] flex flex-col items-center justify-center gap-6 mb-[148px] md:flex-row">
           <InfoCard
             title={OUR_MEMBERS_CONTENT.title}
             heading={OUR_MEMBERS_CONTENT.heading}
@@ -355,18 +379,24 @@ const AboutPage = () => {
           />
         </div>
 
-        {/* Values Section — Rive needs a real URL from Vite (?url) and a sized box for the canvas */}
-        <div className="relative z-10 w-full shrink-0 pb-[280px] max-md:pb-[420px] md:z-0 md:pb-0 max-md:overflow-hidden">
-          <div className="pointer-events-none relative z-10 flex flex-col md:gap-10 md:pb-[566px]">
-            <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl md:text-7xl md:ml-[-40px] 2xl:ml-[160px]">
-              our <strong>values</strong>
-            </h2>
+        
+  
+        <div ref={isComponentVisible} className="relative mb-[420px] md:left-1/2 md:translate-x-[calc(-50%+10vw)]">
+        {/* Header */}
+          <div className="pointer-events-none relative z-30 flex flex-col md:gap-10 mb-[280p]">
+              <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl 
+              md:text-7xl md:translate-x-[calc(-50%+35vw)] lg:translate-x-[calc(-50%+36vw)] 2xl:translate-x-[calc(-50%+51vw)] leading-10">
+                our <strong>values</strong>
+              </h2>
           </div>
-
-          <div className="absolute md:inset-x-0 bottom-0 z-0 h-[400px] w-full md:w-full md:h-[1000px] lg:translate-y-[-50px]">
-            {isMdUp ? <AboutValuesRiveDesktop /> : <AboutValuesRiveMobile />}
+          
+          {/* Rive */}
+          <div className="absolute w-full h-full bottom-0 md:translate-x-[calc(-50%+35vw)] 2xl:translate-x-[calc(-50%+50vw)] md:translate-y-[-300px] lg:translate-y-[-325px] ">
+            {isVisible ? (isMdUp ? <AboutValuesRiveDesktop /> : <AboutValuesRiveMobile />) : null}
           </div>
         </div>
+
+
       </div>
 
       {/* Meet the Team */}
