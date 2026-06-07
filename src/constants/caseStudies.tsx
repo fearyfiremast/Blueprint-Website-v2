@@ -1,10 +1,13 @@
-import { ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import { MemberCardProps } from "../components/shared/MemberCard";
 import { OurCommunityBikes } from "./Team/OurCommunityBikes";
 import { ReelYouth } from "./Team/ReelYouth";
+import { Mosaic } from "./Team/Mosaic";
 
 /**
  * Format that describes valid CaseStudies. Used locally and in CaseStudyLayout.tsx as a basis for its props.
+ * The imgPileFormat function allows the user to create a custom implementation of the imgPile layout found in the hero section. If
+ * left blank will resort to a default layout
  */
 export type CaseStudyContent = {
     slug: string;
@@ -14,18 +17,32 @@ export type CaseStudyContent = {
       partnerContent: ReactNode;
       problemContent: ReactNode;
       logoURL: string;
+      logoAlt?: string;
       img1: {
           url: string;
           caption: string;
           alt?: string;
           polaroidImgClassName?: string;
+          polaroidComponentClassName?: string;
       };
       img2: {
           url: string;
           caption: string;
           alt?: string;
           polaroidImgClassName?: string;
+          polaroidComponentClassName?: string;
       };
+      /**
+       * when defined overides the default image pile layout in caseStudyLayout.tsx. Does not overide the overall layout of the hero section.
+       * @param logoUrl - Url to image
+       * @param img1PolaroidComponent - A PolaroidPhoto component
+       * @param img2PolaroidComponent - A PolaroidPhoto component
+       * @param logoAlt - Optional argument, an alt tag for the logo
+       * @see CaseStudyLayout.tsx
+       * @returns {ReactElement}
+       * 
+       */
+      imgPileFormat?: (logoUrl: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) => ReactElement;
     };
     solution: {
       summary: ReactNode;
@@ -112,10 +129,7 @@ const CaseStudies: CaseStudyContent[] = [
           <>
             <a
               href=" https://reelyouth-demo.xyz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
-            >
+     
               Reel Youth
             </a>{" "}
             is a non-profit organization that empowers youth through filmmaking, producing over 120 films annually.
@@ -149,6 +163,79 @@ const CaseStudies: CaseStudyContent[] = [
         ],
       },
       team: [...ReelYouth].sort((a, b) => a.name.localeCompare(b.name)),
+              MOSAIC BC
+            </a>{" "}
+            is a non-profit in Vancouver that helps newcomers settle through programs, resources, and community
+            support.
+          </>
+        ),
+      },
+      {
+      slug: "mosaic",
+          hero: {
+            title: "mosaic AI chatbot",
+            date: "APRIL 2024 – APRIL 2025",
+            partnerContent: (
+              <>
+                <a
+                  href="https://mosaicbc.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
+                >
+            problemContent:
+            "MOSAIC BC's website contained a large volume of programs and information, making it difficult for newcomers to find what they needed—especially when navigating in a second language.",
+        logoURL: "/images/projects/mosaic/mosaic-sticky.png",
+        img1: {
+          url: "/images/projects/mosaic/mosaic-newcomers.png",
+          caption: "supporting newcomers",
+          alt: "MOSAIC BC team supporting newcomers",
+        },
+        img2: {
+          url: "/images/projects/mosaic/mosaic-services.png",
+          caption: "providing services",
+          alt: "MOSAIC BC staff providing services at a community event",
+        },
+      },
+      solution: {
+        summary: (
+          <p className="tablet:text-body-l-reg">
+            We built an <span className="tablet:text-body-l-bold">AI-powered chatbot</span> embedded directly into
+            MOSAIC BC&apos;s website, allowing users to ask natural language questions and instantly find immigrant
+            programs, events, and resources relevant to their needs.
+          </p>
+        ),
+        contentList: [
+          {
+            description:
+              "The chatbot uses a RAG (retrieval-augmented generation) pipeline with LangChain and OpenAI's GPT to surface accurate, up-to-date information from MOSAIC's existing content!",
+            imgURL: "/images/projects/mosaic/mosaic-chatbot-ui.png",
+            caption:
+              "The chatbot interface lets users ask questions in plain language, returning relevant programs and events in seconds.",
+            alt: "MOSAIC BC website with embedded AI chatbot interface",
+          },
+          {
+            description: (
+              <>
+                <p className="tablet:text-body-l-reg tablet:mb-[30px] mb-[12px] text-mobile-body-l-reg">
+                  The chatbot lowers the barrier to accessing MOSAIC BC&apos;s services, particularly for newcomers
+                  unfamiliar with the site&apos;s structure or navigating in a second language.
+                </p>
+                <p className="tablet:text-body-l-reg text-mobile-body-l-reg">
+                  By surfacing relevant programs conversationally, it reduces the time and effort required for users to
+                  find what they need, and allows MOSAIC&apos;s staff to focus on direct community support rather than
+                  fielding repetitive information requests.
+                </p>
+              </>
+            ),
+            imgURL: "/images/projects/mosaic/mosaic-admin.png",
+            caption:
+              "Admins can manage and update the chatbot's knowledge base to keep program information current.",
+            alt: "Admin dashboard for managing MOSAIC chatbot program data",
+          },
+        ],
+      },
+      team: [...Mosaic].sort((a, b) => a.name.localeCompare(b.name)),
     },
 ];
 
