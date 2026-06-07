@@ -8,6 +8,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import StudentsPage from "./pages/StudentsPage";
 import AlumniPage from "./pages/AlumniPage";
 import NonprofitsPage from "./pages/NonprofitsPage";
+import SponsorUsPage from "./pages/SponsorUsPage";
 import IndividualProject from "./pages/IndividualProject";
 import FooterRevamp from "./components/footer/FooterRevamp";
 import ScrollToHashElement from "./components/shared/ScrollToHash";
@@ -41,6 +42,7 @@ function App() {
         <Route path="/projectspage" element={<ProjectsPage />} />
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/nonprofits" element={<NonprofitsPage />} />
+        <Route path="/sponsor-us" element={<SponsorUsPage />} />
         <Route path="/projects/:slug" element={<IndividualProject />} />
       </Routes>
       </main>
