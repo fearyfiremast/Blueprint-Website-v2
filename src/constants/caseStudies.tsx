@@ -42,7 +42,7 @@ export type CaseStudyContent = {
        * @returns {ReactElement}
        * 
        */
-      imgPileFormat?: (logoUrl: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) => ReactElement;
+      imgPileFormat?: (logoUrl: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent: ReactNode, logoAlt?: string) => ReactElement;
     };
     solution: {
       summary: ReactNode;
@@ -124,12 +124,10 @@ const CaseStudies: CaseStudyContent[] = [
       slug: "reel-youth",
       hero: {
         title: "reel youth",
-        date: "FEB - NOV 2024",
+        date: "AUG 2024 - CURRENT",
         partnerContent: (
           <>
-            <a
-              href=" https://reelyouth-demo.xyz/"
-     
+            <a href=" https://reelyouth-demo.xyz/" >
               Reel Youth
             </a>{" "}
             is a non-profit organization that empowers youth through filmmaking, producing over 120 films annually.
@@ -141,11 +139,30 @@ const CaseStudies: CaseStudyContent[] = [
         img1: {
           url: "/images/projects/reel-youth/reel-youth-polaroid-img1.png",
           caption: "youth empowerment!",
+          polaroidComponentClassName: "z-10 desktop:translate-x-[15px] desktop:translate-y-0 desktop:rotate-[-5deg] tablet:rotate-[9deg] tablet:translate-x-[30px] rotate-[-4deg] translate-x-[-60px]"
         },
         img2: {
           url: "/images/projects/reel-youth/reel-youth-polaroid-img2.png",
           caption: "outdated website :(",
+          polaroidComponentClassName: "desktop:mt-[-160px] desktop:translate-x-[100px] desktop:translate-y-[10px] desktop:rotate-[9deg] tablet:rotate-[-7deg] tablet:translate-x-[-30px] tablet:translate-y-[50px] tablet:mt-0 mt-[-40px] rotate-[7deg] translate-x-[50px]"
         },
+        imgPileFormat: (logoUrl: string, img1PolaroidComponent: ReactNode, img2PolaroidComponent, logoAlt?: string) =>{
+          const altText = logoAlt ? logoAlt : "client logo"
+
+          return (
+          <div className="flex desktop:flex-row-reverse desktop:ml-auto desktop:mb-0 items-center tablet:mb-[70px] flex-col mb-[20px] desktop:self-start">
+              <img className="z-20 
+                              desktop:translate-x-[0px] desktop:translate-y-[-0px] desktop:m-[-10px] desktop:mt-0 desktop:self-auto desktop 
+                              tablet:max-w-[229px] tablet:max-h-[201px] tablet:mt-[-170px] tablet:translate-x-[30px] tablet:translate-y-[170px] tablet:rotate-0 tablet:ml-0 min-[767.9px]:scale-[1.15]
+                              max-w-[197px] max-h-[184px] rotate-[13deg] translate-x-[100px]" 
+                              src={logoUrl} alt={altText}/>
+              <div className="flex desktop:flex-col desktop:translate-y-[30px] tablet:flex-row tablet:mt-0 mt-[-150px] flex-col">
+                {img1PolaroidComponent}
+                {img2PolaroidComponent}
+              </div>
+          </div>
+          )
+        }
       },
       solution: {
         summary:<p>We built a new website to better <span className="tablet:text-body-l-bold"> showcase Reel Youth's activities and services,</span> with clear access to social channels, the project portfolio, media content, and donation pathways.</p>,
@@ -163,40 +180,36 @@ const CaseStudies: CaseStudyContent[] = [
         ],
       },
       team: [...ReelYouth].sort((a, b) => a.name.localeCompare(b.name)),
-              MOSAIC BC
-            </a>{" "}
-            is a non-profit in Vancouver that helps newcomers settle through programs, resources, and community
-            support.
-          </>
-        ),
       },
       {
       slug: "mosaic",
-          hero: {
-            title: "mosaic AI chatbot",
-            date: "APRIL 2024 – APRIL 2025",
-            partnerContent: (
-              <>
-                <a
-                  href="https://mosaicbc.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
-                >
-            problemContent:
-            "MOSAIC BC's website contained a large volume of programs and information, making it difficult for newcomers to find what they needed—especially when navigating in a second language.",
-        logoURL: "/images/projects/mosaic/mosaic-sticky.png",
-        img1: {
-          url: "/images/projects/mosaic/mosaic-newcomers.png",
-          caption: "supporting newcomers",
-          alt: "MOSAIC BC team supporting newcomers",
+        hero: {
+          title: "mosaic AI chatbot",
+          date: "APRIL 2024 – APRIL 2025",
+          partnerContent: 
+            <>
+              <a
+                href="https://mosaicbc.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-bp-blue underline decoration-bp-blue underline-offset-[2px]"
+              >
+                MOSAIC BC</a>{" "} is a non-profit in Vancouver that helps newcomers settle through programs, resources, and community support.
+              </>
+          ,
+          problemContent: "MOSAIC BC's website contained a large volume of programs and information, making it difficult for newcomers to find what they needed—especially when navigating in a second language.",
+          logoURL: "/images/projects/mosaic/mosaic-sticky.png",
+          img1: {
+            url: "/images/projects/mosaic/mosaic-newcomers.png",
+            caption: "supporting newcomers",
+            alt: "MOSAIC BC team supporting newcomers",
+          },
+          img2: {
+            url: "/images/projects/mosaic/mosaic-services.png",
+            caption: "providing services",
+            alt: "MOSAIC BC staff providing services at a community event",
+          },
         },
-        img2: {
-          url: "/images/projects/mosaic/mosaic-services.png",
-          caption: "providing services",
-          alt: "MOSAIC BC staff providing services at a community event",
-        },
-      },
       solution: {
         summary: (
           <p className="tablet:text-body-l-reg">
