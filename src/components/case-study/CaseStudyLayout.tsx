@@ -77,7 +77,7 @@ const CaseStudyLayout = ({backNav, hero, solution, testemonial, team}:CaseStudyL
                                   tablet:gap-[111px] tablet:bg-[#e8e8e8] tablet:pb-28
                                   desktop:gap-[6.75rem] desktop:pb-[9.25rem]">
             {/* Container */}
-            <div className="flex std-max desktop:flex-row flex-col desktop:mt-[7px]">
+            <div className="flex std-max desktop:flex-row flex-col desktop:mt-[7px] desktop:gap-[10px]">
                 {/* Text Content */}
                 <div className="desktop:max-w-[560px] desktop:mb-0 tablet:mb-[60px] mb-[64px]">
                     {/* Back link */}
