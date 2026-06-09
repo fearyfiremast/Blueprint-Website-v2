@@ -1,6 +1,6 @@
-# Contributing Guide — SFU Blueprint Website Revamp
+# Contributing Guide — SFU Blueprint Website
 
-This repo is in an active redesign. We are intentionally rebuilding pages to match the new wireframes.
+This is the official SFU Blueprint website, nearing completion. Follow these guidelines to contribute effectively.
 
 ## Quick Start (Local Setup)
 1. Install Node.js (LTS recommended).
@@ -14,10 +14,14 @@ This repo is in an active redesign. We are intentionally rebuilding pages to mat
 - Figma/wireframes are the source of truth for layout, spacing, typography, and content placement.
 - Do not “eyeball” spacing or invent UI. If the wireframe is unclear, ask in the project channel or comment on the ticket.
 
-## Current Dev Approach: Clean Rebuild
-We are rebuilding from blank/placeholder pages and implementing the new design section-by-section.
+## Current Dev Approach
+We are in the final stages of development, focusing on:
+- Bug fixes and polish
+- Performance optimization
+- Accessibility improvements
+- Final content updates
 
-**Do not refactor old page layouts unless a ticket explicitly asks for it.**
+**Only work on ticketed items unless approved by the tech lead.**
 
 ## Where to Work
 ### Primary folders you will touch
