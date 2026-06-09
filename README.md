@@ -54,18 +54,20 @@ This README guide is designed to help you understand and manage the data for you
 
 The data for the website is organized into several files within the `src/constants` directory:
 
-- **Team/**
-  - `Alumni.js`: Contains data about alumni who have previously worked with the organization.
-  - `Blueprint.js`: Manages data related to team members who worked on the Blueprint project.
-  - `Execs.js`: Holds information about the executive members of the organization.
-  - `Members.js`: General file for current team members not tied to a specific project.
-  - `Mosaic.js`: Contains data about team members who worked on the Mosaic project.
-  - `Pedals.js`: Manages data related to team members who worked on the Pedals project.
-- `Events.js`: Manages data related to upcoming and past events.
-- `Hiring.js`: Contains data about the open roles and hiring status.
-- `Events.js`: Manages data related to upcoming and past events.
-- `Notification.js`: Controls the notifications displayed on the website.
-- `Projects.js`: Holds information about ongoing and past projects.
+- **Team/** (mix of .js and .ts files)
+  - `Alumni.js`: Contains data about alumni
+  - `Blueprint.ts`: Team members who worked on the Blueprint project
+  - `Execs.js`: Executive members of the organization
+  - `Members.js`: Current team members not tied to a specific project
+  - `Mosaic.ts`: Team members who worked on the Mosaic project
+  - `Pedals.ts`: Team members who worked on the Pedals project
+  - `OurCommunityBikes.ts`: Team members who worked on OCB project
+  - `ReelYouth.ts`: Team members who worked on Reel Youth project
+- `Event.js`: Upcoming and past events
+- `Hiring.js`: Open roles and hiring status
+- `Notification.js`: Notification messages displayed on the website
+- `projects.ts`: Ongoing and past projects
+- `caseStudies.tsx`: Case study content and layouts
 
 ## How to Modify Data
 
@@ -84,12 +86,17 @@ To update or change the notification messages displayed on the website, you shou
 
 ### 4. Projects
 
-To add or update project information, go to the `Projects.js` file. This file contains a list of projects each defined by a comprehensive set of properties such as the project name, description, images, tags, and detailed descriptions of the project and the associated non-profit organization. Update the existing project details or add new ones as needed by following the same object structure.
+To add or update project information, go to the `projects.ts` file. This file contains a list of projects each defined by a comprehensive set of properties such as the project name, description, images, tags, and detailed descriptions of the project and the associated non-profit organization. Update the existing project details or add new ones as needed by following the same object structure.
+
+### 5. Case Studies
+
+To add or update case study pages, go to the `caseStudies.tsx` file. Each case study includes hero content, solution details, testimonials, and team member information. Case studies are dynamically routed via `/projects/:slug`.
 
 ## General Tips
 
 - Always ensure that the structure of the data objects is consistent with existing entries to avoid issues in the frontend rendering.
 - When adding images or links, make sure they are correctly pathed and accessible.
+- The project uses a mix of JavaScript (.js) and TypeScript (.ts/.tsx) files. New files should use TypeScript when possible.
 
 
 ## Saving Changes

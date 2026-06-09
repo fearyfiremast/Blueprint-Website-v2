@@ -8,6 +8,60 @@
 **Node Version:** 22.x  
 **Package Manager:** npm 10
 
+**Project Stats:**
+- 179+ merged PRs
+- 15+ contributors
+- 3 case studies published
+- 7 major pages
+- Built from scratch (Nov 2023 - Present)
+
+---
+
+## Project History
+
+### Major Milestones
+
+**November 2023 - Project Inception**
+- Initial repository setup with React and TailwindCSS
+- Core file structure and routing established
+
+**December 2023 - January 2024 - Foundation Pages**
+- Homepage hero and core sections
+- Navigation bar and footer components
+- About page team sections
+- For Students page layout
+
+**February - March 2024 - Content Expansion**
+- Projects page with dynamic routing (`/projects/:slug`)
+- Case study system architecture
+- Non-profits page with partner information
+- Alumni page implementation
+
+**April 2024 - Case Studies Launch**
+- Mosaic AI Chatbot case study
+- Case study layout components with custom image pile formats
+- Testimonial system
+
+**May 2024 - Interactive Features**
+- Homepage video teaser and impact section
+- Rive animations integration for About page
+- Camera haptics for interactive elements
+- Responsive design improvements
+
+**February 2026 - Technical Migration**
+- **CRA to Vite 7 migration** - 15% build time improvement
+- **TypeScript adoption** - Type-safe development standards
+- React 19 upgrade
+- Performance optimizations
+
+**March - June 2026 - Final Features**
+- Our Community Bikes case study (Feb-Nov 2024 project)
+- Reel Youth case study (Aug 2024-current project)
+- Join Us page redesign (PR #135)
+- Sponsor Us page (PR #136)
+- MemberCard hover state fixes
+- Final polish and accessibility improvements
+
 ---
 
 ## Getting Started
@@ -124,33 +178,34 @@ Blueprint-Website-v2/
 
 ---
 
-## Recent Updates (June 2026)
+## Current Status (June 2026)
 
-### PR #135: Join Us Page Update
-- **Merged:** June 7, 2026
-- **Changes:**
-  - Added `/join-us` route
-  - Redesigned `StudentsPage` component (1048 lines changed)
-  - Removed `/students` from dark navigation routes
-  - Added 6 new images for join page
+**Project Status:** Nearing completion, expected launch next week
 
-### PR #136: Sponsor Page
-- **Merged:** June 8, 2026
-- **Changes:**
-  - Created new `SponsorUsPage` component
-  - Added `/sponsor-us` route
-  - Added 4 sponsor images
-  - Includes testimonial from MOSAIC BC
-  - Features funding cards (workshops, maintenance, equipment)
+### Recently Completed (June 2026)
 
-### PR #137: Reel Youth Case Study
-- **Merged:** June 8, 2026
-- **Changes:**
-  - Added Reel Youth project case study
-  - Fixed `MemberCard` hover state bug (now uses `isHovered` state)
-  - Added custom image pile layout for case studies
-  - Added 7 Reel Youth project images
-  - Reorganized case studies order
+**Join Us Page Redesign (PR #135)**
+- Complete overhaul of student recruitment page
+- Figma-aligned design with responsive layouts
+- Added `/join-us` route alongside `/students`
+- Improved role cards and application process sections
+
+**Sponsor Us Page (PR #136)**
+- New sponsorship landing page for corporate partnerships
+- Features funding opportunity cards
+- MOSAIC BC testimonial integration
+- Email contact integration
+
+**Reel Youth Case Study (PR #137)**
+- Third published case study (Aug 2024 - current project)
+- Custom polaroid image layout
+- Fixed MemberCard hover state bug
+- Dynamic team member display
+
+**Technical Documentation (PR #138)**
+- Comprehensive handover documentation
+- Dependency management guide
+- Quick setup guide for new developers
 
 ---
 
@@ -163,9 +218,14 @@ Blueprint-Website-v2/
 
 ### Case Studies (`CaseStudyLayout.tsx`)
 - Reusable layout for project case studies
-- Supports custom image pile formats
+- Supports custom image pile formats via `imgPileFormat` function
 - Polaroid-style image displays
 - Team member cards with hover effects
+
+**Published Case Studies:**
+1. **Our Community Bikes** (`/projects/our-community-bikes`) - Volunteer hour tracking system
+2. **Reel Youth** (`/projects/reel-youth`) - Youth media program platform
+3. **Mosaic** (`/projects/mosaic`) - AI chatbot for newcomer services
 
 ### Member Cards (`MemberCard.tsx`)
 - Display team member information
@@ -251,18 +311,30 @@ Before deploying:
 ## Maintenance Notes
 
 ### Adding New Case Studies
-1. Add team data in `src/constants/Team/[ProjectName].tsx`
-2. Update `src/constants/caseStudies.tsx`
-3. Add images to `public/images/projects/[project-name]/`
+1. Create team data file in `src/constants/Team/[ProjectName].ts`
+2. Export team member array with `MemberCardProps` type
+3. Add case study entry to `src/constants/caseStudies.tsx`
+4. Add project images to `public/images/projects/[project-slug]/`
+5. Include at minimum: logo, 2 polaroid images, and solution images
+6. Test dynamic route: `/projects/[your-slug]`
 
 ### Adding New Routes
-1. Create page in `src/pages/PageName.tsx`
+1. Create page component in `src/pages/PageName.tsx`
 2. Import and add route in `src/App.tsx`
+3. Update dark navigation array if needed (`DARK_NAV_ROUTES`)
+4. Update this documentation
+
+### Updating Content
+- **Team members:** Edit files in `src/constants/Team/` (mix of .js and .ts)
+- **Events:** Edit `src/constants/Event.js`
+- **Hiring:** Edit `src/constants/Hiring.js`
+- **Notifications:** Edit `src/constants/Notification.js`
+- **Projects:** Edit `src/constants/projects.ts`
 
 ### Updating Dependencies
 See `DEPENDENCIES.md` for dependency management
 
 ---
 
-**Last Updated:** June 8, 2026  
-**Document Version:** 1.0
+**Last Updated:** June 9, 2026  
+**Document Version:** 1.1
