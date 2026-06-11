@@ -58,8 +58,8 @@ function ReachOutButton({ className = "" }: { className?: string }) {
     <a
       href="mailto:sfublueprint@gmail.com"
       className={`inline-flex h-[52px] w-[200px] items-center justify-center rounded-[5px] 
-        bg-bp-white px-[44px] font-poppins text-[14px] font-semibold leading-none text-bp-black
-        transition-colors duration-150 hover:bg-bp-lightest-grey active:bg-bp-light-grey
+        bg-bp-blue px-[44px] font-poppins text-[14px] font-semibold leading-none text-bp-white
+        transition-colors duration-150 hover:bg-bp-hover-blue active:bg-bp-pressed-blue
         md:h-[60px] md:text-[16px] ${className}`}
     >
       REACH OUT
@@ -110,13 +110,12 @@ function SponsorshipCalloutCard(
   },
 ) {
   return (
-  <div className='flex flex-col justify-start px-[48px] pb-[60px] pt-[36px] text-bp-white 
-    bg-bp-darkest-grey rounded-[5px] w-[355px] h-[460px] font-poppins'>
+  <div className='flex h-[460px] w-[355px] max-w-full shrink-0 flex-col justify-start px-[48px] pb-[60px] pt-[36px] font-poppins text-bp-white bg-bp-darkest-grey rounded-[5px] max-[1300px]:w-full max-[1300px]:shrink'>
     {/* Tier Title */}
     <div className='flex flex-col gap-[24px]'>
       <div className='inline-flex justify-center items-center gap-3 rounded-[5px] bg-bp-black px-[15px] py-[10px] 
       w-fit max-md:gap-2 max-md:px-3 max-md:py-2'>
-      <span className={`size-4 rounded-[3px] bg-${color} max-md:size-3 max-md:bg-bp-blue`} aria-hidden />
+      <span className={`size-4 rounded-[3px] bg-${color} max-md:size-3`} aria-hidden />
       <span className="font-poppins uppercase text-body-s-reg text-bp-white font-normal 
       max-md:text-[10px]">
                 {title}
@@ -129,7 +128,7 @@ function SponsorshipCalloutCard(
       </h2>
     </div>
     {/* Descriptions */}
-    <div className='flex flex-col pt-[48px]'>
+    <div className='flex w-full flex-col pt-[48px]'>
       <p className='text-body-m-reg'>
         {desc1}
       </p >
@@ -207,18 +206,20 @@ export default function SponsorUsPage() {
         </div>
       </section>
 
-      <section className="flex flex-col bg-bp-black w-full max-w-[1298px] h-[1072px] mx-auto py-[102px] px-[97px] rounded-[20px] gap-[72px]">
+      <section className="flex flex-col bg-bp-black w-full max-w-[1298px] mx-auto py-[102px] px-[97px] rounded-[20px] gap-[72px]">
+       
         {/* Title */}
         <div className='text-bp-white font-poppins flex flex-col gap-[6px] items-center justify-center'>
-            <h2 className='text-heading-s-reg'>
+            <h2 className='text-heading-s-reg max-md:text-mobile-heading-s-reg'>
               sponsorship tiers
             </h2>
-            <p className='text-body-s-reg font-normal'>
+            <p className='text-body-s-reg font-normal max-md:text-mobile-body-s-reg max-md:text-center'>
               All sponsorships are a year-long commitment
             </p>
         </div>
+
         {/* Callout Cards */}
-        <div className='flex flex-row gap-[19px]'>
+        <div className='flex w-full flex-row justify-center gap-[19px] max-[1300px]:flex-col max-[1300px]:items-stretch'>
           {SPONSORSHIP_TIERS.map((tier) => (
             <SponsorshipCalloutCard key={tier.title} {...tier} />
           ))}
@@ -226,14 +227,15 @@ export default function SponsorUsPage() {
 
         {/* CTA */}
         <div className='flex flex-col justify-center items-center font-poppins text-bp-white'>
-          <h2 className='text-heading-xs-reg'>
+          <h2 className='text-heading-xs-reg max-md:text-mobile-heading-xs-reg'>
             interested in partnering with blueprint at SFU?
           </h2>
-          <p className='text-body-m-reg mt-[12px]'>
+          <p className='text-body-m-reg mt-[12px] max-md:text-mobile-body-m-reg'>
             Send us a message at sfublueprint@gmail.com, or click the link below:
           </p>
 
-          <ReachOutButton className="mt-12 max-md:mt-8 " />
+          <ReachOutButton className="mt-12 max-md:mt-8 
+          hover:!bg-bp-light-grey active:!bg-bp-grey !text-bp-black bg-bp-white" />
         </div>
       </section>
     </div>
