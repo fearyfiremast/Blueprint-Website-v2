@@ -94,8 +94,8 @@ export default function FooterRevamp() {
               <div className="flex items-center justify-between text-[14px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex items-center gap-[18px]">
-                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy-policy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms-and-conditions" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>
@@ -155,8 +155,8 @@ export default function FooterRevamp() {
               <div className="flex items-start justify-between text-[14px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex items-center gap-[18px]">
-                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy-policy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms-and-conditions" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>
@@ -221,8 +221,8 @@ export default function FooterRevamp() {
               <div className="flex flex-col gap-[6px] text-[10px] font-medium text-bp-dark-grey uppercase">
                 <p>@2025 sfu blueprint</p>
                 <div className="flex gap-[12px]">
-                  <Link to="/privacy" className="hover:text-bp-black transition-colors">privacy policy</Link>
-                  <Link to="/terms" className="hover:text-bp-black transition-colors">terms and conditions</Link>
+                  <Link to="/privacy-policy" className="hover:text-bp-black transition-colors">privacy policy</Link>
+                  <Link to="/terms-and-conditions" className="hover:text-bp-black transition-colors">terms and conditions</Link>
                 </div>
               </div>
             </div>
