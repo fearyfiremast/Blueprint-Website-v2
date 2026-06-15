@@ -8,7 +8,10 @@ import ProjectsPage from "./pages/ProjectsPage";
 import StudentsPage from "./pages/StudentsPage";
 import AlumniPage from "./pages/AlumniPage";
 import NonprofitsPage from "./pages/NonprofitsPage";
+import SponsorUsPage from "./pages/SponsorUsPage";
 import IndividualProject from "./pages/IndividualProject";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsAndConditionsPage from "./pages/TermsAndConditionsPage";
 import FooterRevamp from "./components/footer/FooterRevamp";
 import ScrollToHashElement from "./components/shared/ScrollToHash";
 
@@ -20,7 +23,7 @@ function ScrollToTop() {
   return null;
 }
 
-const DARK_NAV_ROUTES = ["/", "/students"];
+const DARK_NAV_ROUTES = ["/"];
 
 function App() {
   const { pathname } = useLocation();
@@ -41,7 +44,11 @@ function App() {
         <Route path="/projectspage" element={<ProjectsPage />} />
         <Route path="/students" element={<StudentsPage />} />
         <Route path="/nonprofits" element={<NonprofitsPage />} />
+        <Route path="/join-us" element={<StudentsPage />} />
+        <Route path="/sponsor-us" element={<SponsorUsPage />} />
         <Route path="/projects/:slug" element={<IndividualProject />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
       </Routes>
       </main>
       <FooterRevamp />
