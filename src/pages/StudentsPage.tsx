@@ -151,14 +151,36 @@ const StudentsPage = () => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden bg-blueprint-gray-light max-md:pt-content-mobile">
+    <div className="w-full overflow-x-hidden bg-blueprint-gray-light max-md:pt-content-mobile relative">
+      <div className="w-full h-0 max-[1279.9px]:ml-[-40px] max-[767.9px]:hidden">
+        <div className="bg-bp-lightest-grey bg-[url('/images/crosspoint.png')] bg-no-repeat z-[-10]
+                  min-[1340px]:bg-[calc(100%+585px)_-265px]
+                  max-[1339.9px]:bg-[calc(100%+585px)_-265px]
+                  max-[1279.9px]:bg-[calc(100%+690px)_-265px] max-[1279.9px]:w-[calc(100%+40px)]
+                  max-[1023.9px]:bg-[calc(100%+690px)_-265px] 
+                  max-[767.9px]:bg-[calc(100%+683px)_-500px] max-[767.9px]:w-[calc(100%+17px)]
+                  overflow-clip w-full h-full mt-[-110px] absolute ">
+
+        </div>
+        <video
+          autoPlay
+          muted
+          loop
+
+          className="
+                    min-[1340px]:right-[-102px] min-[1340px]:top-[-25px]
+                    max-[1339.9px]:right-[-101px] max-[1339.9px]:top-[-20px]
+                    max-[1279.9px]:right-[-205px]
+                    max-[1023.9px]:right-[-210px]
+                    max-[767.9px]:right-[-200px] max-[767.9px]:top-[-145px]
+                    min-[514px]:w-[500px] max-[513.9px]:w-[300px] max-[513.9px]:scale-[1] max-[513.9px]:right-[-101px] max-[513.9px]:top-[-46px]
+
+                    absolute  z-[-10]">
+          <source src="videos/crosspoints/dotted-path-2.webm" type="video/webm"/>
+        </video>
+      </div>
       {/* Hero Section - Dark Background */} 
-      <section className="relative bg-blueprint-gray-light z-5
-                          bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
-                          min-[1622.1px]:bg-[calc((50vw+800px)-1689px)_-360px]
-                          max-[1622px]:bg-[calc(100%+585px)_-360px]
-                          max-[1279px]:bg-[calc(100%+689px)_-360px]
-                          max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-132px]">
+      <section className="relative bg-blueprint-gray-light z-5">
         <div className="relative z-10 w-full px-6 md:px-10 xl:px-36 pt-[142px] pb-[100px] max-md:pt-[50px] max-md:pb-[60px]">  {/* HERE std-max */}
           {/* Title + Button row */}
           <div className="flex justify-between items-start gap-8 max-md:flex-col max-md:gap-6 mb-[60px] max-md:mb-[35px]">
@@ -376,12 +398,29 @@ const StudentsPage = () => {
 
       {/* Stay Updated Section */}
       <div className="overflow-x-hidden std-max">
-      <section className="relative z-5
-                          bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
-                          bg-[calc(50%-409px)_-360px]
-                          max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(50%-277px)_-132px]
-                          [clip-path:inset(0_0_0_calc((100%-1320px)/2))]
-                          max-md:[clip-path:none]">
+      <section className="relative z-5">
+        <div className="w-full h-0 ">
+          <div className="bg-bp-lightest-grey bg-[url('/images/crosspoint.png')] bg-no-repeat z-[-10]
+                    min-[1340px]:bg-[calc(50%-399px)_-230px]
+                    max-[1339.9px]:bg-[calc(50%-399px)_-230px] 
+                    max-[767.9px]:bg-[calc(50%-397px)_-330px] 
+                    overflow-clip w-full h-full mt-[-110px] absolute ">
+
+          </div>
+          <video
+            autoPlay
+            muted
+            loop
+
+            className="
+                      min-[1340px]:right-[calc(50%-250px)] min-[1340px]:top-[10px]
+                      max-[1339.9px]:right-[calc(50%-250px)] max-[1339.9px]:top-[10px]
+                      max-[767.9px]:scale-[0.6] max-[767.9px]:right-[calc(50%-250px)] max-[767.9px]:top-[-85px]
+                      w-[500px] max-w-[500px]
+                      absolute  z-[-10]">
+            <source src="videos/crosspoints/dotted-path-2.webm" type="video/webm"/>
+          </video>
+      </div>
         <div className="relative z-10 px-6 md:px-10 xl:px-36 py-[100px] max-md:py-[60px]">
           {/* Header */}
           <div className="text-center mb-[48px] max-md:mb-[32px]">
