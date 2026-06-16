@@ -80,9 +80,9 @@ const NonprofitsPage = () => {
             className="min-w-0 shrink-0 min-[1025px]:h-0 md:-ml-[120px] md:mt-[108px] max-[900px]:ml-0 max-[900px]:mt-[20px]"
           >
             <PolaroidPhoto
-              imageSrc="https://placehold.co/398x298"
-              caption="placeholder"
-              alt="placeholder"
+              imageSrc="/images/parter-with-us/OCB_project_handoff.png"
+              caption="project handoff"
+              alt="Our Community Bikes project handoff"
               className="rotate-[7deg] max-[1024px]:mx-auto"
             />
           </div>

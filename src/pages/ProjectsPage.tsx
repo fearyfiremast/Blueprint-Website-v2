@@ -87,16 +87,15 @@ const ProjectsPage = () => {
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.slug}
-                logo_url={project.image
-                    ? project.image
-                    : "https://placehold.co/76x76"}
-                card_cover_url={project.popupimage
-                    ? project.popupimage
-                    : "https://placehold.co/517x354"}
+                logo_url={project.image ? project.image : "https://placehold.co/76x76"}
+                card_cover_url={
+                  project.popupimage ? project.popupimage : "https://placehold.co/517x354"
+                }
                 description={project.description}
                 client_name={project.name}
                 service={project.tags?.[0] ?? "Web App"}
                 sector={project.tags?.[1] ?? project.tags?.[0] ?? "Web-app"}
+                href={`/projects/${project.slug}`}
               />
             ))}
           </div>

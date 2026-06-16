@@ -13,8 +13,8 @@ export type InfoCardProps = {
 function InfoCard({ title, heading, body, color }: InfoCardProps) {
   return (
     <div
-      className="flex flex-col gap-6 bg-bp-white rounded-[5px] w-full max-w-[357px] h-[321px] px-7 pt-6 pb-12 
-      lg:max-w-[569px] lg:h-[382px] lg:px-12 lg:pt-9 lg:pb-16"
+      className="flex flex-col gap-6 bg-bp-white rounded-[5px] w-full min-w-[357px] h-[321px] px-7 pt-6 pb-12 
+      md:max-w-[569px] lg:h-[382px] lg:px-12 lg:pt-9 lg:pb-16"
     >
       {/* Gray Tag */}
       <div
@@ -31,12 +31,12 @@ function InfoCard({ title, heading, body, color }: InfoCardProps) {
       {/* Body Container */}
       <div className="gap-4 flex flex-col flex-1 min-w-[297px]">
         {/* Heading */}
-        <p className="font-['Poppins'] text-bp-black text-lg md:text-2xl leading-normal">
+        <p className="font-['Poppins'] text-bp-black text-lg lg:text-2xl leading-normal">
           {heading}
         </p>
 
         {/* Body */}
-        <p className="flex font-['Poppins'] text-bp-black text-sm md:text-base leading-normal">
+        <p className="flex font-['Poppins'] text-bp-black text-sm lg:text-base leading-normal">
           {body}
         </p>
       </div>
