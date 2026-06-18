@@ -148,8 +148,31 @@ const StudentsPage = () => {
 
 function HeroSection({ onOpenPositions }: { onOpenPositions: () => void }) {
   return (
-    <section className="relative bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat max-md:bg-none min-[1622px]:bg-[calc(50%+158px)_-316px] max-[1621px]:bg-[calc(100%+572px)_-316px] max-[1279px]:bg-[calc(100%+731px)_-316px]">
-      <div className="mx-auto flex w-full max-w-[1212px] flex-col px-5 pb-[154px] pt-[190px] md:px-10 lg:px-0 max-md:pb-[84px] max-md:pt-[116px]">
+    <section className="relative bg-bp-lightest-grey max-md:bg-none ">
+      <div className="w-full h-0 max-[767.9px]:hidden">
+        <div className="bg-[url('/images/crosspoint.png')] bg-no-repeat
+                  min-[1280px]:bg-[calc(50%+175px)_-218px]
+                  max-[1279.9px]:bg-[calc(100%+697px)_-218px]
+                  max-[767.9px]:bg-[calc(100%+683px)_-500px] max-[767.9px]:w-[calc(100%+17px)]
+                  overflow-clip w-full h-full mt-[-110px] absolute z-0">
+
+        </div>
+        <video
+          autoPlay
+          muted
+          loop
+
+          className="
+                    min-[1280px]:right-[calc(50%-965px)] min-[1280px]:top-[-115px]
+                    max-[1279.9px]:right-[-363px] max-[1279.9px]:top-[-115px]
+                    max-[1023.9px]:right-[-335px] max-[1023.9px]:top-[-100px] min-[1024px]:w-[790px] max-[1023.9px]:w-[740px]
+                    max-[767.9px]:right-[-200px] max-[767.9px]:top-[-175px]
+                      max-[513.9px]:scale-[1] max-[513.9px]:right-[-101px] max-[513.9px]:top-[-46px]
+                    absolute z-0">
+          <source src="videos/crosspoints/dotted-path-2.webm" type="video/webm"/>
+        </video>
+      </div>
+      <div className="mx-auto relative z-10 flex w-full max-w-[1212px] flex-col px-5 pb-[154px] pt-[190px] md:px-10 lg:px-0 max-md:pb-[84px] max-md:pt-[116px]">
         <div className="flex items-start justify-between gap-10 max-md:flex-col max-md:gap-12">
           <div className="max-w-[954px]">
             <h1 className="font-poppins text-[72px] font-bold leading-none tracking-[-1.44px] text-bp-black max-md:text-[46px] max-md:tracking-[-0.92px]">
