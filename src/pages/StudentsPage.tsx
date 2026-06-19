@@ -161,7 +161,7 @@ function HeroSection({ onOpenPositions }: { onOpenPositions: () => void }) {
           autoPlay
           muted
           loop
-
+          playsInline
           className="
                     min-[1280px]:right-[calc(50%-965px)] min-[1280px]:top-[-115px]
                     max-[1279.9px]:right-[-363px] max-[1279.9px]:top-[-115px]

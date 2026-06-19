@@ -47,6 +47,7 @@ const ProjectsPage = () => {
             autoPlay
             muted
             loop
+            playsInline
             className="
                       min-[1600px]:right-[calc(50%-918px)] min-[1340px]:top-[-40px]
                       max-[1599.9px]:right-[-127px] max-[1599.9px]:top-[-40px]
