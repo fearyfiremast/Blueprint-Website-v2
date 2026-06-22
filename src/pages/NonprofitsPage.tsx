@@ -103,7 +103,7 @@ const NonprofitsPage = () => {
             </h2>
             <p
               className="text-black font-poppins text-body-l-reg
-                        max-md:max-w-[305px] max-md:text-mobile-body-l-reg"
+                        max-md:min-w-[305px] max-md:text-mobile-body-l-reg"
             >
               We consider the following aspects when evaluating potential projects:
             </p>
