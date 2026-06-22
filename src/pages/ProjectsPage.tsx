@@ -40,8 +40,8 @@ const ProjectsPage = () => {
                  max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_-45px]"
     >
       <div className="flex flex-col gap-4 items-center justify-center pb-ppcard-bottom pt-main-desktop-top max-md:pt-main-mobile-top">
-        <h1 className="text-center justify-start text-zinc-800 max-md:text-3xl text-5xl font-normal font-['Poppins'] desktop:mb-[74px] md:mb-[50px] mb-[30px]">
-          <span className="max-md:hidden">our projects</span>
+        <h1 className="text-left self-start justify-start desktop:mb-[74px] md:mb-[50px] mb-[30px] font-poppins text-5xl md:text-7xl leading-none tracking-[-0.96px] text-bp-black">
+          <span className="max-md:hidden"><strong>our</strong> projects</span>
           <span className="md:hidden">all our projects</span>
         </h1>
 
@@ -81,7 +81,7 @@ const ProjectsPage = () => {
               />
             ))}
           </div>
-          <div className="flex flex-col items-center pt-4 std-max md:mt-[15px] mt-[10px]">
+          <div className="flex flex-col position sticky bottom-10 items-center pt-4 std-max md:mt-[15px] mt-[10px]">
             <ProjectsCTA />
           </div>
         </section>
