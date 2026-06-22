@@ -10,9 +10,10 @@ const NonprofitsPage = () => {
 
   return (
     <PageContainer
-      className="!pt-[148px] lg:!pt-[132px] overflow-x-hidden bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
-                              min-[1280px]:bg-[calc(100%+585px)_-360px]
-                              max-[1279px]:bg-[calc(100%+689px)_-360px]
+      className="!pt-[148px] lg:!pt-[130px] overflow-x-hidden bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
+                              min-[1280px]:bg-[calc(100%+575px)_-375px]
+                              max-[1279px]:bg-[calc(100%+689px)_-355px]
+                              min-[1025px]:bg-[calc(100%+575px)_-375px]
                               max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_14.5px]"
     >
       {/* Hero Section */}
@@ -28,20 +29,18 @@ const NonprofitsPage = () => {
             className="flex min-w-0 w-full max-w-full flex-col md:shrink-0 md:max-w-[min(100%,calc(100vw*939/1422))] md:w-[min(100%,calc(100vw*939/1422))]"
           >
             <h1
-              className="m-0 whitespace-pre-wrap text-left font-poppins text-bp-black text-[72px] tracking-[-1.44px] leading-none mb-[24px]
-                        max-md:max-w-[233px] max-md:text-[46px] max-md:tracking-[-0.92px] max-md:leading-none max-md:mb-[12px]
+              className="m-0 whitespace-pre-wrap text-left font-poppins text-bp-black text-heading-xl-bold leading-none mb-[24px]
+                        max-md:max-w-[233px] max-md:text-mobile-heading-xl-bold max-md:tracking-[-0.92px] max-md:mb-[12px]
                         md:max-w-none"
             >
-              <span className="font-bold leading-[1] max-md:leading-none">partner</span>{" "}
-              <span className="font-normal leading-[normal] max-md:font-normal max-md:leading-none">
-                with us
-              </span>
+              <span className="font-bold">partner</span>{" "}
+              <span className="font-normal">with us</span>
             </h1>
 
             <p
               className="m-0 min-w-0 self-stretch font-poppins text-black text-heading-xs-reg
                         max-md:max-w-[351px] max-md:text-bp-black max-md:text-mobile-heading-xs-reg
-                        md:max-w-[min(100%,calc(100vw*693.5/1422))]"
+                        md:max-w-[min(100%,calc(100vw*693.5/1422))] min-[901px]:mb-[120px]"
             >
               by working with us, your organization will{" "}
               <span className={`bg-[#D2A6FB] ${colouredRectCSSBase}`} /> gain fresh
@@ -54,7 +53,7 @@ const NonprofitsPage = () => {
           </div>
 
           <div
-            className="min-w-0 shrink-0 min-[1025px]:h-0 md:-ml-[120px] md:mt-[108px] max-[900px]:ml-0 max-[900px]:mt-[20px]"
+            className="min-w-0 shrink-0 max-[900px]:ml-0 min-[900px]:mb-5 max-[900px]:mt-5 min-[901px]:-ml-[120px] min-[901px]:mt-[158px]"
           >
             <PolaroidPhoto
               imageSrc="https://placehold.co/398x298"
@@ -74,13 +73,13 @@ const NonprofitsPage = () => {
         >
           <div className="flex flex-col gap-3 mb-12 max-md:mb-10">
             <h2
-              className="text-bp-black font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px]
+              className="text-bp-black font-poppins font-normal text-heading-s-reg
                           max-md:max-w-[253px] max-md:text-bp-black max-md:text-mobile-heading-s-bold max-md:mb-[12px]"
             >
               can <span className="md:font-semibold">your idea</span> become a project?
             </h2>
             <p
-              className="text-black font-poppins text-[24px]/[130%] font-[400] tracking-[-0.48px]
+              className="text-black font-poppins text-body-l-reg
                         max-md:max-w-[305px] max-md:text-mobile-body-l-reg"
             >
               We consider the following aspects when evaluating potential projects:
@@ -120,8 +119,8 @@ const NonprofitsPage = () => {
         {/* BP Approach Section */}
         <section>
           <h2
-            className="text-bp-black font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px] mb-12
-                        max-md:text-[24px]/[110%] max-md:tracking-[-0.48px] max-md:mb-[18px]"
+            className="text-bp-black font-poppins font-normal text-heading-s-reg mb-12
+                        max-md:text-s-bold max-md:mb-[18px]"
           >
             our <span className="font-semibold">approach</span>
           </h2>
