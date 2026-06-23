@@ -81,7 +81,7 @@ const ProjectsPage = () => {
               />
             ))}
           </div>
-          <div className="flex flex-col position sticky bottom-10 items-center pt-4 std-max md:mt-[15px] mt-[10px]">
+          <div className="flex flex-col position sticky tablet:bottom-10 bottom-3 items-center pt-4 std-max md:mt-[15px] mt-[10px]">
             <ProjectsCTA />
           </div>
         </section>
