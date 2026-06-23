@@ -150,7 +150,7 @@ const StudentsPage = () => {
 function HeroSection({ onOpenPositions }: { onOpenPositions: () => void }) {
   return (
     <section className="relative ">
-      <div className="mx-auto flex w-full max-w-[1212px] flex-col px-5 pb-[154px] pt-[48px] md:px-10 lg:px-0 max-md:pb-[84px] max-md:pt-[116px]">
+      <div className="mx-auto flex w-full max-w-[1212px] flex-col pb-[154px] max-md:pb-[84px] pt-main-desktop-top max-md:pt-main-mobile-top">
         <div className="flex items-start justify-between gap-10 max-md:flex-col max-md:gap-12">
           <div className="max-w-[954px]">
             <h1 className="font-poppins text-[72px] font-bold leading-none tracking-[-1.44px] text-bp-black max-md:text-[46px] max-md:tracking-[-0.92px]">

@@ -10,7 +10,7 @@ const NonprofitsPage = () => {
 
   return (
     <PageContainer
-      className="!pt-[148px] lg:!pt-[132px] overflow-x-hidden bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
+      className="!pt-[144px] lg:!pt-[132px] overflow-x-hidden bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
                               min-[1280px]:bg-[calc(100%+585px)_-360px]
                               max-[1279px]:bg-[calc(100%+689px)_-360px]
                               max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_14.5px]"
