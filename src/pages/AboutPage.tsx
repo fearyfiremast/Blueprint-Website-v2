@@ -149,7 +149,7 @@ function AboutValuesRiveDesktop() {
   });
 
   return (
-    <RiveComponent className="h-[900px] lg:h-[950px] w-[1500px] ml-[-350px]" />
+    <RiveComponent className="h-[900px] lg:h-[950px] w-[1650px] ml-[-350px]" />
   );
 }
 
@@ -274,7 +274,7 @@ const AboutPage = () => {
   const imagesToShow = GroupImages.slice(baseVisible, visibleCount);
 
   return (
-    <PageContainer className="bg-bp-lightest-grey max-md:overflow-x-hidden">
+    <PageContainer className="bg-bp-lightest-grey overflow-x-hidden">
       {/* Main Container */}
       <div className="pt-main-mobile-top md:pt-main-desktop-top flex flex-col justify-between">
         {/* About us section */}
@@ -389,17 +389,17 @@ const AboutPage = () => {
 
         
   
-        <div ref={isComponentVisible} className="relative mb-[420px] md:left-1/2 md:translate-x-[calc(-50%+10vw)] ">
+        <div ref={isComponentVisible} className="relative mb-[420px] max-[1479.9px]:left-[-20px] max-[1280px]:left-[10px] min-[1480px]:left-[calc(50%-500px)] max-[768px]:left-[0px]">
         {/* Header */}
           <div className="pointer-events-none relative z-30 flex flex-col md:gap-10 mb-[280p]">
               <h2 className="pointer-events-auto flex flex-col max-md:justify-center max-md:items-center font-poppins text-5xl 
-              md:text-7xl md:translate-x-[calc(-50%+35vw)] lg:translate-x-[calc(-50%+36vw)] 2xl:translate-x-[calc(-50%+51vw)] leading-10">
+              md:text-7xl leading-10">
                 our <strong>values</strong>
               </h2>
           </div>
           
           {/* Rive */}
-          <div className="absolute w-full h-full bottom-0 md:translate-x-[calc(-50%+35vw)] 2xl:translate-x-[calc(-50%+50vw)] md:translate-y-[-300px] lg:translate-y-[-325px] ">
+          <div className="absolute w-full h-full bottom-0 md:translate-y-[-300px] lg:translate-y-[-325px] ">
             {isVisible ? (isMdUp ? <AboutValuesRiveDesktop /> : <AboutValuesRiveMobile />) : null}
           </div>
         </div>
