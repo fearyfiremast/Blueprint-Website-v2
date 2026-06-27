@@ -9,12 +9,36 @@ const NonprofitsPage = () => {
     "w-[22px] h-[22px] inline-block rounded-[5px] max-md:w-[16px] max-md:h-[16px] max-md:rounded-[3px]";
 
   return (
-    <PageContainer
-      className="!pt-[148px] lg:!pt-[132px] overflow-x-hidden bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat
-                              min-[1280px]:bg-[calc(100%+585px)_-360px]
-                              max-[1279px]:bg-[calc(100%+689px)_-360px]
-                              max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(100%+130px)_14.5px]"
+    <PageContainer className="overflow-hidden relative"
     >
+      <div className="w-full h-0 xl:ml-[-144px] max-[1279.9px]:ml-[-40px]">
+          <div className="bg-bp-lightest-grey bg-[url('/images/crosspoint.png')] bg-no-repeat z-[-10]
+                    min-[1340px]:bg-[calc(100%+600px)_-405px]
+                    max-[1339.9px]:bg-[calc(100%+670px)_-405px]
+                    max-[1279.9px]:bg-[calc(100%+630px)_-405px]
+                    max-[1023.9px]:bg-[calc(100%+700px)_-405px]
+                    max-[767.9px]:bg-[calc(100%+683px)_-500px] max-[767.9px]:w-[calc(100%+17px)]
+                    overflow-clip w-full h-full mt-[-110px] absolute ">
+
+          </div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="
+                      min-[1340px]:right-[-117px] min-[1340px]:top-[-50px]
+                      max-[1339.9px]:right-[-187px] max-[1339.9px]:top-[-50px]
+                      max-[1279.9px]:right-[-147px]
+                      max-[1023.9px]:right-[-217px]
+                      max-[767.9px]:scale-[0.6] max-[767.9px]:right-[-200px] max-[767.9px]:top-[-145px]
+                      min-[514px]:w-[500px] max-[513.9px]:w-[300px] max-[513.9px]:scale-[1] max-[513.9px]:right-[-101px] max-[513.9px]:top-[-46px]
+
+                      absolute  z-[-10]">
+            <source src="videos/crosspoints/dotted-path-1.webm" type="video/webm"/>
+          </video>
+      </div>
+
       {/* Hero Section */}
       <section
         className="mb-[180px]
