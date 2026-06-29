@@ -52,20 +52,18 @@ const NonprofitsPage = () => {
             className="flex min-w-0 w-full max-w-full flex-col md:shrink-0 md:max-w-[min(100%,calc(100vw*939/1422))] md:w-[min(100%,calc(100vw*939/1422))]"
           >
             <h1
-              className="m-0 whitespace-pre-wrap text-left font-poppins text-bp-black text-[72px] tracking-[-1.44px] leading-none mb-[24px]
-                        max-md:max-w-[233px] max-md:text-[46px] max-md:tracking-[-0.92px] max-md:leading-none max-md:mb-[12px]
+              className="m-0 whitespace-pre-wrap text-left font-poppins text-bp-black text-heading-xl-bold leading-none mb-[24px]
+                        max-md:max-w-[233px] max-md:text-mobile-heading-xl-bold max-md:tracking-[-0.92px] max-md:mb-[12px]
                         md:max-w-none"
             >
-              <span className="font-bold leading-[1] max-md:leading-none">partner</span>{" "}
-              <span className="font-normal leading-[normal] max-md:font-normal max-md:leading-none">
-                with us
-              </span>
+              <span className="font-bold">partner</span>{" "}
+              <span className="font-normal">with us</span>
             </h1>
 
             <p
               className="m-0 min-w-0 self-stretch font-poppins text-black text-heading-xs-reg
                         max-md:max-w-[351px] max-md:text-bp-black max-md:text-mobile-heading-xs-reg
-                        md:max-w-[min(100%,calc(100vw*693.5/1422))]"
+                        md:max-w-[min(100%,calc(100vw*693.5/1422))] min-[901px]:mb-[120px]"
             >
               by working with us, your organization will{" "}
               <span className={`bg-[#D2A6FB] ${colouredRectCSSBase}`} /> gain fresh
@@ -78,7 +76,7 @@ const NonprofitsPage = () => {
           </div>
 
           <div
-            className="min-w-0 shrink-0 min-[1025px]:h-0 md:-ml-[120px] md:mt-[108px] max-[900px]:ml-0 max-[900px]:mt-[20px]"
+            className="min-w-0 shrink-0 max-[900px]:ml-0 min-[900px]:mb-5 max-[900px]:mt-5 min-[901px]:-ml-[120px] min-[901px]:mt-[145px]"
           >
             <PolaroidPhoto
               imageSrc="/images/parter-with-us/OCB_project_handoff.png"
@@ -98,14 +96,14 @@ const NonprofitsPage = () => {
         >
           <div className="flex flex-col gap-3 mb-12 max-md:mb-10">
             <h2
-              className="text-bp-black font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px]
+              className="text-bp-black font-poppins font-normal text-heading-s-reg
                           max-md:max-w-[253px] max-md:text-bp-black max-md:text-mobile-heading-s-bold max-md:mb-[12px]"
             >
               can <span className="md:font-semibold">your idea</span> become a project?
             </h2>
             <p
-              className="text-black font-poppins text-[24px]/[130%] font-[400] tracking-[-0.48px]
-                        max-md:max-w-[305px] max-md:text-mobile-body-l-reg"
+              className="text-black font-poppins text-body-l-reg
+                        max-md:min-w-[305px] max-md:text-mobile-body-l-reg"
             >
               We consider the following aspects when evaluating potential projects:
             </p>
@@ -144,8 +142,8 @@ const NonprofitsPage = () => {
         {/* BP Approach Section */}
         <section>
           <h2
-            className="text-bp-black font-poppins font-normal text-[36px]/[140%] tracking-[-0.72px] mb-12
-                        max-md:text-[24px]/[110%] max-md:tracking-[-0.48px] max-md:mb-[18px]"
+            className="text-bp-black font-poppins font-normal text-heading-s-reg mb-12
+                        max-md:text-s-bold max-md:mb-[18px]"
           >
             our <span className="font-semibold">approach</span>
           </h2>
@@ -265,15 +263,19 @@ const NonprofitsPage = () => {
         </div>
       </section>
 
-      {/* NPO project proposal — mobile: full-bleed #0146BE, white type, white CTA; md+: gray card */}
+      {/* NPO project proposal — mobile: full-bleed #0146BE, white type, white CTA; md+: gray card 
+      Update the section to better align with the site's grey and blue design language.
+      Improve consistency with surrounding sections.
+     
+      */}
       <section
-        className="mt-[148px] max-md:mt-16 mb-12 md:mb-16
-                -mx-6 min-w-0 md:-mx-10 xl:-mx-36
-                max-md:bg-bp-blue max-md:py-12 max-md:!px-6
-                px-3 sm:px-4 md:px-5 xl:px-6 md:bg-transparent"
+        className="mt-[148px] max-md:mt-16 mb-12 md:mb-16 min-w-0
+                -mx-6 md:-mx-10 xl:-mx-36 max-md:pl-[23px] max-md:pr-[23px]
+                px-footer-px-mobile md:px-footer-px-tablet lg:px-footer-px-desktop
+                max-md:bg-bp-blue max-md:py-12 md:bg-transparent"
       >
         <div
-          className="w-full box-border shrink-0 flex flex-col justify-center items-stretch
+          className="w-full shrink-0 flex flex-col justify-center items-stretch
                 max-md:bg-transparent max-md:p-0 max-md:min-h-0
                 md:bg-bp-lighter-grey rounded-[20px]
                 pt-[72px] pb-[96px] px-6 sm:px-10 md:px-[103px]
@@ -286,7 +288,7 @@ const NonprofitsPage = () => {
                 aria-hidden
               />
               <h2
-                className="m-0 min-h-0 w-full min-w-0 max-md:max-w-[280px] text-left font-poppins text-white text-mobile-heading-m-reg md:max-w-[483px] md:font-normal md:text-bp-black md:text-heading-s-reg"
+                className="m-0 min-h-0 w-full min-w-0 max-md:mr-32 max-md:min-w-[253px] text-left font-poppins text-white text-mobile-heading-m-reg md:max-w-[483px] md:font-normal md:text-bp-black md:text-heading-s-reg"
               >
                 are you part of an NPO with{" "}
                 <span className="font-normal md:font-semibold">a project idea</span> in mind?
@@ -298,14 +300,15 @@ const NonprofitsPage = () => {
               aria-hidden
             />
 
-            <div className="flex w-full flex-col md:flex-row md:items-start md:justify-between md:gap-12 max-md:gap-0">
-              <div className="flex w-full max-w-full min-w-0 flex-col gap-6 self-start md:w-[588px] md:max-w-[588px] md:shrink-0">
-                <div className="w-full min-w-0 self-stretch overflow-x-auto sm:overflow-visible max-md:max-w-[253px] max-md:overflow-visible md:max-w-none">
-                  <p className="text-left font-poppins whitespace-normal text-mobile-body-l-bold text-bp-white md:whitespace-nowrap md:text-body-l-bold md:text-bp-black">
+            <div className="flex w-full flex-col lg:flex-row md:items-start md:justify-between md:gap-12 max-md:gap-0">
+              <div className="flex w-full max-w-full min-w-0 flex-col gap-6 self-start md:max-w-[588px] md:shrink-0 flex-1">
+                <div className="w-full min-w-0 self-stretch overflow-x-auto sm:overflow-visible max-md:pr-36  max-md:overflow-visible md:max-w-none">
+                  <p className="text-left font-poppins whitespace-normal text-mobile-body-l-bold text-bp-white max-md:min-w-[253px]  md:text-body-l-bold md:text-bp-black">
                     Submit your project proposal through the form!
                   </p>
                 </div>
-                <p className="w-full min-w-0 max-w-full self-stretch text-left font-poppins leading-[normal] text-body-m-reg text-bp-white max-md:max-w-[346px] max-md:flex-1 max-md:basis-0 max-md:shrink-0 md:max-w-none md:flex-none md:basis-auto md:text-bp-black">
+                <p className="min-w-0 self-stretch text-left font-poppins leading-[normal] text-body-m-reg text-bp-white 
+                max-md:min-w-[346px] max-md:flex-1 max-md:basis-0 max-md:shrink-0 md:max-w-none md:flex-none md:basis-auto md:text-bp-black">
                   If you have any questions, or haven&apos;t heard back from us within a
                   week of submitting a proposal, feel free to reach out to{" "}
                   <a
@@ -321,7 +324,7 @@ const NonprofitsPage = () => {
                 href="/nonprofits/proposal"
                 className="inline-flex w-full shrink-0 items-center justify-center gap-[10px] rounded-[5px] transition-colors
                 max-md:mt-10 max-md:min-h-[52px] max-md:px-6 max-md:py-3.5 max-md:bg-white max-md:hover:bg-bp-lightest-grey
-                md:mt-0 md:box-border md:h-[60px] md:w-[200px] md:max-w-full md:self-start md:px-[44px] md:py-[14px] md:bg-bp-black md:hover:bg-bp-darkest-grey md:active:bg-bp-dark-grey"
+                md:mt-0 md:box-border md:h-[60px] md:w-full lg:w-[200px] md:max-w-full md:self-start md:px-[44px] md:py-[14px] md:bg-bp-blue md:hover:bg-bp-hover-blue md:active:bg-bp-pressed-blue"
               >
                 <span className="whitespace-nowrap text-center font-poppins uppercase leading-[normal] text-mobile-body-m-bold text-bp-blue md:text-body-m-bold md:text-bp-white">
                   PROPOSAL FORM
