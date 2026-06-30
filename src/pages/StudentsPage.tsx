@@ -1,5 +1,6 @@
 import { useCallback, useLayoutEffect, useRef, useState, type ComponentType, type CSSProperties, type SVGProps } from "react";
 import Button from "../components/shared/Button";
+import ExpandableContentCards from "../components/shared/ExpandableContentCards";
 import { ReactComponent as ArrowUpRightIcon } from "../assets/icons/ArrowUpRight.svg";
 import { ReactComponent as InstagramIcon } from "../assets/icons/instagram.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/icons/youtube.svg";
@@ -39,7 +40,7 @@ const SOCIAL_EVENT_CARDS = [
     image: "/images/student/join-social-blueprint-wide.webp",
     imageClassName: "h-[166.67%] w-[179.49%] -left-[32.67%] -top-[66.67%]",
     accentColor: "#D2A6FB",
-    imageHoverClassName: "md:group-hover/social-card:left-[-17.35%] md:group-hover/social-card:w-[142.86%]",
+    imageHoverClassName: "md:group-hover/expandable-card:left-[-17.35%] md:group-hover/expandable-card:w-[142.86%]",
   },
   {
     title: "Team Socials",
@@ -149,6 +150,31 @@ const StudentsPage = () => {
 
 function HeroSection({ onOpenPositions }: { onOpenPositions: () => void }) {
   return (
+    <section className="relative bg-bp-lightest-grey max-md:bg-none ">
+      <div className="w-full h-0 max-[767.9px]:hidden">
+        <div className="bg-[url('/images/crosspoint.png')] bg-no-repeat
+                  min-[1280px]:bg-[calc(50%+175px)_-218px]
+                  max-[1279.9px]:bg-[calc(100%+697px)_-218px]
+                  max-[767.9px]:bg-[calc(100%+683px)_-500px] max-[767.9px]:w-[calc(100%+17px)]
+                  overflow-clip w-full h-full mt-[-110px] absolute z-0">
+
+        </div>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="
+                    min-[1280px]:right-[calc(50%-965px)] min-[1280px]:top-[-115px]
+                    max-[1279.9px]:right-[-363px] max-[1279.9px]:top-[-115px]
+                    max-[1023.9px]:right-[-335px] max-[1023.9px]:top-[-100px] min-[1024px]:w-[790px] max-[1023.9px]:w-[740px]
+                    max-[767.9px]:right-[-200px] max-[767.9px]:top-[-175px]
+                      max-[513.9px]:scale-[1] max-[513.9px]:right-[-101px] max-[513.9px]:top-[-46px]
+                    absolute z-0">
+          <source src="videos/crosspoints/dotted-path-2.webm" type="video/webm"/>
+        </video>
+      </div>
+      <div className="mx-auto relative z-10 flex w-full max-w-[1212px] flex-col px-5 pb-[154px] pt-[190px] md:px-10 lg:px-0 max-md:pb-[84px] max-md:pt-[116px]">
     <section className="relative ">
       <div className="mx-auto flex w-full max-w-[1212px] flex-col pb-[154px] max-md:pb-[84px] pt-main-desktop-top max-md:pt-main-mobile-top">
         <div className="flex items-start justify-between gap-10 max-md:flex-col max-md:gap-12">
@@ -210,7 +236,7 @@ function TypicalExperienceSection() {
         <p className="max-w-[820px] text-center font-poppins text-[24px] font-normal leading-[1.3] tracking-[-0.48px] text-black max-md:max-w-[300px] max-md:text-[18px] max-md:tracking-[-0.36px]">
           Through our <span className="font-medium">regular social events</span>, you can take the opportunity to meet passionate people, build real connections, and engage with a community that supports your growth - personally and professionally.
         </p>
-        <SocialEventCards />
+        <ExpandableContentCards cards={SOCIAL_EVENT_CARDS} />
       </div>
 
       <TimelineSection />
@@ -315,48 +341,6 @@ function TriadRoleButton({
       <span className="size-4 shrink-0 rounded-[3px] max-md:size-3" style={{ backgroundColor: accent }} aria-hidden />
       {label}
     </button>
-  );
-}
-
-function SocialEventCards() {
-  return (
-    <div className="w-full max-md:w-[351px]">
-      <div className="flex justify-center gap-[23px] max-md:snap-x max-md:justify-start max-md:overflow-x-auto max-md:scrollbar-hide-custom">
-        {SOCIAL_EVENT_CARDS.map((card) => (
-          <article
-            key={card.title}
-            className="group/social-card relative h-[470px] w-[351px] shrink-0 overflow-hidden rounded-[10px] bg-white px-9 pt-9 transition-[width] duration-300 ease-out md:hover:w-[429px] max-md:h-[418px] max-md:snap-center motion-reduce:transition-none"
-          >
-            <div className="flex items-center gap-0 transition-[gap] duration-300 ease-out md:group-hover/social-card:gap-[10px] motion-reduce:transition-none">
-              <span
-                className="h-[19px] w-0 shrink-0 rounded-[4px] opacity-0 transition-[width,opacity] duration-300 ease-out md:group-hover/social-card:w-[19px] md:group-hover/social-card:opacity-100 motion-reduce:transition-none"
-                style={{ backgroundColor: card.accentColor }}
-                aria-hidden
-              />
-              <h3 className="whitespace-nowrap font-caveat text-[32px] font-normal leading-[1.3] tracking-[-0.64px] text-black max-md:text-[28px] max-md:tracking-[-0.56px]">
-                {card.title}
-              </h3>
-            </div>
-            <p className="mt-[10px] w-[282px] font-poppins text-[16px] font-normal leading-normal text-black transition-[width] duration-300 ease-out md:group-hover/social-card:w-[275px] max-md:w-[290px] max-md:text-[14px] motion-reduce:transition-none">
-              {card.body}
-            </p>
-            <div className="absolute left-5 top-[199px] h-[252px] w-[312px] overflow-hidden rounded-[10px] transition-[left,width] duration-300 ease-out md:group-hover/social-card:left-[20.5px] md:group-hover/social-card:w-[392px] max-md:top-[145px] motion-reduce:transition-none">
-              <img
-                src={card.image}
-                alt=""
-                className={`absolute max-w-none transition-[left,width] duration-300 ease-out motion-reduce:transition-none ${card.imageClassName} ${card.imageHoverClassName ?? ""}`}
-                loading="lazy"
-              />
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className="mt-[22px] hidden justify-center gap-[8px] max-md:flex" aria-hidden>
-        <span className="h-[11px] w-[30px] rounded-full bg-bp-blue" />
-        <span className="size-[11px] rounded-full bg-bp-grey" />
-        <span className="size-[11px] rounded-full bg-bp-grey" />
-      </div>
-    </div>
   );
 }
 
@@ -567,7 +551,7 @@ function OpenPositionsSection() {
   return (
     <section
       id="open-positions"
-      className="mx-auto grid w-full max-w-[1298px] grid-cols-[318px_623px] justify-center gap-[127px] rounded-[20px] bg-bp-black px-[115px] py-[117px] max-lg:flex max-lg:flex-col max-lg:gap-[31px] max-lg:rounded-none max-lg:px-[19px] max-lg:pb-[76px] max-lg:pt-[61px]"
+      className="mx-auto relative z-10 grid w-full max-w-[1298px] grid-cols-[318px_623px] justify-center gap-[127px] rounded-[20px] bg-bp-black px-[115px] py-[117px] max-lg:flex max-lg:flex-col max-lg:gap-[31px] max-lg:rounded-none max-lg:px-[19px] max-lg:pb-[76px] max-lg:pt-[61px]"
     >
       <div className="flex flex-col gap-12 text-white max-lg:gap-0">
         <div className="flex flex-col gap-6">
@@ -645,8 +629,26 @@ function OpenPositionCard({
 
 function StayUpdatedSection() {
   return (
-    <section className="relative bg-bp-lightest-grey bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat bg-[calc(50%-409px)_-208px] py-[202px] max-md:bg-[url('/images/non-profit/mobile_partner_crosspoint.svg')] max-md:bg-[calc(50%-277px)_-132px] max-md:py-[122px]">
-      <div className="mx-auto flex w-full max-w-[1155px] flex-col items-center gap-[58px] px-5 max-md:gap-[38px]">
+    <section className="relative bg-bp-lightest-grey py-[202px] max-md:py-[122px]">
+        <div className="w-full h-0 ">
+          <div className="bg-bp-lightest-grey bg-[url('/images/crosspoint.png')] bg-no-repeat
+                    min-[768px]:bg-[calc(50%-399px)_-310px] 
+                    max-[767.9px]:bg-[calc(50%-190px)_-250px] max-[767.9px]:bg-[length:1100px_1100px]
+                    overflow-clip h-[900px] w-full mt-[-110px] absolute">
+          </div>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="
+                      min-[768px]:w-[785px] min-[768px]:max-w-[785px] min-[768px]:right-[calc(50%-395px)] min-[768px]:top-[-8px]
+                      max-[767.9px]:w-[400px] max-[767.9px]:max-w-[370px] max-[767.9px]:right-[calc(50%-187px)] max-[767.9px]:top-[20px]
+                      absolute ">
+            <source src="videos/crosspoints/dotted-path-2.webm" type="video/webm"/>
+          </video>
+      </div>
+      <div className="mx-auto z-10 relative flex w-full max-w-[1155px] flex-col items-center gap-[58px] px-5 max-md:gap-[38px]">
         <div className="flex flex-col items-center gap-3 text-center max-md:gap-1.5">
           <h2 className="font-caveat text-[78px] font-normal leading-[1.2] tracking-[-1.56px] text-bp-black max-md:text-[32px] max-md:tracking-[-0.64px]">
             stay updated
