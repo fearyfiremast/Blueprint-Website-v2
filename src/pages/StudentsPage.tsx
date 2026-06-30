@@ -6,6 +6,7 @@ import { ReactComponent as InstagramIcon } from "../assets/icons/instagram.svg";
 import { ReactComponent as YoutubeIcon } from "../assets/icons/youtube.svg";
 import { ReactComponent as DiscordIcon } from "../assets/icons/discord.svg";
 import { ReactComponent as LinkedinIcon } from "../assets/icons/linkedin.svg";
+import PageContainer from "../components/layout/PageContainer";
 
 const HERO_CONTENT = {
   subtitle:
@@ -137,13 +138,13 @@ const StudentsPage = () => {
   };
 
   return (
-    <div className="w-full overflow-x-hidden bg-bp-lightest-grey text-bp-black">
+    <PageContainer className="bg-bp-lightest-grey overflow-x-hidden text-bp-black bg-[url('/images/non-profit/desktop_partner_crosspoint.svg')] bg-no-repeat max-md:bg-none min-[1622px]:bg-[calc(50%+158px)_-371px] max-[1621px]:bg-[calc(100%+572px)_-371px] max-[1279px]:bg-[calc(100%+700px)_-371px]">
       <HeroSection onOpenPositions={scrollToPositions} />
       <TypicalExperienceSection />
       <ApplicationProcessSection />
       <OpenPositionsSection />
       <StayUpdatedSection />
-    </div>
+    </PageContainer>
   );
 };
 
@@ -174,6 +175,8 @@ function HeroSection({ onOpenPositions }: { onOpenPositions: () => void }) {
         </video>
       </div>
       <div className="mx-auto relative z-10 flex w-full max-w-[1212px] flex-col px-5 pb-[154px] pt-[190px] md:px-10 lg:px-0 max-md:pb-[84px] max-md:pt-[116px]">
+    <section className="relative ">
+      <div className="mx-auto flex w-full max-w-[1212px] flex-col pb-[154px] max-md:pb-[84px] pt-main-desktop-top max-md:pt-main-mobile-top">
         <div className="flex items-start justify-between gap-10 max-md:flex-col max-md:gap-12">
           <div className="max-w-[954px]">
             <h1 className="font-poppins text-[72px] font-bold leading-none tracking-[-1.44px] text-bp-black max-md:text-[46px] max-md:tracking-[-0.92px]">
